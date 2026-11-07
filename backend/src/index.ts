@@ -4,7 +4,9 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import { scholarshipRouter } from './routes/scholarshipRoutes.js';
+import { sourcesRouter } from './routes/sourcesRoutes.js';
 import { providerRouter } from './routes/providerRoutes.js';
+import { scholarshipRepository } from './services/scholarshipAggregator.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
 dotenv.config();
@@ -29,7 +31,7 @@ app.use(express.json({ limit: '1mb' }));
 // Rate Limiting
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 300, // 300 requests per 15 minutes per IP
+  max: 500,
   standardHeaders: true,
   legacyHeaders: false,
   message: {
@@ -48,13 +50,34 @@ app.get('/api/health', (req, res) => {
   res.json({
     status: 'healthy',
     timestamp: new Date().toISOString(),
-    service: 'GRANTLY Scholarship API Engine',
-    version: '1.0.0'
+    service: 'GRANTLY Scholarship Web-Sourced Database Engine',
+    version: '2.0.0',
+    architecture: 'web_sourced_public_database'
+  });
+});
+
+// Direct Collection Report endpoint
+app.get('/api/collection-report', async (req, res) => {
+  const report = await scholarshipRepository.getCollectionReport();
+  if (!report) {
+    res.status(404).json({
+      success: false,
+      error: {
+        code: 'REPORT_NOT_FOUND',
+        message: 'Collection report has not been generated yet.'
+      }
+    });
+    return;
+  }
+  res.json({
+    success: true,
+    data: report
   });
 });
 
 // Routes
 app.use('/api/scholarships', scholarshipRouter);
+app.use('/api/sources', sourcesRouter);
 app.use('/api/providers', providerRouter);
 
 // Centralized Error Handler

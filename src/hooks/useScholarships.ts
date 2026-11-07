@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { Scholarship, ScholarshipCategory, ProviderCategory, EducationLevel, GenderEligibility } from '../types/scholarship';
+import { Scholarship, ScholarshipCategory, ProviderCategory, EducationLevel, GenderEligibility, FundingType } from '../types/scholarship';
 import { EligibilityResult, EligibilityStatus } from '../types/eligibility';
 import { EligibilityEngine } from '../services/eligibilityEngine';
 import { StudentProfile } from '../types/student';
@@ -10,10 +10,12 @@ export interface ScholarshipFilters {
   category: ScholarshipCategory | 'all';
   providerCategory: ProviderCategory | 'all';
   educationLevel: EducationLevel | 'all';
+  country: string;
   state: string;
+  fundingType: FundingType | 'all';
   gender: GenderEligibility | 'all';
   eligibilityStatus: EligibilityStatus | 'all';
-  status: 'open' | 'closed' | 'coming_soon' | 'all';
+  status: 'open' | 'closed' | 'upcoming' | 'coming_soon' | 'all';
   sortBy: 'relevance' | 'deadline' | 'amount_high' | 'amount_low' | 'newest';
 }
 
@@ -22,7 +24,9 @@ export const INITIAL_FILTERS: ScholarshipFilters = {
   category: 'all',
   providerCategory: 'all',
   educationLevel: 'all',
+  country: 'all',
   state: 'all',
+  fundingType: 'all',
   gender: 'all',
   eligibilityStatus: 'all',
   status: 'all',
@@ -86,11 +90,29 @@ export function useScholarships(profile: StudentProfile | null) {
         const matchesName = scholarship.name.toLowerCase().includes(q);
         const matchesProvider = scholarship.provider.toLowerCase().includes(q);
         const matchesDesc = scholarship.description.toLowerCase().includes(q);
+        const matchesCountry = scholarship.country && scholarship.country.toLowerCase().includes(q);
+        const matchesState = scholarship.state && scholarship.state.toLowerCase().includes(q);
         const matchesStreams = scholarship.coursesAndStreams.some(s => s.toLowerCase().includes(q));
         const matchesTags = scholarship.tags.some(t => t.toLowerCase().includes(q));
-        if (!matchesName && !matchesProvider && !matchesDesc && !matchesStreams && !matchesTags) {
+        if (!matchesName && !matchesProvider && !matchesDesc && !matchesCountry && !matchesState && !matchesStreams && !matchesTags) {
           return false;
         }
+      }
+
+      // Country
+      if (filters.country !== 'all') {
+        if (filters.country === 'India') {
+          if (scholarship.country !== 'India') return false;
+        } else if (filters.country === 'International') {
+          if (scholarship.country === 'India') return false;
+        } else {
+          if (scholarship.country !== filters.country) return false;
+        }
+      }
+
+      // Funding Type
+      if (filters.fundingType !== 'all') {
+        if (scholarship.fundingType !== filters.fundingType) return false;
       }
 
       // Category
@@ -110,11 +132,12 @@ export function useScholarships(profile: StudentProfile | null) {
 
       // State
       if (filters.state !== 'all') {
+        const targetState = filters.state.toLowerCase();
+        const matchesStateField = scholarship.state && scholarship.state.toLowerCase() === targetState;
         const reqStates = scholarship.requirements.eligibleStates;
-        if (reqStates && reqStates.length > 0 && !reqStates.includes('All India')) {
-          if (!reqStates.some(st => st.toLowerCase() === filters.state.toLowerCase())) {
-            return false;
-          }
+        const matchesReqStates = reqStates && (reqStates.includes('All India') || reqStates.some(st => st.toLowerCase() === targetState));
+        if (!matchesStateField && !matchesReqStates) {
+          return false;
         }
       }
 
@@ -162,8 +185,16 @@ export function useScholarships(profile: StudentProfile | null) {
     let needsInfoCount = 0;
     let ineligibleCount = 0;
     let totalEligibleFundingValue = 0;
+    let indianCount = 0;
+    let internationalCount = 0;
 
     for (const s of scholarships) {
+      if (s.country === 'India') {
+        indianCount++;
+      } else {
+        internationalCount++;
+      }
+
       const res = evaluationsMap.get(s.id);
       if (!res) continue;
 
@@ -182,19 +213,20 @@ export function useScholarships(profile: StudentProfile | null) {
       eligibleCount,
       needsInfoCount,
       ineligibleCount,
-      totalEligibleFundingValue
+      totalEligibleFundingValue,
+      indianCount,
+      internationalCount
     };
   }, [scholarships, evaluationsMap]);
 
   return {
     scholarships,
     processedScholarships,
-    evaluationsMap,
     loading,
     isFromBackend,
     filters,
     setFilters,
     stats,
-    refetch: fetchScholarships
+    refreshScholarships: fetchScholarships
   };
 }

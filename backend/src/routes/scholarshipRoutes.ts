@@ -1,5 +1,5 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { scholarshipAggregator } from '../services/scholarshipAggregator.js';
+import { scholarshipRepository } from '../services/scholarshipAggregator.js';
 import { scholarshipQuerySchema } from '../validators/scholarshipValidator.js';
 import { Scholarship } from '../types/index.js';
 
@@ -10,8 +10,8 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
     const query = scholarshipQuerySchema.parse(req.query);
     const forceRefresh = req.query.refresh === 'true';
 
-    const { scholarships, total, liveSyncedCount, verifiedCuratedCount, lastSynchronizedAt } =
-      await scholarshipAggregator.getScholarships(forceRefresh);
+    const { scholarships, total, indianCount, internationalCount, activeCount, lastSynchronizedAt } =
+      await scholarshipRepository.getScholarships(forceRefresh);
 
     let filtered = [...scholarships];
 
@@ -22,9 +22,18 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
         s.name.toLowerCase().includes(q) ||
         s.provider.toLowerCase().includes(q) ||
         s.description.toLowerCase().includes(q) ||
+        (s.briefSummary && s.briefSummary.toLowerCase().includes(q)) ||
+        (s.country && s.country.toLowerCase().includes(q)) ||
+        (s.state && s.state.toLowerCase().includes(q)) ||
         s.coursesAndStreams.some(c => c.toLowerCase().includes(q)) ||
         s.tags.some(t => t.toLowerCase().includes(q))
       );
+    }
+
+    // Country filter
+    if (query.country) {
+      const targetCountry = query.country.toLowerCase();
+      filtered = filtered.filter(s => s.country && s.country.toLowerCase() === targetCountry);
     }
 
     // Category filter
@@ -46,10 +55,21 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
     if (query.state) {
       const stateQuery = query.state.toLowerCase();
       filtered = filtered.filter(s => {
+        if (s.state && s.state.toLowerCase() === stateQuery) return true;
         if (!s.requirements.eligibleStates || s.requirements.eligibleStates.length === 0) return true;
         if (s.requirements.eligibleStates.includes('All India')) return true;
         return s.requirements.eligibleStates.some(st => st.toLowerCase() === stateQuery);
       });
+    }
+
+    // Funding Type
+    if (query.fundingType) {
+      filtered = filtered.filter(s => s.fundingType === query.fundingType);
+    }
+
+    // Verification Status
+    if (query.verificationStatus) {
+      filtered = filtered.filter(s => s.verificationStatus === query.verificationStatus);
     }
 
     // Gender
@@ -62,6 +82,22 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
     // Status
     if (query.status) {
       filtered = filtered.filter(s => s.status === query.status);
+    }
+
+    // Income
+    if (query.maxIncome !== undefined) {
+      filtered = filtered.filter(s => {
+        if (!s.requirements.maxAnnualIncome) return true;
+        return query.maxIncome! <= s.requirements.maxAnnualIncome;
+      });
+    }
+
+    // Percentage
+    if (query.minPercentage !== undefined) {
+      filtered = filtered.filter(s => {
+        if (!s.requirements.minPercentage) return true;
+        return query.minPercentage! >= s.requirements.minPercentage;
+      });
     }
 
     // Sorting
@@ -96,8 +132,9 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
         page,
         limit,
         totalPages: Math.ceil(filtered.length / limit),
-        liveSyncedCount,
-        verifiedCuratedCount,
+        indianCount,
+        internationalCount,
+        activeCount,
         lastSynchronizedAt
       }
     });
@@ -106,14 +143,19 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
   }
 });
 
+// GET /api/scholarships/:id - Details by ID or Slug
 scholarshipRouter.get('/:id', async (req: Request, res: Response, next: NextFunction) => {
   try {
     const id = String(req.params.id);
-    const scholarship = await scholarshipAggregator.getScholarshipById(id);
+    const scholarship = await scholarshipRepository.getScholarshipById(id);
+
     if (!scholarship) {
       res.status(404).json({
         success: false,
-        error: { message: `Scholarship with identifier '${id}' was not found.` }
+        error: {
+          code: 'NOT_FOUND',
+          message: `Scholarship with ID or Slug '${id}' was not found in the verified dataset.`
+        }
       });
       return;
     }

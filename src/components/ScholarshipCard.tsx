@@ -9,10 +9,11 @@ import {
   Building,
   GraduationCap,
   Bookmark,
-  ExternalLink,
   ChevronRight,
   ShieldCheck,
-  Zap
+  Globe,
+  MapPin,
+  Award
 } from 'lucide-react';
 
 interface Props {
@@ -59,16 +60,30 @@ export const ScholarshipCard: React.FC<Props> = ({
   const categoryLabels: Record<string, { label: string; color: string }> = {
     central_gov: { label: 'Central Government', color: 'bg-blue-50 text-blue-700 border-blue-200' },
     state_gov: { label: 'State Government', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+    corporate_csr: { label: 'Corporate CSR', color: 'bg-purple-50 text-purple-700 border-purple-200' },
     corporate: { label: 'Corporate CSR', color: 'bg-purple-50 text-purple-700 border-purple-200' },
-    private: { label: 'Private Entity', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+    foundation_ngo: { label: 'NGO / Foundation', color: 'bg-amber-50 text-amber-700 border-amber-200' },
     ngo: { label: 'NGO / Foundation', color: 'bg-amber-50 text-amber-700 border-amber-200' },
-    university: { label: 'University', color: 'bg-teal-50 text-teal-700 border-teal-200' },
-    international: { label: 'International', color: 'bg-rose-50 text-rose-700 border-rose-200' }
+    premier_university: { label: 'Premier University', color: 'bg-teal-50 text-teal-700 border-teal-200' },
+    university: { label: 'University Aid', color: 'bg-teal-50 text-teal-700 border-teal-200' },
+    international_government: { label: 'International Gov', color: 'bg-rose-50 text-rose-700 border-rose-200' },
+    international_university: { label: 'World University', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
+    international: { label: 'International', color: 'bg-rose-50 text-rose-700 border-rose-200' },
+    private: { label: 'Private Entity', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' }
   };
 
   const catConfig = categoryLabels[scholarship.providerCategory] || {
-    label: scholarship.providerCategory,
+    label: scholarship.providerCategory.replace('_', ' '),
     color: 'bg-slate-50 text-slate-700 border-slate-200'
+  };
+
+  // Funding Type format
+  const fundingFormat: Record<string, string> = {
+    full_funding: 'Full Funding',
+    tuition_waiver: 'Tuition Waiver',
+    fixed_award: 'Direct Grant',
+    partial_funding: 'Partial Award',
+    loan_scholarship: 'Loan Scholarship'
   };
 
   // Calculate days left
@@ -80,27 +95,42 @@ export const ScholarshipCard: React.FC<Props> = ({
 
   return (
     <div className="group bg-white rounded-2xl border border-slate-200 shadow-subtle hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between overflow-hidden relative">
-      {/* Top Bar with Category & Bookmark */}
+      {/* Top Bar with Category, Location & Bookmark */}
       <div className="p-5 pb-3">
         <div className="flex items-start justify-between gap-3 mb-2">
-          <div className="flex items-center gap-2 flex-wrap">
+          <div className="flex items-center gap-1.5 flex-wrap">
             <span
               className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${catConfig.color}`}
             >
               {catConfig.label}
             </span>
 
-            {scholarship.dataProvenance === 'live_synced' ? (
-              <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
-                <Zap size={10} className="text-cyan-600" />
-                Live Sync
+            {/* Country / State Tag */}
+            {scholarship.country !== 'India' ? (
+              <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                <Globe size={11} className="text-slate-500" />
+                {scholarship.country}
               </span>
-            ) : (
-              <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                <ShieldCheck size={10} className="text-slate-600" />
-                Verified Record
+            ) : scholarship.state && scholarship.state !== 'All India' ? (
+              <span className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                <MapPin size={11} className="text-slate-500" />
+                {scholarship.state}
+              </span>
+            ) : null}
+
+            {/* Funding Type */}
+            {scholarship.fundingType && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
+                <Award size={10} className="text-brand-600" />
+                {fundingFormat[scholarship.fundingType] || scholarship.fundingType}
               </span>
             )}
+
+            {/* Verified badge */}
+            <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+              <ShieldCheck size={10} className="text-emerald-600" />
+              {scholarship.verificationStatus || 'Verified'}
+            </span>
           </div>
 
           <button

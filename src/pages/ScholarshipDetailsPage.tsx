@@ -22,7 +22,9 @@ import {
   Check,
   Plus,
   Send,
-  Zap
+  Globe,
+  MapPin,
+  Award
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
@@ -144,17 +146,35 @@ export const ScholarshipDetailsPage: React.FC = () => {
               {scholarship.providerCategory.replace('_', ' ')}
             </span>
 
-            {scholarship.dataProvenance === 'live_synced' ? (
-              <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-cyan-50 text-cyan-800 border border-cyan-200">
-                <Zap size={13} className="text-cyan-600" />
-                Live Synchronized
+            {/* Country / State Tag */}
+            {scholarship.country !== 'India' ? (
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                <Globe size={13} className="text-slate-500" />
+                {scholarship.country}
+              </span>
+            ) : scholarship.state && scholarship.state !== 'All India' ? (
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                <MapPin size={13} className="text-slate-500" />
+                {scholarship.state}
               </span>
             ) : (
-              <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
-                <ShieldCheck size={13} className="text-slate-600" />
-                Verified Curated Scheme
+              <span className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200">
+                <MapPin size={13} className="text-slate-500" />
+                All India
               </span>
             )}
+
+            {scholarship.fundingType && (
+              <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-brand-50 text-brand-800 border border-brand-200">
+                <Award size={13} className="text-brand-600" />
+                {scholarship.fundingType.replace('_', ' ')}
+              </span>
+            )}
+
+            <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+              <ShieldCheck size={13} className="text-emerald-600" />
+              {scholarship.verificationStatus || 'Officially Verified'}
+            </span>
           </div>
 
           <div className="flex items-center gap-2">

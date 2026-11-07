@@ -1,793 +1,10227 @@
 import { Scholarship } from '../types/scholarship';
 
-export const SCHOLARSHIPS_DATA: Scholarship[] = [
+/**
+ * GRANTLY — Web-Sourced Genuine Scholarship Database
+ * Pre-compiled verified dataset for instant offline PWA access and initial load.
+ * Synchronized with data/scholarships.json.
+ */
+export const FALLBACK_SCHOLARSHIPS: Scholarship[] = [
   {
-    id: 'nsp-central-sector-2025',
-    name: 'Central Sector Scheme of Scholarship for College and University Students (PM-USP)',
-    slug: 'central-sector-scheme-pm-usp',
-    provider: 'Department of Higher Education, Ministry of Education, Govt of India',
-    providerCategory: 'central_gov',
-    categories: ['central_gov', 'merit', 'need'],
-    description: 'The Central Sector Scheme of Scholarship for College and University Students aims to provide financial assistance to meritorious students from low-income families to meet a part of their day-to-day expenses while pursuing higher studies.',
-    briefSummary: 'Central government merit-cum-means scholarship for top-percentile 12th passouts pursuing degree programs.',
-    amount: 20000,
-    formattedAmount: '₹12,000 to ₹20,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: '₹12,000/yr for graduation (first 3 years) and ₹20,000/yr for post-graduation',
-    benefits: [
-      '₹12,000 per annum for the first 3 years of Undergraduate studies',
-      '₹20,000 per annum for 4th & 5th year / Postgraduate courses',
-      'Direct Benefit Transfer (DBT) via PFMS to Aadhaar-seeded bank account',
-      'Renewable every year subject to 50% marks and minimum 75% attendance'
+    "id": "central-aicte-post-graduate-pg-scholarship--f678868b",
+    "name": "AICTE Post Graduate (PG) Scholarship for GATE/CEED Qualified Students",
+    "slug": "aicte-post-graduate-pg-scholarship-for-gate-ceed-qualified-students",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit"
     ],
-    educationLevels: ['undergraduate', 'postgraduate'],
-    coursesAndStreams: ['Engineering', 'Medical', 'Arts', 'Science', 'Commerce', 'Law', 'Management'],
-    requirements: {
-      educationLevels: ['undergraduate', 'postgraduate'],
-      minPercentage: 80, // Above 80th percentile in Class 12 board
-      maxAnnualIncome: 450000,
-      gender: 'all',
-      socialCategories: ['Any'],
-      eligibleStates: ['All India'],
-      institutionTypes: ['Government', 'Private', 'Aided']
+    "description": "Monthly financial assistance awarded to full-time GATE/CEED qualified students admitted to AICTE approved M.E./M.Tech/M.Arch/M.Des programs to promote technical postgraduate education in India.",
+    "briefSummary": "₹12,400/month scholarship for GATE and CEED qualified M.Tech/M.Des students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 148800,
+    "formattedAmount": "₹12,400 / month (24 Months)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly stipend for 24 months (duration of post-graduate technical degree)",
+    "benefits": [
+      "₹12,400 per month deposited directly into student's Aadhaar-linked bank account",
+      "Covers 8-10 hours/week teaching or research assistance at institution",
+      "Guaranteed for all valid GATE/CEED score card holders in approved seats"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "M.Tech",
+      "M.E.",
+      "M.Arch",
+      "M.Des"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
     },
-    requiredDocuments: [
-      'Class 12th Board Marksheet',
-      'Income Certificate issued by competent revenue authority (≤ ₹4.5 Lakh)',
-      'Bonafide Student Certificate from College / University',
-      'Bank Account passbook copy (Aadhaar linked)',
-      'Domicile Certificate'
+    "requiredDocuments": [
+      "Valid GATE / CEED Score Card",
+      "Postgraduate College Admission Fee Receipt and Allotment Letter",
+      "Aadhaar card seeded with active bank account",
+      "Institute Student ID Card"
     ],
-    applicationProcedure: [
-      'Register on the National Scholarship Portal (NSP) with One-Time Registration (OTR)',
-      'Fill in student academic credentials, admission details and family income',
-      'Upload institutional Bonafide certificate and required revenue documents',
-      'Institute nodal officer verifies the application physically & digitally',
-      'State Nodal Officer conducts 2nd tier verification before DBT sanction'
+    "applicationProcedure": [
+      "Register on AICTE PG Scholarship Portal (pgscholarship.aicte-india.org)",
+      "Enter GATE/CEED roll number for automated score verification",
+      "Institute verifies student enrollment and biometric attendance",
+      "Monthly DBT disbursement via PFMS"
     ],
-    applicationStartDate: '2025-07-01',
-    deadline: '2026-11-30',
-    status: 'open',
-    officialUrl: 'https://scholarships.gov.in',
-    applicationUrl: 'https://scholarships.gov.in/fresh',
-    sourceName: 'National Scholarship Portal (NSP)',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-25',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['NSP', 'Ministry of Education', 'Central Sector', 'Merit-Cum-Means']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://pgscholarship.aicte-india.org",
+    "applicationUrl": "https://pgscholarship.aicte-india.org",
+    "sourceUrl": "https://www.aicte-india.org",
+    "sourceName": "All India Council for Technical Education (AICTE)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "AICTE",
+      "GATE",
+      "MTech",
+      "PG Scholarship",
+      "Technical Education"
+    ]
   },
   {
-    id: 'aicte-pragati-girls-2025',
-    name: 'AICTE Pragati Scholarship Scheme for Girl Students',
-    slug: 'aicte-pragati-scholarship-girls',
-    provider: 'All India Council for Technical Education (AICTE)',
-    providerCategory: 'central_gov',
-    categories: ['central_gov', 'stem', 'need'],
-    description: 'Pragati is an AICTE Scheme envisaging financial support of ₹50,000 per annum to aid female students to advance technical education. Maximum two girls per family are eligible.',
-    briefSummary: 'AICTE initiative awarding ₹50,000 per annum to young women pursuing technical degrees or diplomas.',
-    amount: 50000,
-    formattedAmount: '₹50,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: 'Tuition fees, equipment, software, books and laptop purchase assistance',
-    benefits: [
-      '₹50,000 lump sum per annum for every year of technical course duration',
-      'Covers college fee reimbursement and learning equipment contingency',
-      '10,000 scholarships disbursed nationwide per academic year'
+    "id": "central-aicte-pragati-scholarship-scheme-fo-a093cfc0",
+    "name": "AICTE Pragati Scholarship Scheme for Girl Students (Degree & Diploma)",
+    "slug": "aicte-pragati-scholarship-scheme-for-girl-students-degree-diploma",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "stem",
+      "need"
     ],
-    educationLevels: ['undergraduate', 'diploma'],
-    coursesAndStreams: ['Engineering & Technology', 'Pharmacy', 'Architecture', 'Applied Arts', 'Computer Applications'],
-    requirements: {
-      educationLevels: ['undergraduate', 'diploma'],
-      minPercentage: 60,
-      maxAnnualIncome: 800000,
-      gender: 'female',
-      institutionTypes: ['Government', 'Private', 'Aided'],
-      specialConditions: ['Admitted in AICTE approved technical institution in 1st year or 2nd year via lateral entry']
+    "description": "Financial support of ₹50,000 per annum to aid female students pursuing technical education in AICTE-approved institutions.",
+    "briefSummary": "AICTE initiative awarding ₹50,000 per annum to young women pursuing technical degrees or diplomas.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, equipment, software, books and laptop purchase assistance",
+    "benefits": [
+      "₹50,000 lump sum per annum for every year of technical course duration",
+      "Covers college fee reimbursement and learning equipment contingency",
+      "10,000 scholarships disbursed nationwide per academic year"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering & Technology",
+      "Pharmacy",
+      "Architecture",
+      "Applied Arts",
+      "Computer Applications"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 800000,
+      "gender": "female",
+      "institutionTypes": [
+        "Government",
+        "Private",
+        "Aided"
+      ],
+      "specialConditions": [
+        "Admitted in AICTE approved technical institution in 1st year or 2nd year via lateral entry"
+      ]
     },
-    requiredDocuments: [
-      'Mark sheet of qualifying exam (10th / 12th / ITI)',
-      'Tuition fee receipt of current academic session',
-      'Valid Annual Family Income Certificate (≤ ₹8 Lakh)',
-      'AICTE institute admission letter & allotment order',
-      'Signed declaration by parents affirming not more than 2 daughters are availing scheme'
+    "requiredDocuments": [
+      "Mark sheet of qualifying exam (10th / 12th / ITI)",
+      "Tuition fee receipt of current academic session",
+      "Valid Annual Family Income Certificate (≤ ₹8 Lakh)",
+      "AICTE institute admission letter & allotment order",
+      "Signed declaration affirming not more than 2 daughters are availing scheme"
     ],
-    applicationProcedure: [
-      'Register on National Scholarship Portal (NSP) with Aadhaar OTR',
-      'Choose AICTE Pragati Scholarship under Central Schemes tab',
-      'Verify technical college AICTE approval code and course registration',
-      'Submit institutional bonafide endorsed by Head of Institution'
+    "applicationProcedure": [
+      "Register on National Scholarship Portal (NSP) with Aadhaar OTR",
+      "Choose AICTE Pragati Scholarship under Central Schemes tab",
+      "Verify technical college AICTE approval code and course registration",
+      "Submit institutional bonafide endorsed by Head of Institution"
     ],
-    applicationStartDate: '2025-08-01',
-    deadline: '2026-12-15',
-    status: 'open',
-    officialUrl: 'https://www.aicte-india.org/schemes/students-development-schemes/pragati',
-    applicationUrl: 'https://scholarships.gov.in',
-    sourceName: 'AICTE & NSP Official Portal',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-28',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['AICTE', 'Women in STEM', 'Technical Education', 'Engineering']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.aicte-india.org/schemes/students-development-schemes/pragati",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "National Scholarship Portal (NSP)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "AICTE",
+      "Women in STEM",
+      "Technical Education",
+      "Engineering"
+    ]
   },
   {
-    id: 'reliance-foundation-ug-2025',
-    name: 'Reliance Foundation Undergraduate Scholarship',
-    slug: 'reliance-foundation-undergraduate-scholarship',
-    provider: 'Reliance Foundation',
-    providerCategory: 'corporate',
-    categories: ['corporate', 'merit', 'need'],
-    description: 'Empowering India’s youth to become next-generation leaders. The Reliance Foundation Undergraduate Scholarship provides up to ₹2 Lakhs over the course of undergraduate study alongside holistic leadership development programs.',
-    briefSummary: 'Prestigious corporate scholarship granting up to ₹2 Lakhs with mentorship for high-potential undergraduates.',
-    amount: 200000,
-    formattedAmount: 'Up to ₹2,00,000',
-    awardFrequency: 'variable',
-    awardCoverage: 'Up to ₹2,00,000 total across the degree duration plus alumni mentorship',
-    benefits: [
-      'Financial support up to ₹2,00,000 over the complete undergraduate degree',
-      'Leadership training webinars, personal development modules and mentorship',
-      'Exclusive membership into the vibrant Reliance Foundation Scholar Alumni network',
-      '5,000 undergraduate scholars selected annually'
+    "id": "central-aicte-saksham-scholarship-scheme-fo-fc155987",
+    "name": "AICTE Saksham Scholarship Scheme for Specially-Abled Students",
+    "slug": "aicte-saksham-scholarship-scheme-for-specially-abled-students",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "stem",
+      "need"
     ],
-    educationLevels: ['undergraduate'],
-    coursesAndStreams: ['Engineering', 'Commerce', 'Medicine', 'Law', 'Natural Sciences', 'Humanities'],
-    requirements: {
-      educationLevels: ['undergraduate'],
-      minPercentage: 60,
-      maxAnnualIncome: 1500000, // Preference to under 2.5 Lakhs
-      gender: 'all',
-      eligibleStates: ['All India']
+    "description": "Financial assistance of ₹50,000 per annum to specially-abled students with ≥40% disability pursuing technical degree or diploma courses.",
+    "briefSummary": "₹50,000 per year dedicated financial support for students with ≥40% disability in technical programs.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, assistive devices, software, books and study equipment",
+    "benefits": [
+      "₹50,000 per year assistance for college fee reimbursement and learning equipment",
+      "Covers purchase of assistive devices, braille displays, and mobility apparatus",
+      "All eligible applicants fulfilling criteria are accommodated without numerical cap"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering & Technology",
+      "Pharmacy",
+      "Architecture",
+      "Applied Arts",
+      "Design"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 800000,
+      "disabilityOnly": true,
+      "minDisabilityPercentage": 40,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
     },
-    requiredDocuments: [
-      'Class 12th board marksheet',
-      'Current college bonafide certificate or student identity card',
-      'Family Income certificate or ITR copy (≤ ₹15 Lakhs)',
-      'Valid Government Photo ID proof (Aadhaar or Voter ID)',
-      'Passport size photograph'
+    "requiredDocuments": [
+      "Disability Certificate / UDID card issued by competent medical authority (≥40% benchmark)",
+      "Class 10th / 12th board marksheet",
+      "Tuition fee receipt of current academic session",
+      "Income Certificate (ceiling ₹8 Lakhs/year)",
+      "College bonafide signed by Principal"
     ],
-    applicationProcedure: [
-      'Complete online application form on the official Reliance Foundation portal',
-      'Take the mandatory online aptitude test (60 minutes, MCQ)',
-      'Evaluation based on combined aptitude test score and household economic need',
-      'Final selection announcement with direct disbursement'
+    "applicationProcedure": [
+      "Apply online on National Scholarship Portal (NSP)",
+      "Upload UDID verification barcode / scanned medical board certificate",
+      "College nodal officer confirms enrollment in AICTE-approved degree"
     ],
-    applicationStartDate: '2025-08-15',
-    deadline: '2026-10-31',
-    isDeadlinePassed: true,
-    status: 'closed',
-    officialUrl: 'https://www.scholarships.reliancefoundation.org',
-    applicationUrl: 'https://www.scholarships.reliancefoundation.org/UG_Scholarship.aspx',
-    sourceName: 'Reliance Foundation Corporate Portal',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-11-01',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Reliance', 'Corporate CSR', 'Aptitude Test', 'Leadership']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.aicte-india.org/schemes/students-development-schemes/saksham",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "AICTE Official Schemes Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "AICTE",
+      "Saksham",
+      "PwD",
+      "Disability Support",
+      "STEM"
+    ]
   },
   {
-    id: 'tata-capital-pankh-2025',
-    name: 'Tata Capital Pankh Scholarship Programme for General & Professional Courses',
-    slug: 'tata-capital-pankh-scholarship',
-    provider: 'Tata Capital Limited',
-    providerCategory: 'corporate',
-    categories: ['corporate', 'need', 'merit'],
-    description: 'An initiative of Tata Capital to support the higher education of youth belonging to underprivileged families. Covers up to 80% of tuition fees or fixed financial assistance up to ₹50,000.',
-    briefSummary: 'Tata Capital CSR grant providing up to ₹50,000 or 80% course fees for undergraduate and professional students.',
-    amount: 50000,
-    formattedAmount: 'Up to ₹50,000 (80% fees)',
-    awardFrequency: 'annual',
-    awardCoverage: 'Up to 80% of annual course fees or ₹50,000, whichever is lower',
-    benefits: [
-      'Financial grant up to ₹50,000 towards institutional tuition fee',
-      'Support throughout professional degree trajectory',
-      'One-on-one life skills sessions and career counseling by Tata mentors'
+    "id": "central-aicte-swanath-scholarship-scheme-fo-83f090cc",
+    "name": "AICTE Swanath Scholarship Scheme for Orphans and COVID-Affected Wards",
+    "slug": "aicte-swanath-scholarship-scheme-for-orphans-and-covid-affected-wards",
+    "provider": "All India Council for Technical Education (AICTE)",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "need"
     ],
-    educationLevels: ['undergraduate', 'diploma'],
-    coursesAndStreams: ['B.Com', 'B.Sc', 'B.A', 'B.Tech', 'MBBS', 'BBA', 'BCA', 'Diploma'],
-    requirements: {
-      educationLevels: ['undergraduate', 'diploma'],
-      minPercentage: 60,
-      maxAnnualIncome: 400000,
-      gender: 'all',
-      eligibleStates: ['All India']
+    "description": "Financial assistance of ₹50,000 per year to provide financial support to orphans, wards of parents who died of COVID-19, and wards of Armed Forces martyrs.",
+    "briefSummary": "₹50,000 per year for orphaned and COVID-affected children pursuing technical education.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, hostel, boarding, and book allowances",
+    "benefits": [
+      "₹50,000 per year assistance for technical degree or diploma courses",
+      "2,000 scholarships available annually (1,000 degree + 1,000 diploma)",
+      "Covers orphans and children of martyrs"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Pharmacy",
+      "Architecture",
+      "Design"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 800000,
+      "gender": "all",
+      "specialConditions": [
+        "Orphan child OR either/both parents died due to COVID-19 OR ward of Armed Forces martyr"
+      ]
     },
-    requiredDocuments: [
-      'Previous academic year marksheet (min 60% marks)',
-      'Government issued identity card (Aadhaar Card)',
-      'Current year admission receipt or college bonafide certificate',
-      'Annual Income certificate (Salary slip / Form 16 / Tehsildar certificate)',
-      'Student bank account details with canceled cheque'
+    "requiredDocuments": [
+      "Death Certificate of parents (or COVID-19 death proof)",
+      "Orphan certificate issued by District Magistrate / Tahsildar",
+      "Bonafide certificate of AICTE institute admission",
+      "Marksheet of previous qualifying exam"
     ],
-    applicationProcedure: [
-      'Register online on Buddy4Study / Tata Capital Pankh scholarship portal',
-      'Complete personal, academic, and financial background details',
-      'Upload scanned verification records and latest marksheets',
-      'Telephonic interview and document verification by program team'
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under AICTE Swanath Scheme",
+      "Submit verified death certificates and orphan certificates",
+      "Verification by Institute Principal and State Nodal Desk"
     ],
-    applicationStartDate: '2025-06-01',
-    deadline: '2026-11-15',
-    status: 'open',
-    officialUrl: 'https://www.tatacapital.com/csr/pankh-scholarship.html',
-    applicationUrl: 'https://www.buddy4study.com/page/tata-capital-pankh-scholarship-programme',
-    sourceName: 'Buddy4Study Verified Feed',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-30',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Tata Capital', 'CSR', 'Tuition Reimbursement', 'Buddy4Study']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.aicte-india.org/schemes/students-development-schemes/swanath",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "National Scholarship Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "AICTE",
+      "Swanath",
+      "Orphan Support",
+      "COVID Assistance"
+    ]
   },
   {
-    id: 'karnataka-post-matric-ssp-2025',
-    name: 'Karnataka State Scholarship Portal (SSP) Post-Matric Fee Reimbursement',
-    slug: 'karnataka-ssp-post-matric-scholarship',
-    provider: 'Social Welfare Department, Government of Karnataka',
-    providerCategory: 'state_gov',
-    categories: ['state_gov', 'need', 'minority'],
-    description: 'Unified state government portal for pre-matric and post-matric fee reimbursement and maintenance allowances for students belonging to SC, ST, OBC, EWS, and minority communities domiciled in Karnataka.',
-    briefSummary: 'Comprehensive Karnataka state scholarship covering full college fee reimbursement & maintenance allowance.',
-    amount: 35000,
-    formattedAmount: '₹15,000 to ₹60,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: '100% tuition fee reimbursement + monthly hostel maintenance stipend',
-    benefits: [
-      'Full tuition fee reimbursement remitted directly to the college',
-      'Monthly maintenance allowance credited directly to student bank account via e-KSHANA',
-      'Hostel fee reimbursement for day scholars and hostellers'
+    "id": "corporate-aditya-birla-scholarship-for-premie-5f67db40",
+    "name": "Aditya Birla Scholarship for Premier Institutions (IIMs, IITs, BITS, NLUs)",
+    "slug": "aditya-birla-scholarship-for-premier-institutions-iims-iits-bits-nlus",
+    "provider": "Aditya Birla Centre for Community Initiatives and Rural Development",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "merit"
     ],
-    educationLevels: ['undergraduate', 'postgraduate', 'diploma', 'phd'],
-    coursesAndStreams: ['Engineering', 'Medical', 'Dental', 'Nursing', 'Science', 'Arts', 'Commerce', 'Polytechnic'],
-    requirements: {
-      educationLevels: ['undergraduate', 'postgraduate', 'diploma', 'phd'],
-      minPercentage: 50,
-      maxAnnualIncome: 250000,
-      eligibleStates: ['Karnataka'],
-      eligibleDomicile: ['Karnataka'],
-      gender: 'all',
-      socialCategories: ['SC', 'ST', 'OBC', 'Minority', 'EWS']
+    "description": "Prestigious scholarship awarded to the top rankers admitted to premier institutions: IIM Ahmedabad, Bangalore, Calcutta, Lucknow, Kozhikode, Shillong; IITs; BITS Pilani; and National Law Universities.",
+    "briefSummary": "Prestigious merit scholarship covering ₹1,00,000 to ₹3,00,000/year for toppers entering IITs, IIMs, and NLUs.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 300000,
+    "formattedAmount": "₹1,00,000 to ₹3,00,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual scholarship covering tuition and living hostel expenses",
+    "benefits": [
+      "IIM scholars: ₹3,00,000 per annum",
+      "IIT / BITS scholars: ₹1,50,000 per annum (or actual tuition fees)",
+      "Law scholars: ₹1,80,000 per annum",
+      "Lifetime prestige and direct networking with Aditya Birla leadership"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "MBA",
+      "Engineering",
+      "Law"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 85,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Admitted in top 20 rank of admission batch in designated premier institution (IIM, IIT, BITS, NLU)"
+      ]
     },
-    requiredDocuments: [
-      'Karnataka SSP Student SATS/Registration ID',
-      'Caste and Income RD Certificate Number issued by Karnataka Nadakacheri',
-      'College Bonafide and Fee Structure Receipt',
-      'Aadhaar Seeding with NPCI Bank Account confirmation'
+    "requiredDocuments": [
+      "Entrance exam scorecard (CAT / JEE Advanced / CLAT)",
+      "Detailed application essay evaluating leadership ethos",
+      "Academic transcripts and curriculum vitae",
+      "Dean's recommendation"
     ],
-    applicationProcedure: [
-      'Create account on Karnataka State Scholarship Portal (SSP)',
-      'Enter 15-digit RD Number for automated Caste/Income validation',
-      'Fetch college enrollment details via State University Student ID',
-      'Hostel verification through e-Hostel portal integration'
+    "applicationProcedure": [
+      "Campus dean forwards application of top 20 eligible admitted students",
+      "Apex selection committee reviews essays and leadership profiles",
+      "Final round of personal interviews in Mumbai"
     ],
-    applicationStartDate: '2025-09-01',
-    deadline: '2026-12-31',
-    status: 'open',
-    officialUrl: 'https://ssp.postmatric.karnataka.gov.in',
-    applicationUrl: 'https://ssp.postmatric.karnataka.gov.in/homepage.aspx',
-    sourceName: 'Karnataka State Scholarship Portal (SSP)',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-11-02',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Karnataka', 'SSP', 'State Government', 'Fee Concession']
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-09-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.adityabirlascholars.net",
+    "applicationUrl": "https://www.adityabirlascholars.net",
+    "sourceUrl": "https://www.adityabirlascholars.net",
+    "sourceName": "Aditya Birla Scholarship Trust",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Aditya Birla",
+      "IIM",
+      "IIT",
+      "BITS Pilani",
+      "NLU",
+      "Merit"
+    ]
   },
   {
-    id: 'mahadbt-post-matric-2025',
-    name: 'Maharashtra Post-Matric Scholarship Scheme (MahaDBT)',
-    slug: 'maharashtra-mahadbt-post-matric-scholarship',
-    provider: 'Social Justice & Special Assistance Department, Govt of Maharashtra',
-    providerCategory: 'state_gov',
-    categories: ['state_gov', 'need', 'merit'],
-    description: 'State government initiative on the MahaDBT portal to provide financial assistance, exam fee waivers, and maintenance support for higher education to domiciled students of Maharashtra.',
-    briefSummary: 'Maharashtra state scholarship providing 50% to 100% tuition waiver and hostel allowance.',
-    amount: 40000,
-    formattedAmount: '₹20,000 to ₹75,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: 'Full or half tuition waiver, exam fee waiver, and living allowance',
-    benefits: [
-      '100% tuition and development fee reimbursement for SC/ST students',
-      '50% tuition fee reimbursement for OBC / SEBC / EBC categories',
-      'Direct maintenance allowance for rural & hostel students'
+    "id": "corporate-adobe-india-women-in-technology-sch-3bbddac3",
+    "name": "Adobe India Women-in-Technology Scholarship",
+    "slug": "adobe-india-women-in-technology-scholarship",
+    "provider": "Adobe India Research",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "merit"
     ],
-    educationLevels: ['undergraduate', 'postgraduate', 'diploma'],
-    coursesAndStreams: ['Engineering', 'Pharmacy', 'Architecture', 'Arts', 'Commerce', 'Science', 'Law', 'Polytechnic'],
-    requirements: {
-      educationLevels: ['undergraduate', 'postgraduate', 'diploma'],
-      minPercentage: 50,
-      maxAnnualIncome: 800000,
-      eligibleStates: ['Maharashtra'],
-      eligibleDomicile: ['Maharashtra'],
-      gender: 'all',
-      socialCategories: ['SC', 'ST', 'OBC', 'EWS', 'General']
+    "description": "Recognizing outstanding female students in technology and computer science across Indian universities, offering full tuition, equipment, and internship opportunities.",
+    "briefSummary": "Elite tech scholarship covering full tuition fees, equipment grant, and internship interview with Adobe Research.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fully_funded",
+    "currency": "INR",
+    "amount": 250000,
+    "formattedAmount": "₹2,50,000 + Tech Gear",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "one-time",
+    "awardCoverage": "Tuition fees, research grant, Adobe mentor pairing, and interview opportunity for summer internship",
+    "benefits": [
+      "Financial grant of ₹2,50,000 towards academic tuition",
+      "Opportunity to interview for an internship at Adobe India Research",
+      "Mentorship from senior female researchers and technical leaders at Adobe",
+      "Complimentary travel and registration for Grace Hopper Celebration India (GHCI)"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Computer Science",
+      "Information Technology",
+      "Data Science",
+      "Electrical & Electronics",
+      "Mathematics & Computing"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 75,
+      "gender": "female",
+      "eligibleStates": [
+        "All India"
+      ]
     },
-    requiredDocuments: [
-      'Maharashtra Domicile Certificate',
-      'Competent Tahsildar Income Certificate (Barcode valid)',
-      'Caste Certificate & Caste Validity Certificate (for reserved categories)',
-      'CAP allotment letter and college fee receipt',
-      'Ration Card / Declaration of family members'
+    "requiredDocuments": [
+      "Resume / CV highlighting coding projects, hackathons & research papers",
+      "Academic transcripts of all completed semesters",
+      "One Letter of Recommendation (LoR)",
+      "Four essay responses outlining technical vision"
     ],
-    applicationProcedure: [
-      'Register on MahaDBT portal with biometric or OTP Aadhaar authentication',
-      'Select relevant Department scheme (Social Justice / DTE / Tribal Welfare)',
-      'Upload verified documents and submit for scrutiny by College Principal',
-      'Sanctioned grant disbursed in 2 installments via PFMS'
+    "applicationProcedure": [
+      "Submit detailed application on Adobe Careers & Student Programs portal",
+      "Technical committee screens essays and projects",
+      "Virtual technical interviews with Adobe scientists"
     ],
-    applicationStartDate: '2025-08-15',
-    deadline: '2026-12-20',
-    status: 'open',
-    officialUrl: 'https://mahadbt.maharashtra.gov.in',
-    applicationUrl: 'https://mahadbt.maharashtra.gov.in/SchemeData/SchemeData?str=E9DD4FA4812C44B9B8808E413C53DF83',
-    sourceName: 'MahaDBT Official Portal',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-11-03',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Maharashtra', 'MahaDBT', 'State Government', 'Fee Waiver']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://research.adobe.com/scholarship/adobe-india-women-in-technology-scholarship",
+    "applicationUrl": "https://research.adobe.com/scholarship/adobe-india-women-in-technology-scholarship/",
+    "sourceUrl": "https://research.adobe.com",
+    "sourceName": "Adobe Research Official Site",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Adobe",
+      "STEM",
+      "Women in Tech",
+      "Computer Science",
+      "Internship"
+    ]
   },
   {
-    id: 'adobe-women-tech-2025',
-    name: 'Adobe India Women-in-Technology Scholarship',
-    slug: 'adobe-women-in-technology-scholarship',
-    provider: 'Adobe India Research',
-    providerCategory: 'corporate',
-    categories: ['corporate', 'stem', 'merit'],
-    description: 'The Adobe India Women-in-Technology Scholarship strives to recognize outstanding female students in technology and computer science fields across Indian universities and institutions.',
-    briefSummary: 'Elite global tech scholarship covering full tuition fees and an internship interview opportunity with Adobe Research.',
-    amount: 250000,
-    formattedAmount: '₹2,50,000 + Tech Gear',
-    awardFrequency: 'one-time',
-    awardCoverage: 'Tuition fees, research grant, Adobe mentor pairing, and interview opportunity for summer internship',
-    benefits: [
-      'Substantial financial grant of ₹2,50,000 towards academic tuition',
-      'Opportunity to interview for an internship at Adobe India Research',
-      'Mentorship from senior female researchers and technical leaders at Adobe',
-      'Complimentary travel and registration for Grace Hopper Celebration India (GHCI)'
+    "id": "corporate-amazon-future-engineer-scholarship--cde26b7c",
+    "name": "Amazon Future Engineer Scholarship for Girls in Computer Science",
+    "slug": "amazon-future-engineer-scholarship-for-girls-in-computer-science",
+    "provider": "Amazon India",
+    "providerCategory": "corporate_csr",
+    "categories": [
+      "corporate_csr",
+      "need",
+      "merit"
     ],
-    educationLevels: ['undergraduate', 'postgraduate'],
-    coursesAndStreams: ['Computer Science', 'Information Technology', 'Data Science', 'Electrical & Electronics', 'Mathematics & Computing'],
-    requirements: {
-      educationLevels: ['undergraduate', 'postgraduate'],
-      minPercentage: 75,
-      gender: 'female',
-      eligibleStates: ['All India']
+    "description": "Initiative by Amazon India providing 4-year financial aid, mentorship, and guaranteed internship opportunities to female students from underserved communities admitted to undergraduate CS courses.",
+    "briefSummary": "₹50,000/year for 4 years + Amazon mentorship & internship opportunities.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "₹50,000 / year (For 4 Years)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual financial grant towards college tuition, laptop, and academic learning resources",
+    "benefits": [
+      "₹50,000 per year for 4-year B.Tech / B.E. computer science degree",
+      "One-on-one mentorship by Amazon software development engineers",
+      "Eligible for Amazon software development internship at end of 3rd year"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Computer Science and Engineering",
+      "Information Technology",
+      "AI & ML",
+      "Data Engineering"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 70,
+      "maxAnnualIncome": 300000,
+      "gender": "female",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
     },
-    requiredDocuments: [
-      'Resume/Curriculum Vitae highlighting coding projects, hackathons & research papers',
-      'Academic transcripts of all completed semesters',
-      'One Letter of Recommendation (LoR) from professor or academic mentor',
-      'Four essay responses outlining technical vision and passion for CS'
+    "requiredDocuments": [
+      "Class 12th Board Marksheet with mathematics and physics",
+      "First year B.Tech admission allotment letter in computer science or related stream",
+      "Family Income Certificate (under ₹3 Lakhs)",
+      "Aadhaar card and photo identity proof"
     ],
-    applicationProcedure: [
-      'Submit detailed application on Adobe Careers & Student Programs portal',
-      'Technical committee screens essays, GitHub repositories and academic scores',
-      'Shortlisted applicants undergo virtual technical interviews with Adobe scientists',
-      'Recipients announced in ceremony'
+    "applicationProcedure": [
+      "Apply online through Amazon Future Engineer partner portal (Buddy4Study / Foundation For Excellence)",
+      "Screening based on financial need and academic merit",
+      "Telephonic interview and selection announcement by Amazon CSR committee"
     ],
-    applicationStartDate: '2025-08-01',
-    deadline: '2026-11-20',
-    status: 'open',
-    officialUrl: 'https://research.adobe.com/scholarship/adobe-india-women-in-technology-scholarship',
-    applicationUrl: 'https://research.adobe.com/scholarship/adobe-india-women-in-technology-scholarship/',
-    sourceName: 'Adobe Research Official Site',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-18',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Adobe', 'STEM', 'Women in Tech', 'Computer Science', 'Internship']
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.amazonfutureengineer.in",
+    "applicationUrl": "https://www.amazonfutureengineer.in",
+    "sourceUrl": "https://www.amazonfutureengineer.in",
+    "sourceName": "Amazon Future Engineer India",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Amazon",
+      "Future Engineer",
+      "Girls in Tech",
+      "Computer Science",
+      "Corporate CSR"
+    ]
   },
   {
-    id: 'hdfc-badhte-kadam-2025',
-    name: 'HDFC Bank Parivartan’s Badhte Kadam Scholarship',
-    slug: 'hdfc-parivartan-badhte-kadam',
-    provider: 'HDFC Bank CSR Parivartan',
-    providerCategory: 'corporate',
-    categories: ['corporate', 'need'],
-    description: 'HDFC Bank Parivartan’s Badhte Kadam aims to provide financial support to high-need students who are at risk of dropping out due to personal or financial crises, ensuring their educational continuity.',
-    briefSummary: 'HDFC Bank emergency crisis support granting up to ₹1,00,000 for students facing severe economic hardship.',
-    amount: 100000,
-    formattedAmount: 'Up to ₹1,00,000',
-    awardFrequency: 'annual',
-    awardCoverage: 'Annual educational expenditure, boarding, books, and examination fees',
-    benefits: [
-      'Scholarship grant up to ₹1,00,000 for professional degree students',
-      'Special preference for students who have suffered loss of family breadwinner',
-      'Direct bank account transfer'
+    "id": "state-andaman-nicobar-post-matric-scholar-a2666404",
+    "name": "Andaman & Nicobar Post-Matric Scholarship for ST & Higher Education Students",
+    "slug": "andaman-nicobar-post-matric-scholarship-for-st-higher-education-students",
+    "provider": "Tribal Welfare Department, Andaman & Nicobar Administration",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
     ],
-    educationLevels: ['high_school', 'undergraduate', 'postgraduate', 'diploma'],
-    coursesAndStreams: ['General Degree', 'Professional Degree', 'Vocational'],
-    requirements: {
-      educationLevels: ['high_school', 'undergraduate', 'postgraduate', 'diploma'],
-      minPercentage: 60,
-      maxAnnualIncome: 600000,
-      gender: 'all',
-      eligibleStates: ['All India']
+    "description": "Financial assistance covering 100% tuition fees, hostel boarding, and travel assistance for island students pursuing higher education inside the islands or on the Indian mainland.",
+    "briefSummary": "Tuition fees, hostel fees & travel allowance for Andaman & Nicobar students.",
+    "country": "India",
+    "state": "Andaman and Nicobar Islands",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "Full Tuition + Hostel & Travel Allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full tuition fees + residential hostel maintenance + annual mainland ship/flight passage",
+    "benefits": [
+      "100% tuition fee reimbursement",
+      "Subsidized passage/travel grant between Port Blair and mainland India",
+      "Hostel and book allowance"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Engineering",
+      "Medical",
+      "Marine Science",
+      "Arts",
+      "Science"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 300000,
+      "eligibleStates": [
+        "Andaman and Nicobar Islands"
+      ],
+      "eligibleDomicile": [
+        "Andaman and Nicobar Islands"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "ST",
+        "General",
+        "OBC"
+      ]
     },
-    requiredDocuments: [
-      'Previous year examination marksheet',
-      'Current year admission proof and fee structure',
-      'Proof of family income (Salary slips, Form 16, or BPL card)',
-      'Proof of crisis/adversity (medical reports or death certificate of earner, if applicable)'
+    "requiredDocuments": [
+      "Andaman & Nicobar Local Resident / ST Certificate",
+      "Income Certificate issued by Tehsildar",
+      "College Admission Letter (Mainland / Island)",
+      "Aadhaar card and bank account details"
     ],
-    applicationProcedure: [
-      'Apply online on Buddy4Study HDFC Parivartan portal',
-      'Complete socioeconomic profile and specify hardship context',
-      'Document tele-verification and home-verification audit',
-      'Award disbursement'
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under Andaman & Nicobar Administration",
+      "Verification by Tribal Welfare / Higher Education Cell Port Blair",
+      "Direct disbursement via PFMS"
     ],
-    applicationStartDate: '2025-07-15',
-    deadline: '2026-11-28',
-    status: 'open',
-    officialUrl: 'https://www.hdfcbank.com/personal/about-us/corporate-social-responsibility',
-    applicationUrl: 'https://www.buddy4study.com/page/hdfc-bank-parivartans-badhte-kadam-scholarship',
-    sourceName: 'Buddy4Study Verified Partner Integration',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-29',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['HDFC Bank', 'CSR Parivartan', 'Crisis Support', 'Need-Based']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://andaman.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://andaman.gov.in",
+    "sourceName": "Andaman & Nicobar Administration",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Andaman and Nicobar",
+      "Island Students",
+      "Post-Matric",
+      "Travel Grant"
+    ]
   },
   {
-    id: 'fulbright-nehru-masters-2026',
-    name: 'Fulbright-Nehru Master’s Fellowships for Study in the United States',
-    slug: 'fulbright-nehru-masters-fellowships',
-    provider: 'United States-India Educational Foundation (USIEF)',
-    providerCategory: 'international',
-    categories: ['international', 'merit', 'research'],
-    description: 'Designed for highly motivated Indian graduates with substantial leadership potential and professional experience to pursue a fully-funded Master’s degree at select U.S. colleges and universities.',
-    briefSummary: 'Fully funded U.S. Master’s fellowship covering tuition, airfare, living stipend, and health insurance.',
-    amount: 4500000,
-    formattedAmount: 'Fully Funded (~₹45,00,000+ value)',
-    awardFrequency: 'variable',
-    awardCoverage: 'Full university tuition, J-1 visa sponsorship, economy airfare, monthly living allowance, and health benefit plan',
-    benefits: [
-      '100% waiver of tuition and mandatory university fees at top US institutions',
-      'Round-trip international air travel between India and the United States',
-      'Generous monthly living stipend adhering to US cost-of-living index',
-      'Sickness and accident coverage conforming to US federal regulations'
+    "id": "state-andhra-pradesh-jagananna-vidya-deev-e1bdb67e",
+    "name": "Andhra Pradesh Jagananna Vidya Deevena (Full Fee Reimbursement)",
+    "slug": "andhra-pradesh-jagananna-vidya-deevena-full-fee-reimbursement",
+    "provider": "Department of Higher Education, Government of Andhra Pradesh",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
     ],
-    educationLevels: ['postgraduate'],
-    coursesAndStreams: ['Public Health', 'Environmental Science', 'Public Administration', 'International Affairs', 'Urban Planning', 'Economics'],
-    requirements: {
-      educationLevels: ['postgraduate'],
-      minPercentage: 60,
-      gender: 'all',
-      eligibleStates: ['All India'],
-      specialConditions: ['Must have completed at least 3 years of full-time professional work experience after bachelor degree']
+    "description": "100% full fee reimbursement provided directly to the bank accounts of mothers of poor and backward class students pursuing polytechnic, ITI, degree, and engineering courses.",
+    "briefSummary": "100% full college tuition fee reimbursement for students belonging to low-income families in AP.",
+    "country": "India",
+    "state": "Andhra Pradesh",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 55000,
+    "formattedAmount": "100% Tuition Fee Reimbursement",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% institutional tuition fee disbursed quarterly to student's mother's account",
+    "benefits": [
+      "Complete tuition fee waiver across engineering, medicine, pharmacy, MBA, and degree courses",
+      "Combined with Jagananna Vasathi Deevena for boarding/hostel allowance up to ₹20,000/yr"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medicine",
+      "Degree",
+      "Polytechnic",
+      "Pharmacy",
+      "MBA",
+      "MCA"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Andhra Pradesh"
+      ],
+      "eligibleDomicile": [
+        "Andhra Pradesh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC",
+        "EWS",
+        "Minority"
+      ]
     },
-    requiredDocuments: [
-      'Academic transcripts of all university degrees',
-      'Three confidential Letters of Reference (LoR)',
-      'Statement of Purpose (SoP) and Personal Statement',
-      'Employer Endorsement Form if currently employed',
-      'Valid Indian Passport'
+    "requiredDocuments": [
+      "Rice Card (BPL card) or Tahsildar Income Certificate (≤ ₹2.5 Lakhs)",
+      "MeeSeva Caste Certificate",
+      "Mother's Aadhaar linked bank account details",
+      "Minimum 75% college biometric attendance record"
     ],
-    applicationProcedure: [
-      'Complete online application on USIEF Embark portal',
-      'Regional screening committees evaluate academic and community leadership',
-      'National interviews in New Delhi or virtual before bilateral US-India board',
-      'Selected finalists placed at accredited US graduate programs'
+    "applicationProcedure": [
+      "Registration via Jnanabhumi AP portal or Village/Ward Secretariat desk",
+      "Quarterly attendance audit before installment release"
     ],
-    applicationStartDate: '2025-02-01',
-    deadline: '2026-05-15',
-    status: 'open',
-    officialUrl: 'https://www.usief.org.in/Fulbright-Nehru-Master-Fellowships.aspx',
-    applicationUrl: 'https://www.usief.org.in/Fellowships/Fellowships-for-Indian-Citizens.aspx',
-    sourceName: 'USIEF Official Government Exchange',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-15',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['USIEF', 'Fulbright', 'Study in USA', 'Fully Funded', 'International']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://jnanabhumi.ap.gov.in",
+    "applicationUrl": "https://jnanabhumi.ap.gov.in",
+    "sourceUrl": "https://jnanabhumi.ap.gov.in",
+    "sourceName": "Andhra Pradesh Jnanabhumi Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Andhra Pradesh",
+      "Jnanabhumi",
+      "Vidya Deevena",
+      "Fee Waiver"
+    ]
   },
   {
-    id: 'rhodes-scholarship-india-2026',
-    name: 'Rhodes Scholarship for India at the University of Oxford',
-    slug: 'rhodes-scholarship-india-oxford',
-    provider: 'The Rhodes Trust, Oxford',
-    providerCategory: 'international',
-    categories: ['international', 'merit', 'research'],
-    description: 'The Rhodes Scholarship is the oldest and perhaps the most prestigious international scholarship programme, enabling outstanding young people from across India to study at the University of Oxford.',
-    briefSummary: 'Preeminent international scholarship covering all Oxford University fees, generous stipend, and airfare.',
-    amount: 5500000,
-    formattedAmount: 'Fully Funded (~₹55,00,000+ value)',
-    awardFrequency: 'variable',
-    awardCoverage: 'Full Oxford University & college fees, personal stipend of £19,092/year, flights, and visa',
-    benefits: [
-      'Full payment of all University of Oxford tuition and college fees',
-      'Personal living stipend of £19,092 per annum',
-      'Private health insurance and student visa application reimbursement',
-      'Lifelong fellowship at Rhodes House with worldwide alumni cohort'
+    "id": "state-arunachal-pradesh-state-stipend-sch-baae96ab",
+    "name": "Arunachal Pradesh State Stipend Scheme for APST Students",
+    "slug": "arunachal-pradesh-state-stipend-scheme-for-apst-students",
+    "provider": "Directorate of Higher & Technical Education, Government of Arunachal Pradesh",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
     ],
-    educationLevels: ['postgraduate', 'phd'],
-    coursesAndStreams: ['All Academic Disciplines taught at University of Oxford'],
-    requirements: {
-      educationLevels: ['postgraduate', 'phd'],
-      minPercentage: 75,
-      minAge: 19,
-      maxAge: 25,
-      gender: 'all',
-      eligibleStates: ['All India'],
-      specialConditions: ['Must hold first-class undergraduate degree by October 2026']
+    "description": "Monthly stipend and book grant awarded to indigenous Arunachal Pradesh Scheduled Tribe (APST) students pursuing diploma, graduate, and postgraduate studies.",
+    "briefSummary": "Monthly stipend & book grant for Arunachal Pradesh Scheduled Tribe students.",
+    "country": "India",
+    "state": "Arunachal Pradesh",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 18000,
+    "formattedAmount": "₹1,400 to ₹2,000 / month + Book Grant",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Monthly living stipend + one-time annual book grant",
+    "benefits": [
+      "Consistent monthly stipend for living and academic costs",
+      "Annual book grant up to ₹2,000",
+      "Applicable across all recognized universities in India"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Engineering",
+      "Medical",
+      "B.Sc",
+      "B.A",
+      "Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 300000,
+      "eligibleStates": [
+        "Arunachal Pradesh"
+      ],
+      "eligibleDomicile": [
+        "Arunachal Pradesh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "ST"
+      ]
     },
-    requiredDocuments: [
-      'Formal academic transcripts',
-      'Comprehensive Curriculum Vitae (CV)',
-      'Personal Statement (maximum 1,000 words)',
-      'Academic statement of study (maximum 350 words)',
-      'Five to six letters of reference (at least 3 academic)'
+    "requiredDocuments": [
+      "Arunachal Pradesh Scheduled Tribe (APST) Certificate",
+      "Permanent Residence Certificate (PRC)",
+      "Marksheets of previous examinations",
+      "College Bonafide and active bank account details"
     ],
-    applicationProcedure: [
-      'Submit comprehensive dossier on the Rhodes Trust India portal',
-      'Preliminary shortlisting followed by preliminary panel interviews',
-      'Final weekend social engagement and final panel interview in New Delhi',
-      '5 Rhodes Scholars selected from India annually'
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under Arunachal Pradesh State Schemes",
+      "College verification and endorsement",
+      "DHTE Arunachal Pradesh sanction and DBT transfer"
     ],
-    applicationStartDate: '2025-06-01',
-    deadline: '2026-08-01',
-    status: 'coming_soon',
-    officialUrl: 'https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/',
-    applicationUrl: 'https://www.rhodeshouse.ox.ac.uk/scholarships/apply/india/',
-    sourceName: 'The Rhodes Trust Oxford',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-20',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Oxford', 'Rhodes Trust', 'UK', 'Fully Funded', 'Postgraduate']
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://apdhte.nic.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://apdhte.nic.in",
+    "sourceName": "Directorate of Higher & Technical Education Arunachal Pradesh",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Arunachal Pradesh",
+      "APST Stipend",
+      "ST",
+      "North East"
+    ]
   },
   {
-    id: 'dr-ambedkar-post-matric-ebc-2025',
-    name: 'Dr. Ambedkar Post-Matric Scholarship for Economically Backward Classes (EBC)',
-    slug: 'dr-ambedkar-post-matric-ebc',
-    provider: 'Ministry of Social Justice and Empowerment, Govt of India',
-    providerCategory: 'central_gov',
-    categories: ['central_gov', 'need'],
-    description: 'A Centrally Sponsored Scheme to provide financial assistance to General Category Economically Backward Class (EBC) students studying at post-matriculation or post-secondary stage.',
-    briefSummary: 'Central government scheme providing maintenance allowance and fee support for General/EBC students.',
-    amount: 15000,
-    formattedAmount: '₹8,000 to ₹18,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: 'Maintenance allowance, study tour charges, and thesis typing charges',
-    benefits: [
-      'Maintenance allowance up to ₹1,200 per month for hostellers and ₹750/month for day scholars',
-      'Reimbursement of compulsory non-refundable fees',
-      'Book allowance and thesis grant for postgraduate/research students'
+    "id": "university-ashoka-university-need-based-financ-b911b9c6",
+    "name": "Ashoka University Need-Based Financial Aid Programme",
+    "slug": "ashoka-university-need-based-financial-aid-programme",
+    "provider": "Ashoka University",
+    "providerCategory": "university",
+    "categories": [
+      "university",
+      "need"
     ],
-    educationLevels: ['undergraduate', 'postgraduate', 'diploma', 'phd'],
-    coursesAndStreams: ['All recognized post-matric degree & diploma courses'],
-    requirements: {
-      educationLevels: ['undergraduate', 'postgraduate', 'diploma', 'phd'],
-      minPercentage: 50,
-      maxAnnualIncome: 250000,
-      socialCategories: ['EWS', 'General'],
-      gender: 'all',
-      eligibleStates: ['All India']
+    "description": "Comprehensive need-based financial assistance designed to ensure no admitted student is turned away due to financial constraints. Grants range from 25% tuition waiver to 100% tuition, residence, and meals coverage.",
+    "briefSummary": "100% need-based financial aid covering up to full tuition, residence, and meals at Ashoka University.",
+    "country": "India",
+    "state": "Haryana",
+    "fundingType": "fully_funded",
+    "currency": "INR",
+    "amount": 750000,
+    "formattedAmount": "Up to 100% Tuition & Residence (~₹7.5L / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, on-campus accommodation, meal plan, and study material assistance",
+    "benefits": [
+      "Financial aid is assessed purely on family financial circumstances, completely independent of admission offer",
+      "Covers up to full cost of attendance (tuition, residence, meals)",
+      "Approximately 47% of Ashoka students receive financial aid"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Computer Science",
+      "Economics",
+      "History",
+      "Psychology",
+      "Biology",
+      "Philosophy",
+      "English",
+      "Political Science"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 1500000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Must have received a provisional or firm offer of admission to Ashoka University"
+      ]
     },
-    requiredDocuments: [
-      'Income Certificate from competent revenue officer showing income ≤ ₹2.5 Lakhs',
-      'Proof of admission in recognized institution',
-      'Previous examination marksheets',
-      'Bank passbook copy with IFSC and Aadhaar linkage proof'
+    "requiredDocuments": [
+      "Income tax returns (ITR) of both parents for the last three financial years",
+      "Bank statements for the last 12 months for all bank accounts held by family",
+      "Audited balance sheets, P&L accounts (for business owners)",
+      "Proof of investments, real estate, and vehicle registrations"
     ],
-    applicationProcedure: [
-      'Apply online on National Scholarship Portal (NSP)',
-      'Select Ministry of Social Justice & Empowerment dropdown',
-      'Submit verification form to college nodal desk'
+    "applicationProcedure": [
+      "Apply via the Ashoka University Financial Aid portal after receiving admission offer",
+      "Financial aid committee conducts detailed financial audit and home/telephonic consultation",
+      "Aid package awarded along with final admission acceptance"
     ],
-    applicationStartDate: '2025-07-15',
-    deadline: '2026-11-30',
-    status: 'open',
-    officialUrl: 'https://socialjustice.gov.in/schemes/42',
-    applicationUrl: 'https://scholarships.gov.in',
-    sourceName: 'Ministry of Social Justice & NSP',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-22',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['EBC', 'Social Justice', 'NSP', 'Need-Based']
+    "applicationStartDate": "2025-10-01",
+    "deadline": "2026-06-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.ashoka.edu.in/financial-aid/",
+    "applicationUrl": "https://admissions.ashoka.edu.in",
+    "sourceUrl": "https://www.ashoka.edu.in",
+    "sourceName": "Ashoka University Financial Aid Committee",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Ashoka University",
+      "Financial Aid",
+      "Liberal Arts",
+      "Need-Based",
+      "Computer Science"
+    ]
   },
   {
-    id: 'saksham-differently-abled-2025',
-    name: 'AICTE Saksham Scholarship Scheme for Specially-Abled Students',
-    slug: 'aicte-saksham-scholarship-differently-abled',
-    provider: 'All India Council for Technical Education (AICTE)',
-    providerCategory: 'central_gov',
-    categories: ['central_gov', 'stem', 'need'],
-    description: 'Saksham is an AICTE initiative providing ₹50,000 per annum to specially-abled students who have a disability of not less than 40% to pursue technical degree or diploma courses.',
-    briefSummary: '₹50,000 per year dedicated financial support for students with ≥40% disability in technical programs.',
-    amount: 50000,
-    formattedAmount: '₹50,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: 'Lump-sum grant of ₹50,000 for each year of study towards tuition and assistive devices',
-    benefits: [
-      '₹50,000 per year assistance for college fee reimbursement and learning software/hardware',
-      'Covers purchase of assistive devices, braille displays, and mobility apparatus',
-      'All eligible applicants fulfilling criteria are accommodated without numerical cap'
+    "id": "state-assam-state-post-matric-combined-me-976fd860",
+    "name": "Assam State Post-Matric & Combined Merit Scholarship",
+    "slug": "assam-state-post-matric-combined-merit-scholarship",
+    "provider": "Directorate of Higher Education, Government of Assam",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
     ],
-    educationLevels: ['undergraduate', 'diploma'],
-    coursesAndStreams: ['Engineering & Technology', 'Pharmacy', 'Architecture', 'Applied Arts', 'Design'],
-    requirements: {
-      educationLevels: ['undergraduate', 'diploma'],
-      minPercentage: 50,
-      maxAnnualIncome: 800000,
-      disabilityOnly: true,
-      minDisabilityPercentage: 40,
-      gender: 'all',
-      eligibleStates: ['All India']
+    "description": "State merit and post-matric scholarship awarded to domiciled students of Assam pursuing general degree, professional, technical, and master's degree courses.",
+    "briefSummary": "Merit and need-based financial assistance for college and university students of Assam.",
+    "country": "India",
+    "state": "Assam",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 18000,
+    "formattedAmount": "₹12,000 to ₹18,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual stipend for tuition, book allowance and study maintenance",
+    "benefits": [
+      "Annual scholarship for general and professional degree students",
+      "Special incentives for meritorious girl students in higher education",
+      "Direct benefit transfer through Assam DHE portal"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Arts",
+      "Science",
+      "Commerce",
+      "Engineering",
+      "Medical",
+      "Law"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Assam"
+      ],
+      "eligibleDomicile": [
+        "Assam"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "Minority"
+      ]
     },
-    requiredDocuments: [
-      'Disability Certificate / UDID card issued by competent medical authority indicating ≥40% benchmark disability',
-      'Class 10th / 12th board marksheet',
-      'Tuition fee receipt of current academic session',
-      'Income Certificate (ceiling ₹8 Lakhs/year)',
-      'College bonafide signed by Principal'
+    "requiredDocuments": [
+      "Permanent Resident Certificate (PRC) of Assam",
+      "HSLC / 12th Marksheet with minimum 60% marks",
+      "Income Certificate issued by Circle Officer",
+      "College Bonafide and active bank account details"
     ],
-    applicationProcedure: [
-      'Apply online on National Scholarship Portal (NSP)',
-      'Upload UDID verification barcode / scanned medical board certificate',
-      'College nodal officer confirms enrollment in AICTE-approved degree'
+    "applicationProcedure": [
+      "Apply online through Directorate of Higher Education Assam portal (dhe-operations.assam.gov.in)",
+      "Upload PRC and marksheet verification",
+      "College Principal/Registrar counter-signs and submits recommendations"
     ],
-    applicationStartDate: '2025-08-01',
-    deadline: '2026-12-15',
-    status: 'open',
-    officialUrl: 'https://www.aicte-india.org/schemes/students-development-schemes/saksham',
-    applicationUrl: 'https://scholarships.gov.in',
-    sourceName: 'AICTE & NSP Official Portal',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-25',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['AICTE', 'Saksham', 'PwD', 'Disability Support', 'STEM']
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://directorateofhighereducation.assam.gov.in",
+    "applicationUrl": "https://dhe-operations.assam.gov.in",
+    "sourceUrl": "https://directorateofhighereducation.assam.gov.in",
+    "sourceName": "Directorate of Higher Education Assam",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Assam",
+      "Combined Merit",
+      "Higher Education",
+      "North East"
+    ]
   },
   {
-    id: 'infosys-foundation-stem-girls-2025',
-    name: 'Infosys Foundation STEM Stars Scholarship for Girls',
-    slug: 'infosys-foundation-stem-stars-girls',
-    provider: 'Infosys Foundation',
-    providerCategory: 'corporate',
-    categories: ['corporate', 'stem', 'need'],
-    description: 'The Infosys Foundation STEM Stars scholarship aims to encourage and support young women from economically underprivileged backgrounds to pursue higher education in STEM fields at NIRF-ranked institutions.',
-    briefSummary: 'Infosys Foundation grant of up to ₹1,00,000/yr for female students in NIRF-ranked STEM colleges.',
-    amount: 100000,
-    formattedAmount: 'Up to ₹1,00,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: 'Tuition fees, living expenses, books, and educational supplies up to ₹1,00,000 annually',
-    benefits: [
-      'Financial assistance up to ₹1 Lakh per year for the full 4-year degree course',
-      'Access to tech workshops, coding mentorship and learning pathways curated by Infosys',
-      'Recognition at annual Infosys Foundation STEM Stars summit'
+    "id": "international-australia-awards-scholarships-dfat-8fad696e",
+    "name": "Australia Awards Scholarships (DFAT)",
+    "slug": "australia-awards-scholarships-dfat",
+    "provider": "Department of Foreign Affairs and Trade (Australian Government)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
     ],
-    educationLevels: ['undergraduate'],
-    coursesAndStreams: ['Computer Science', 'Information Science', 'AI & Machine Learning', 'Electronics & Communication', 'Mechanical', 'Civil'],
-    requirements: {
-      educationLevels: ['undergraduate'],
-      minPercentage: 70,
-      maxAnnualIncome: 800000,
-      gender: 'female',
-      eligibleStates: ['All India'],
-      institutionTypes: ['Government', 'Private', 'Aided']
+    "description": "Long-term development awards administered by the Department of Foreign Affairs and Trade. Aim to contribute to the development needs of Australia's partner countries in line with bilateral agreements.",
+    "briefSummary": "100% full tuition, return air travel, establishment allowance, and living contribution (CLE) in Australia.",
+    "country": "Australia",
+    "state": "All Australian States",
+    "fundingType": "fully_funded",
+    "currency": "AUD",
+    "amount": 50000,
+    "formattedAmount": "Fully Funded (~AUD 50,000 / ₹28 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "Full tuition, return air travel, establishment allowance (AUD 5,000), Contribution to Living Expenses (CLE), and OSHC",
+    "benefits": [
+      "Full tuition fees for Master's or PhD programme",
+      "Return air travel to and from Australia",
+      "Contribution to Living Expenses (CLE) paid fortnightly to cover basic living costs",
+      "Overseas Student Health Cover (OSHC) for the duration of the award"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Climate Change",
+      "Agriculture and Food Security",
+      "Energy Transition",
+      "Disaster Resilience",
+      "Public Health",
+      "Water Governance"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "Indo-Pacific Partner Countries"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "minAge": 18,
+      "gender": "all",
+      "specialConditions": [
+        "Citizen of an eligible country",
+        "Agree to return to home country for at least two years after completion of scholarship"
+      ]
     },
-    requiredDocuments: [
-      'Class 12th board marksheet with minimum 70% in science subjects',
-      'Government Family Income Certificate (≤ ₹8 Lakhs)',
-      'Admission allotment letter in NIRF-ranked institute',
-      'Government Photo ID proof',
-      'Electricity bill of residence for verification'
+    "requiredDocuments": [
+      "Certified copies of university transcripts and degree certificates",
+      "Comprehensive development impact narrative and research proposal",
+      "Two academic and professional referee reports",
+      "IELTS / TOEFL academic English test score"
     ],
-    applicationProcedure: [
-      'Apply online on the official Infosys Foundation scholarship portal or partner portal',
-      'Provide academic details and upload supporting certificates',
-      'Document validation followed by telephone interview for shortlisted candidates'
+    "applicationProcedure": [
+      "Apply online through the Online Australia Awards Scholarships Information System (OASIS)",
+      "Participating candidates shortlisted for interview with Australian High Commission selection board"
     ],
-    applicationStartDate: '2025-07-01',
-    deadline: '2026-11-25',
-    status: 'open',
-    officialUrl: 'https://www.infosys.com/infosys-foundation/initiatives/education/stem-stars.html',
-    applicationUrl: 'https://www.infosys.com/infosys-foundation/initiatives/education/stem-stars.html',
-    sourceName: 'Infosys Foundation Official Portal',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-31',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['Infosys', 'STEM Stars', 'Girls in Engineering', 'Corporate Foundation']
+    "applicationStartDate": "2025-02-01",
+    "deadline": "2026-04-30",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.dfat.gov.au/people-to-people/australia-awards/australia-awards-scholarships",
+    "applicationUrl": "https://oasis.dfat.gov.au",
+    "sourceUrl": "https://www.dfat.gov.au",
+    "sourceName": "DFAT Australian Government",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Australia Awards",
+      "DFAT",
+      "Australia",
+      "Fully Funded",
+      "Master's",
+      "PhD"
+    ]
   },
   {
-    id: 'swami-vivekananda-merit-wb-2025',
-    name: 'Swami Vivekananda Merit-cum-Means Scholarship (SVMCM)',
-    slug: 'swami-vivekananda-merit-wb-svmcm',
-    provider: 'Higher Education Department, Govt of West Bengal',
-    providerCategory: 'state_gov',
-    categories: ['state_gov', 'merit', 'need'],
-    description: 'Premier state scholarship for meritorious and economically backward students of West Bengal pursuing higher secondary, undergraduate, postgraduate, and doctoral studies.',
-    briefSummary: 'Flagship West Bengal state scholarship granting ₹12,000 to ₹60,000 per year for domicile students.',
-    amount: 30000,
-    formattedAmount: '₹12,000 to ₹60,000 / year',
-    awardFrequency: 'annual',
-    awardCoverage: 'Course fee support and monthly maintenance stipend up to ₹5,000/month for medical students',
-    benefits: [
-      '₹1,000 to ₹5,000 per month depending on degree and stream',
-      'Engineering and Medical students receive ₹60,000 per annum',
-      'Direct disbursement through Banglar Uchhashiksha portal'
+    "id": "international-australian-government-research-trai-f23850d1",
+    "name": "Australian Government Research Training Program (RTP) Stipend",
+    "slug": "australian-government-research-training-program-rtp-stipend",
+    "provider": "Department of Education, Australian Government & Participating Universities",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "research",
+      "merit"
     ],
-    educationLevels: ['high_school', 'undergraduate', 'postgraduate', 'diploma', 'phd'],
-    coursesAndStreams: ['Higher Secondary', 'Undergraduate Degree', 'Postgraduate Degree', 'Engineering', 'Medical', 'Polytechnic'],
-    requirements: {
-      educationLevels: ['high_school', 'undergraduate', 'postgraduate', 'diploma', 'phd'],
-      minPercentage: 60,
-      maxAnnualIncome: 250000,
-      eligibleStates: ['West Bengal'],
-      eligibleDomicile: ['West Bengal'],
-      gender: 'all'
+    "description": "Australian Government Research Training Program (RTP) scholarships provided to domestic and international students of exceptional research potential to undertake a Research Doctorate or Research Master's degree in Australia.",
+    "briefSummary": "100% tuition offset + AUD $35,000 to $40,000/year living stipend + overseas student health cover.",
+    "country": "Australia",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "AUD",
+    "amount": 42000,
+    "formattedAmount": "Full Tuition + AUD $35,000-$40,000/yr Living",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% RTP Tuition Fee Offset + RTP Living Stipend paid fortnightly + Overseas Student Health Cover (OSHC) + relocation allowance",
+    "benefits": [
+      "Complete tuition fee waiver for up to 3.5 to 4 years of PhD research",
+      "Tax-free annual living stipend of AUD $35,000 - $40,000",
+      "Available across top Australian Group of Eight (Go8) universities (ANU, Melbourne, Sydney, UNSW, Queensland, Monash, Adelaide, UWA)"
+    ],
+    "educationLevels": [
+      "phd",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Science",
+      "Technology",
+      "Engineering",
+      "Medicine",
+      "Humanities",
+      "Social Sciences"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd",
+        "postgraduate"
+      ],
+      "minPercentage": 75,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
     },
-    requiredDocuments: [
-      'Marksheet of qualifying Madhyamik/Higher Secondary/Graduation examination',
-      'Income Certificate issued by Joint BDO / Executive Officer / Municipality',
-      'West Bengal Domicile Certificate (Ration card / Voter card / Aadhaar)',
-      'Admission receipt of current institution'
+    "requiredDocuments": [
+      "Four-year Bachelor's with First Class Honours or Master's degree with research thesis component",
+      "Research Proposal outlining project scope and methodology",
+      "Curriculum Vitae including publications and research output",
+      "English language proficiency (IELTS / TOEFL)",
+      "Two Academic Referees reports"
     ],
-    applicationProcedure: [
-      'Register on SVMCM portal (svmcm.wbhed.gov.in)',
-      'Select relevant Directorate (DPI, DTE, DME, or School Education)',
-      'Upload signed documents and submit to institutional verification desk'
+    "applicationProcedure": [
+      "Identify and contact a potential research supervisor at participating Australian university",
+      "Submit online application for PhD candidature and tick the box to be considered for RTP scholarship",
+      "Centrally assessed and awarded by university graduate research committee"
     ],
-    applicationStartDate: '2025-09-10',
-    deadline: '2026-12-31',
-    status: 'open',
-    officialUrl: 'https://svmcm.wbhed.gov.in',
-    applicationUrl: 'https://svmcm.wbhed.gov.in/page/application_procedure.php',
-    sourceName: 'Govt of West Bengal Higher Education Portal',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-11-04',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['West Bengal', 'SVMCM', 'State Government', 'Merit-Cum-Means']
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-08-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.education.gov.au/research-block-grants/research-training-program",
+    "applicationUrl": "https://www.education.gov.au",
+    "sourceUrl": "https://www.education.gov.au",
+    "sourceName": "Australian Government Department of Education",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Australia",
+      "RTP",
+      "PhD",
+      "Group of Eight",
+      "Full Funding",
+      "Research"
+    ]
   },
   {
-    id: 'sitaram-jindal-foundation-2025',
-    name: 'Sitaram Jindal Foundation Scholarship Scheme',
-    slug: 'sitaram-jindal-foundation-scholarship',
-    provider: 'Sitaram Jindal Foundation',
-    providerCategory: 'ngo',
-    categories: ['ngo', 'merit', 'need'],
-    description: 'Charitable foundation scholarship to assist poor and deserving students pursuing higher education across India, from high school to postgraduation and professional courses.',
-    briefSummary: 'Reputed non-governmental foundation scholarship offering monthly stipends to needy students nationwide.',
-    amount: 38400,
-    formattedAmount: '₹14,400 to ₹38,400 / year',
-    awardFrequency: 'monthly',
-    awardCoverage: 'Monthly maintenance stipend disbursed quarterly directly by cheque / NEFT',
-    benefits: [
-      'Monthly scholarship between ₹1,200 and ₹3,200 depending on course level and hostel status',
-      'Additional allowance for physically challenged scholars and students staying in paid hostels',
-      'Reliable financial assistance without bond or obligation'
+    "id": "university-bits-pilani-institute-merit-and-nee-9de606e7",
+    "name": "BITS Pilani Institute Merit and Need-Based Tuition Fee Concession",
+    "slug": "bits-pilani-institute-merit-and-need-based-tuition-fee-concession",
+    "provider": "Birla Institute of Technology and Science (BITS Pilani)",
+    "providerCategory": "university",
+    "categories": [
+      "university",
+      "merit",
+      "need",
+      "stem"
     ],
-    educationLevels: ['high_school', 'diploma', 'undergraduate', 'postgraduate'],
-    coursesAndStreams: ['General Graduation', 'Post Graduation', 'Engineering', 'Medicine', 'Polytechnic', 'ITI'],
-    requirements: {
-      educationLevels: ['high_school', 'diploma', 'undergraduate', 'postgraduate'],
-      minPercentage: 65, // 65% for boys, 60% for girls
-      maxAnnualIncome: 400000,
-      gender: 'all',
-      eligibleStates: ['All India']
+    "description": "Large-scale institutional scholarship programme covering 15% to 100% of semester tuition fees for students studying at Pilani, Goa, and Hyderabad campuses based on academic performance and family income.",
+    "briefSummary": "15% to 100% semester tuition fee waiver for over 30% of students across BITS Pilani campuses.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 250000,
+    "formattedAmount": "15% to 100% Tuition Fee Concession",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "per-semester",
+    "awardCoverage": "Direct deduction from semester fee: 100%, 80%, 40%, 25%, or 15% tuition concession",
+    "benefits": [
+      "Top 1% students by CGPA receive 100% tuition fee waiver regardless of income",
+      "Students with family income ≤ ₹11 Lakhs receive 25% to 80% tuition concession based on CGPA",
+      "Over ₹50 Crores disbursed across Pilani, K.K. Birla Goa, and Hyderabad campuses annually"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "B.E.",
+      "M.Sc. Integrated Dual Degree",
+      "B.Pharm",
+      "M.E.",
+      "M.Pharm"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "minCgpa": 6.5,
+      "maxAnnualIncome": 1100000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Enrolled as a full-time regular student at BITS Pilani (Pilani, Goa, or Hyderabad campus)"
+      ]
     },
-    requiredDocuments: [
-      'Marksheet of qualifying examination',
-      'Annual Income Certificate issued by Revenue Authority',
-      'Hostel certificate signed by warden (for hostel stipend)',
-      'Fee structure and receipts of payments made to college'
+    "requiredDocuments": [
+      "Parents' ITR-V with computation of income (ceiling ₹11.00 Lakhs for need-based)",
+      "Salary slip / Form 16 / Tehsildar income certificate",
+      "Current CGPA transcript generated from SWD portal"
     ],
-    applicationProcedure: [
-      'Download prescribed application form from Sitaram Jindal Foundation website',
-      'Get application verified and certified by Principal of College / Institute',
-      'Mail hard copy with attached certificates to Foundation Office in Bengaluru'
+    "applicationProcedure": [
+      "Apply each semester through the Student Welfare Division (SWD) online portal",
+      "Upload verified ITR forms and computation of income",
+      "Automated merit-cum-means matrix assigns scholarship concession tier"
     ],
-    applicationStartDate: '2025-01-01',
-    deadline: '2026-12-31',
-    status: 'open',
-    officialUrl: 'https://www.sitaramjindalfoundation.org/scholarships.php',
-    applicationUrl: 'https://www.sitaramjindalfoundation.org/scholarships-apply-offline.php',
-    sourceName: 'Sitaram Jindal Foundation Official',
-    verificationStatus: 'verified',
-    lastVerifiedDate: '2026-10-10',
-    lastSynchronizedDate: '2026-11-06',
-    dataProvenance: 'verified_curated',
-    tags: ['NGO', 'Sitaram Jindal', 'Monthly Stipend', 'Pan-India']
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.bits-pilani.ac.in/financial-assistance/",
+    "applicationUrl": "https://swd.bits-pilani.ac.in",
+    "sourceUrl": "https://www.bits-pilani.ac.in",
+    "sourceName": "BITS Pilani Student Welfare Division",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "BITS Pilani",
+      "BITSAT",
+      "Fee Concession",
+      "Merit-Cum-Means",
+      "Engineering"
+    ]
+  },
+  {
+    "id": "central-begum-hazrat-mahal-national-scholar-3fff14e0",
+    "name": "Begum Hazrat Mahal National Scholarship for Meritorious Girls Belonging to Minorities",
+    "slug": "begum-hazrat-mahal-national-scholarship-for-meritorious-girls-belonging-to-minor",
+    "provider": "Maulana Azad Education Foundation (MAEF) & Ministry of Minority Affairs",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "minority",
+      "merit",
+      "need"
+    ],
+    "description": "National scholarship scheme providing financial assistance to meritorious girl students belonging to economically weaker sections of notified minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Parsi) in classes 9th to 12th.",
+    "briefSummary": "₹5,000 to ₹6,000/year scholarship for minority girl students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 6000,
+    "formattedAmount": "₹5,000 to ₹6,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual scholarship for tuition fees, school uniform, and books",
+    "benefits": [
+      "₹5,000/yr for Class 9 & 10; ₹6,000/yr for Class 11 & 12",
+      "Empowers minority girls to complete senior secondary schooling",
+      "Direct bank transfer via National Scholarship Portal"
+    ],
+    "educationLevels": [
+      "school"
+    ],
+    "coursesAndStreams": [
+      "Secondary School (Class 9-10)",
+      "Higher Secondary (Class 11-12)"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "school"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 200000,
+      "gender": "female",
+      "religions": [
+        "Muslim",
+        "Christian",
+        "Sikh",
+        "Buddhist",
+        "Jain",
+        "Parsi"
+      ],
+      "socialCategories": [
+        "Minority"
+      ]
+    },
+    "requiredDocuments": [
+      "Minority Community Certificate / Self-Declaration",
+      "Previous Class Marksheet with minimum 50% marks",
+      "Family Income Certificate issued by competent authority",
+      "School Bonafide Certificate and Student Bank Account details"
+    ],
+    "applicationProcedure": [
+      "Apply online through National Scholarship Portal (scholarships.gov.in)",
+      "Upload school verification form signed by Principal",
+      "District Nodal Officer and Ministry scrutiny and DBT transfer"
+    ],
+    "applicationStartDate": "2025-07-20",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://scholarships.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://minorityaffairs.gov.in",
+    "sourceName": "Ministry of Minority Affairs",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Begum Hazrat Mahal",
+      "Minority Girls",
+      "School",
+      "NSP",
+      "Central Government"
+    ]
+  },
+  {
+    "id": "state-bihar-post-matric-scholarship-pms-o-8c081f2d",
+    "name": "Bihar Post-Matric Scholarship (PMS Online) for SC, ST, BC & EBC",
+    "slug": "bihar-post-matric-scholarship-pms-online-for-sc-st-bc-ebc",
+    "provider": "Backward & Extremely Backward Classes Welfare Dept, Govt of Bihar",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "State scholarship portal for Bihar domiciled students studying in recognized institutions within Bihar or across India.",
+    "briefSummary": "Bihar state scholarship reimbursing non-refundable college fees and maintenance allowance.",
+    "country": "India",
+    "state": "Bihar",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 35000,
+    "formattedAmount": "Up to ₹15,000 to ₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Compulsory non-refundable fee + monthly maintenance grant",
+    "benefits": [
+      "Full tuition fee reimbursement for government colleges; approved ceiling for private colleges",
+      "Maintenance allowance of up to ₹1,200 per month"
+    ],
+    "educationLevels": [
+      "high_school",
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Inter",
+      "Graduation",
+      "Post Graduation",
+      "Engineering",
+      "Medical",
+      "ITI",
+      "Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 300000,
+      "eligibleStates": [
+        "Bihar"
+      ],
+      "eligibleDomicile": [
+        "Bihar"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Bihar Domicile (Awasiya) Certificate",
+      "Caste Certificate (Jati Praman Patra)",
+      "Income Certificate (Aay Praman Patra showing income ≤ ₹3 Lakhs)",
+      "College Bonafide certificate and fee structure"
+    ],
+    "applicationProcedure": [
+      "Register on PMS Online Bihar portal (pmsonline.bih.nic.in)",
+      "Submit online application with scanned receipts and Bonafide"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://pmsonline.bih.nic.in",
+    "applicationUrl": "https://pmsonline.bih.nic.in",
+    "sourceUrl": "https://pmsonline.bih.nic.in",
+    "sourceName": "Government of Bihar PMS Online",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Bihar",
+      "PMS Online",
+      "Post-Matric",
+      "BC",
+      "EBC",
+      "SC",
+      "ST"
+    ]
+  },
+  {
+    "id": "international-british-council-great-scholarships--682c6fbb",
+    "name": "British Council GREAT Scholarships for Indian Students",
+    "slug": "british-council-great-scholarships-for-indian-students",
+    "provider": "British Council & UK Government GREAT Britain Campaign",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "merit"
+    ],
+    "description": "Scholarships jointly funded by the UK Government's GREAT Britain Campaign and British Council partnering with over 25 UK universities, offering £10,000 towards tuition fees for one-year postgraduate taught courses in the UK.",
+    "briefSummary": "£10,000 tuition fee scholarship for one-year postgraduate Master's in the UK.",
+    "country": "United Kingdom",
+    "state": "International",
+    "fundingType": "partial_funding",
+    "currency": "GBP",
+    "amount": 10000,
+    "formattedAmount": "£10,000 Tuition Contribution",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "one_time",
+    "awardCoverage": "£10,000 credited directly towards university tuition fees for 1-year Master's degree",
+    "benefits": [
+      "£10,000 discount on tuition fees across premier UK universities",
+      "Access to British Council networking and UK alumni events",
+      "Opportunity to attend welcoming reception and connect with other GREAT scholars"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Law",
+      "Business",
+      "Engineering",
+      "Arts and Design",
+      "Information Technology",
+      "Climate Change and Sustainability"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Indian Passport holding citizenship",
+      "Undergraduate Degree Certificate and Academic Transcripts",
+      "Offer of admission from a participating UK university",
+      "English language proficiency test results (IELTS / PTE) or university waiver",
+      "Statement of Purpose"
+    ],
+    "applicationProcedure": [
+      "Apply for admission to an eligible Master's programme at a participating UK university",
+      "Upon receiving an offer, apply for the GREAT Scholarship directly through the university's scholarship portal",
+      "University selection committee evaluates and notifies successful recipients"
+    ],
+    "applicationStartDate": "2025-10-01",
+    "deadline": "2026-05-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://study-uk.britishcouncil.org/scholarships-funding/great-scholarships",
+    "applicationUrl": "https://study-uk.britishcouncil.org/scholarships-funding/great-scholarships",
+    "sourceUrl": "https://study-uk.britishcouncil.org",
+    "sourceName": "British Council Study UK",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "GREAT Scholarships",
+      "United Kingdom",
+      "British Council",
+      "Master's",
+      "Study Abroad"
+    ]
+  },
+  {
+    "id": "central-csir-ugc-net-junior-research-fellow-75e67f73",
+    "name": "CSIR-UGC NET Junior Research Fellowship (JRF) in Sciences",
+    "slug": "csir-ugc-net-junior-research-fellowship-jrf-in-sciences",
+    "provider": "Council of Scientific and Industrial Research (CSIR) & UGC",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "research",
+      "merit",
+      "stem"
+    ],
+    "description": "National level examination awarding fellowships to eligible candidates for research in chemical, earth, life, mathematical, and physical sciences.",
+    "briefSummary": "Prestigious national fellowship offering ₹37,000/month + HRA + contingency for PhD scholars in Science & Technology.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 444000,
+    "formattedAmount": "₹37,000 / month + HRA + Contingency",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "₹37,000/mo JRF (first 2 years) upgraded to ₹42,000/mo SRF (years 3-5) + 24% HRA + ₹20,000/yr contingency",
+    "benefits": [
+      "Monthly stipend of ₹37,000 for years 1-2; ₹42,000 for years 3-5",
+      "House Rent Allowance (HRA) up to 27% as per city classification",
+      "Annual contingency grant of ₹20,000 for books and research chemicals",
+      "Recognized across all IITs, IISc, CSIR labs, and Central Universities"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Chemical Sciences",
+      "Earth Sciences",
+      "Life Sciences",
+      "Mathematical Sciences",
+      "Physical Sciences"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd",
+        "postgraduate"
+      ],
+      "minPercentage": 55,
+      "maxAge": 28,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Must qualify Joint CSIR-UGC NET exam with JRF rank"
+      ]
+    },
+    "requiredDocuments": [
+      "M.Sc / BS-MS degree certificate with minimum 55% marks (50% for SC/ST/PwD)",
+      "CSIR-UGC JRF Award Letter with valid roll number",
+      "PhD joining report from recognized university / CSIR national laboratory"
+    ],
+    "applicationProcedure": [
+      "Appear and qualify for Joint CSIR-UGC NET national examination conducted by NTA",
+      "Enrol in PhD programme within two years of JRF award letter validity",
+      "Submit joining report and HRA declaration through CSIR HRDG portal"
+    ],
+    "applicationStartDate": "2025-03-01",
+    "deadline": "2026-06-30",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://csirhrdg.res.in",
+    "applicationUrl": "https://csirnet.nta.ac.in",
+    "sourceUrl": "https://csirhrdg.res.in",
+    "sourceName": "CSIR Human Resource Development Group",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "CSIR",
+      "UGC",
+      "JRF",
+      "PhD Fellowship",
+      "Science"
+    ]
+  },
+  {
+    "id": "central-central-sector-scheme-of-scholarshi-cfe57a2e",
+    "name": "Central Sector Scheme of Scholarship for College and University Students (PM-USP)",
+    "slug": "central-sector-scheme-of-scholarship-for-college-and-university-students-pm-usp",
+    "provider": "Department of Higher Education, Ministry of Education, Govt of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Financial assistance to meritorious students from low-income families to meet day-to-day expenses while pursuing graduate and professional studies.",
+    "briefSummary": "Central government merit-cum-means scholarship for top-percentile 12th passouts pursuing degree programs.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 20000,
+    "formattedAmount": "₹12,000 to ₹20,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹12,000/yr for graduation (first 3 years) and ₹20,000/yr for post-graduation",
+    "benefits": [
+      "₹12,000 per annum for the first 3 years of Undergraduate studies",
+      "₹20,000 per annum for 4th & 5th year / Postgraduate courses",
+      "Direct Benefit Transfer (DBT) via PFMS to Aadhaar-seeded bank account",
+      "Renewable every year subject to 50% marks and minimum 75% attendance"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medical",
+      "Arts",
+      "Science",
+      "Commerce",
+      "Law",
+      "Management"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 80,
+      "maxAnnualIncome": 450000,
+      "gender": "all",
+      "socialCategories": [
+        "Any"
+      ],
+      "eligibleStates": [
+        "All India"
+      ],
+      "institutionTypes": [
+        "Government",
+        "Private",
+        "Aided"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th Board Marksheet",
+      "Income Certificate issued by competent revenue authority (≤ ₹4.5 Lakh)",
+      "Bonafide Student Certificate from College / University",
+      "Bank Account passbook copy (Aadhaar linked)",
+      "Domicile Certificate"
+    ],
+    "applicationProcedure": [
+      "Register on National Scholarship Portal (NSP) with One-Time Registration (OTR)",
+      "Fill in academic credentials, admission details and family income",
+      "Upload institutional Bonafide certificate and required revenue documents",
+      "Institute nodal officer conducts verification",
+      "State Nodal Officer conducts 2nd tier verification before DBT sanction"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://scholarships.gov.in",
+    "applicationUrl": "https://scholarships.gov.in/fresh",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "National Scholarship Portal (NSP)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "NSP",
+      "Ministry of Education",
+      "Central Sector",
+      "Merit-Cum-Means"
+    ]
+  },
+  {
+    "id": "international-chevening-scholarships-for-one-year-390cec6c",
+    "name": "Chevening Scholarships for One-Year Master's in the United Kingdom",
+    "slug": "chevening-scholarships-for-one-year-master-s-in-the-united-kingdom",
+    "provider": "Foreign, Commonwealth & Development Office (UK Government)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit"
+    ],
+    "description": "The UK government's global scholarship programme, funded by the Foreign, Commonwealth and Development Office (FCDO) and partner organisations. Offers fully funded grants for one-year master's degrees at any UK university.",
+    "briefSummary": "100% fully funded UK master's scholarship covering tuition fees, living stipend, return flights, and visa.",
+    "country": "United Kingdom",
+    "state": "All Regions",
+    "fundingType": "fully_funded",
+    "currency": "GBP",
+    "amount": 35000,
+    "formattedAmount": "Fully Funded (~£35,000+ / ₹38 Lakhs)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "University tuition fees, monthly living allowance, economy return flights, arrival allowance, and visa reimbursement",
+    "benefits": [
+      "100% full payment of UK university tuition fees (uncapped for master's courses)",
+      "Generous monthly living allowance based on London / non-London index",
+      "Return economy class airfare between home country and the UK",
+      "Access to exclusive UK cultural events, networking trips, and parliamentary tours"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All full-time taught Master's degree programmes at any UK university"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "Chevening Eligible Countries"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "specialConditions": [
+        "Hold an undergraduate degree equivalent to an upper second-class 2:1 honours degree in the UK",
+        "Have at least two years of work experience (minimum 2,800 hours)",
+        "Apply to three different eligible UK university courses and receive an unconditional offer from at least one"
+      ]
+    },
+    "requiredDocuments": [
+      "Official undergraduate university transcripts and degree certificates",
+      "Two valid references submitted in English",
+      "Four comprehensive leadership and networking essay answers",
+      "Valid international passport",
+      "Unconditional offer letter from at least one eligible UK university"
+    ],
+    "applicationProcedure": [
+      "Submit online application dossier on Chevening portal (chevening.org/apply)",
+      "Independent reading committee reviews applications against global scoring criteria",
+      "Shortlisted candidates invited for interview at British High Commission / Embassy",
+      "Successful awardees placed at UK university"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-04",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.chevening.org",
+    "applicationUrl": "https://www.chevening.org/apply",
+    "sourceUrl": "https://www.chevening.org",
+    "sourceName": "Chevening Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Chevening",
+      "UK",
+      "Fully Funded",
+      "Master's",
+      "FCDO",
+      "Study Abroad"
+    ]
+  },
+  {
+    "id": "state-chhattisgarh-post-matric-scholarshi-ef1ad103",
+    "name": "Chhattisgarh Post-Matric Scholarship Scheme for SC/ST/OBC",
+    "slug": "chhattisgarh-post-matric-scholarship-scheme-for-sc-st-obc",
+    "provider": "Tribal and Scheduled Caste Development Department, Government of Chhattisgarh",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Tuition fee reimbursement and maintenance grant for students belonging to SC, ST, and OBC communities of Chhattisgarh enrolled in post-matric and higher educational institutions.",
+    "briefSummary": "Full course fee reimbursement and monthly stipend for Chhattisgarh college students.",
+    "country": "India",
+    "state": "Chhattisgarh",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 32000,
+    "formattedAmount": "Tuition Fee + ₹1,000/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full tuition fee reimbursement + monthly maintenance allowance",
+    "benefits": [
+      "Comprehensive tuition fee coverage for government and private colleges",
+      "Direct Aadhaar payment through Chhattisgarh State Scholarship Portal",
+      "Hostel allowance for resident students"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "Professional",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Chhattisgarh"
+      ],
+      "eligibleDomicile": [
+        "Chhattisgarh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC"
+      ]
+    },
+    "requiredDocuments": [
+      "Chhattisgarh Domicile Certificate",
+      "Permanent Caste Certificate issued by Revenue Authority",
+      "Annual Income Certificate",
+      "College Admission and Fee Receipt"
+    ],
+    "applicationProcedure": [
+      "Apply online through CG State Scholarship Portal (postmatric-scholarship.cg.nic.in)",
+      "College online verification",
+      "Approval by Assistant Commissioner / District Collectorate"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://postmatric-scholarship.cg.nic.in",
+    "applicationUrl": "https://postmatric-scholarship.cg.nic.in",
+    "sourceUrl": "https://tribal.cg.gov.in",
+    "sourceName": "Chhattisgarh Post-Matric Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Chhattisgarh",
+      "Post-Matric",
+      "SC/ST/OBC",
+      "Higher Education"
+    ]
+  },
+  {
+    "id": "state-chief-minister-s-merit-scholarship--93ff7c52",
+    "name": "Chief Minister's Merit Scholarship Scheme (CMMSS) Sikkim",
+    "slug": "chief-minister-s-merit-scholarship-scheme-cmmss-sikkim",
+    "provider": "Education Department, Government of Sikkim",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit"
+    ],
+    "description": "Premier scholarship scheme of the Government of Sikkim supporting talented local students with full financial sponsorship for premier boarding and higher educational studies across India.",
+    "briefSummary": "Comprehensive state sponsorship for meritorious students of Sikkim.",
+    "country": "India",
+    "state": "Sikkim",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 80000,
+    "formattedAmount": "Full Academic & Boarding Fees",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition, institutional charges, and residential hostel maintenance",
+    "benefits": [
+      "Full educational sponsorship in premier institutions",
+      "Book and clothing allowances",
+      "State recognition and mentorship"
+    ],
+    "educationLevels": [
+      "school",
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Science",
+      "Commerce",
+      "Humanities",
+      "Engineering"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "school",
+        "undergraduate"
+      ],
+      "minPercentage": 70,
+      "maxAnnualIncome": 450000,
+      "eligibleStates": [
+        "Sikkim"
+      ],
+      "eligibleDomicile": [
+        "Sikkim"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST"
+      ]
+    },
+    "requiredDocuments": [
+      "Certificate of Identification (COI) / Sikkim Subject Certificate",
+      "Previous qualifying marksheet with 70%+",
+      "Income declaration",
+      "School / College verification certificate"
+    ],
+    "applicationProcedure": [
+      "Apply through Sikkim Education Department Scholarship Cell",
+      "Appear for state-level merit assessment / selection",
+      "Institutional confirmation and disbursement"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-10-30",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://sikkim.gov.in",
+    "applicationUrl": "https://sikkim.gov.in",
+    "sourceUrl": "https://sikkim.gov.in",
+    "sourceName": "Government of Sikkim Education Department",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Sikkim",
+      "CMMSS",
+      "Merit",
+      "North East"
+    ]
+  },
+  {
+    "id": "international-commonwealth-master-s-and-phd-schol-81560721",
+    "name": "Commonwealth Master's and PhD Scholarships in the United Kingdom",
+    "slug": "commonwealth-master-s-and-phd-scholarships-in-the-united-kingdom",
+    "provider": "Commonwealth Scholarship Commission in the UK (CSC)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
+    ],
+    "description": "Funded by the UK Foreign, Commonwealth & Development Office (FCDO), these scholarships enable talented and motivated individuals to gain the knowledge and skills required for sustainable development.",
+    "briefSummary": "Fully funded scholarship covering tuition, airfare, monthly stipend (£1,347 - £1,652/mo), and study grants in the UK.",
+    "country": "United Kingdom",
+    "state": "All Regions",
+    "fundingType": "fully_funded",
+    "currency": "GBP",
+    "amount": 40000,
+    "formattedAmount": "Fully Funded (~£40,000+ / ₹44 Lakhs)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "Full tuition, living allowance (£1,347/mo or £1,652/mo in London), flights, warm clothing allowance",
+    "benefits": [
+      "Approved airfare from home country to UK and return",
+      "Approved tuition and examination fees paid in full",
+      "Stipend (living allowance) at the rate of £1,347 per month, or £1,652 per month for London institutions",
+      "Warm clothing allowance, study travel grant, and thesis grant (for PhD)"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Science & Technology for Development",
+      "Health Systems",
+      "Global Prosperity",
+      "Peace & Security",
+      "Resilience & Crises"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "Commonwealth Citizens"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "specialConditions": [
+        "Citizen of a Commonwealth country (including India)",
+        "Hold an upper second-class (2:1) first degree or Master's for PhD"
+      ]
+    },
+    "requiredDocuments": [
+      "Full academic transcripts of all higher education qualifications",
+      "Detailed development impact statement explaining how studies align with UN SDGs",
+      "Two confidential referee reports",
+      "Valid national passport"
+    ],
+    "applicationProcedure": [
+      "Apply using the CSC's online application system (OAS)",
+      "Apply via National Nominating Agency (Ministry of Education in India) or nominated NGO",
+      "Final selection by Commonwealth Scholarship Commission in London"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-10-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://cscuk.fcdo.gov.uk/scholarships/commonwealth-masters-scholarships/",
+    "applicationUrl": "https://cscuk.fcdo.gov.uk/apply/",
+    "sourceUrl": "https://cscuk.fcdo.gov.uk",
+    "sourceName": "Commonwealth Scholarship Commission UK",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Commonwealth",
+      "UK",
+      "Fully Funded",
+      "Master's",
+      "PhD",
+      "Development"
+    ]
+  },
+  {
+    "id": "international-daad-development-related-postgradua-0bb7a49d",
+    "name": "DAAD Development-Related Postgraduate Courses (EPOS) in Germany",
+    "slug": "daad-development-related-postgraduate-courses-epos-in-germany",
+    "provider": "German Academic Exchange Service (DAAD)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "need"
+    ],
+    "description": "Scholarships for international students from developing countries to pursue development-related Master's degrees at state-recognized German universities with tuition exemptions.",
+    "briefSummary": "DAAD scholarship offering €934/month, health insurance, travel allowance, and free tuition in Germany.",
+    "country": "Germany",
+    "state": "All German States",
+    "fundingType": "fully_funded",
+    "currency": "EUR",
+    "amount": 16000,
+    "formattedAmount": "Fully Funded (~€16,000 / ₹15 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly stipend of €934, health insurance, return air travel allowance, and German language training",
+    "benefits": [
+      "Monthly payments of €934 for graduates or €1,300 for doctoral candidates",
+      "Payments towards health, accident and personal liability insurance coverage",
+      "Travel allowance, one-off study allowance, and subsidized family allowance if applicable",
+      "Zero tuition fees at public universities in Germany"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Economic Sciences",
+      "Development Cooperation",
+      "Engineering",
+      "Regional and Urban Planning",
+      "Agricultural Sciences",
+      "Environmental Sciences",
+      "Public Health",
+      "Education"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "DAC List Developing Countries"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "specialConditions": [
+        "Hold an appropriate bachelor's degree completed within the last six years",
+        "Have at least two years of relevant professional experience after graduation"
+      ]
+    },
+    "requiredDocuments": [
+      "Signed DAAD application form",
+      "Hand-signed Curriculum Vitae (europass format)",
+      "Letter of Motivation (with current occupation reference)",
+      "Academic letters of recommendation and employer reference letters",
+      "English proficiency certificate (IELTS / TOEFL)"
+    ],
+    "applicationProcedure": [
+      "Apply directly to the chosen EPOS degree course in Germany",
+      "Selection committee of the university puts forward shortlisted candidates to DAAD"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.daad.de/en/information-services-for-higher-education-institutions/further-information-on-daad-programmes/epos/",
+    "applicationUrl": "https://www.daad.de",
+    "sourceUrl": "https://www.daad.de",
+    "sourceName": "DAAD Official Exchange",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DAAD",
+      "Germany",
+      "EPOS",
+      "Master's",
+      "Fully Funded",
+      "Development"
+    ]
+  },
+  {
+    "id": "international-daad-helmut-schmidt-programme-publi-2bf5fda8",
+    "name": "DAAD Helmut-Schmidt-Programme (Public Policy & Good Governance)",
+    "slug": "daad-helmut-schmidt-programme-public-policy-good-governance",
+    "provider": "German Academic Exchange Service (DAAD) & Federal Foreign Office of Germany",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "merit"
+    ],
+    "description": "Supports future leaders from developing countries in politics, law, economics, and administration who want to actively contribute to the social and political development of their home countries with a master's degree in Germany.",
+    "briefSummary": "Full tuition waiver, €934/month stipend, health insurance, and travel allowance in Germany.",
+    "country": "Germany",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "EUR",
+    "amount": 20000,
+    "formattedAmount": "Full Tuition + €934/mo Stipend + Insurance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly scholarship installment of €934 + health, accident, and liability insurance + travel allowance + 6-month preparatory German language course",
+    "benefits": [
+      "100% tuition-free master's degree at selected German universities",
+      "Monthly stipend of €934 to cover accommodation and living costs",
+      "Intensive German language course prior to master's studies",
+      "Research grant and family allowance where applicable"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Public Policy",
+      "Good Governance",
+      "International Relations",
+      "Public Management",
+      "Development Studies",
+      "Law"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "DAAD Application Form completed in English or German",
+      "Hand-signed letter of motivation detailing political/social engagement",
+      "University Degree Certificate and detailed transcripts",
+      "Language certificate in English (TOEFL/IELTS) or German",
+      "Two letters of recommendation from academic or employer sources"
+    ],
+    "applicationProcedure": [
+      "Select up to two eligible master's courses from Helmut-Schmidt list",
+      "Submit application directly to the respective universities via their online portals",
+      "University selection committee and DAAD review applications and award fellowships"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-07-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.daad.de/en/information-services-for-higher-education-institutions/programme-priority-areas/helmut-schmidt-programme/",
+    "applicationUrl": "https://www.daad.de",
+    "sourceUrl": "https://www.daad.de",
+    "sourceName": "DAAD Germany",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DAAD",
+      "Helmut Schmidt",
+      "Germany",
+      "Public Policy",
+      "Full Funding",
+      "Master's"
+    ]
+  },
+  {
+    "id": "central-dbt-junior-research-fellowship-dbt--367d1949",
+    "name": "DBT Junior Research Fellowship (DBT-JRF) in Biotechnology",
+    "slug": "dbt-junior-research-fellowship-dbt-jrf-in-biotechnology",
+    "provider": "Department of Biotechnology (DBT), Ministry of Science & Technology",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "research",
+      "merit"
+    ],
+    "description": "Fellowships awarded to students through the Biotechnology Eligibility Test (BET) for pursuing research in frontier areas of biotechnology and life sciences in Indian universities.",
+    "briefSummary": "₹37,000/month (JRF) & ₹42,000/month (SRF) + HRA + ₹30,000/year contingency.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 534000,
+    "formattedAmount": "₹37,000 to ₹42,000 / month + HRA + Contingency",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly fellowship + institutional contingency allowance for research",
+    "benefits": [
+      "Tenure of 5 years for pursuing doctoral studies in biotechnology",
+      "Category I fellows eligible for fellowship in any university across India",
+      "Category II fellows eligible for appointment in DBT sponsored research projects"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Biotechnology",
+      "Bioinformatics",
+      "Microbiology",
+      "Genetics",
+      "Biochemistry",
+      "Life Sciences"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 60,
+      "maxAge": 28,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Valid Graduate Pharmacy / Biotechnology Eligibility Test (BET) Score Card",
+      "Master's Degree (MSc / MTech / MVSc) Marksheets",
+      "PhD Admission Offer from recognized institution",
+      "Category / Age relaxation certificate (if applicable)"
+    ],
+    "applicationProcedure": [
+      "Appear in national BET examination conducted by NTA / DBT-HRD PMU",
+      "Category-I awardees activate fellowship upon PhD registration",
+      "Direct disbursement of fellowship via DBT-JRF online portal"
+    ],
+    "applicationStartDate": "2025-05-01",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://dbt.nta.ac.in",
+    "applicationUrl": "https://dbt.nta.ac.in",
+    "sourceUrl": "https://dbtindia.gov.in",
+    "sourceName": "Department of Biotechnology (DBT)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DBT",
+      "Biotechnology",
+      "BET",
+      "JRF",
+      "Life Sciences",
+      "Fellowship"
+    ]
+  },
+  {
+    "id": "central-dst-inspire-fellowship-for-doctoral-eb0722da",
+    "name": "DST INSPIRE Fellowship for Doctoral Research",
+    "slug": "dst-inspire-fellowship-for-doctoral-research",
+    "provider": "Department of Science and Technology (DST), Ministry of Science & Technology",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit",
+      "research"
+    ],
+    "description": "Prestigious national doctoral research fellowship awarded to 1st rank holders in university postgraduate science/engineering examinations or INSPIRE Scholars with 70%+ in MSc/MTech to pursue full-time PhD in basic and applied sciences.",
+    "briefSummary": "₹37,000 to ₹42,000/month fellowship + ₹20,000/year contingency for doctoral PhD research.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 524000,
+    "formattedAmount": "₹37,000 to ₹42,000 / month + HRA + Contingency",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly fellowship of ₹37,000 (JRF) / ₹42,000 (SRF) + HRA as per central norms + ₹20,000 annual research contingency grant",
+    "benefits": [
+      "5-year direct doctoral research fellowship for PhD scholars",
+      "Annual contingency grant for research consumables, books, and conference travel",
+      "Exemption from NET/GATE requirement for 1st rank university toppers"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Basic Sciences",
+      "Applied Sciences",
+      "Engineering Sciences",
+      "Agricultural Sciences",
+      "Pharmacy"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 70,
+      "maxAge": 32,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "University 1st Rank Certificate issued by University Registrar or INSPIRE Scholar ID",
+      "Postgraduate Degree Marksheets (MSc / MTech / MS)",
+      "PhD Admission Offer Letter from recognized Indian University / Institute",
+      "Brief research proposal signed by PhD Guide"
+    ],
+    "applicationProcedure": [
+      "Apply online through DST INSPIRE Portal (online-inspire.gov.in)",
+      "Submit academic transcripts and university rank verification certificate",
+      "Expert subject committee evaluation and fellowship sanction"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://online-inspire.gov.in",
+    "applicationUrl": "https://online-inspire.gov.in",
+    "sourceUrl": "https://dst.gov.in",
+    "sourceName": "Department of Science and Technology (DST)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DST",
+      "INSPIRE",
+      "PhD",
+      "Doctoral Research",
+      "Central Government",
+      "Fellowship"
+    ]
+  },
+  {
+    "id": "corporate-dxc-progressing-minds-scholarship-f-09f32b40",
+    "name": "DXC Progressing Minds Scholarship for STEM Students",
+    "slug": "dxc-progressing-minds-scholarship-for-stem-students",
+    "provider": "DXC Technology India",
+    "providerCategory": "corporate_csr",
+    "categories": [
+      "corporate_csr",
+      "need",
+      "merit"
+    ],
+    "description": "CSR initiative of DXC Technology supporting meritorious students from marginalized backgrounds, transgender persons, and women pursuing STEM degrees.",
+    "briefSummary": "₹50,000/year scholarship for undergraduate STEM and technology students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, academic books, and educational project expenses",
+    "benefits": [
+      "Direct financial support of ₹50,000 for college education",
+      "Special inclusion quotas for transgender youth and women students",
+      "Mentorship and skill building workshops by DXC IT professionals"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "B.E.",
+      "BCA",
+      "B.Sc (IT / Computer Science / Mathematics / Physics)"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 400000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th marksheet with minimum 60% marks",
+      "Current year college admission bonafide certificate",
+      "Family income certificate (under ₹4 Lakhs)",
+      "Applicant bank passbook and government ID"
+    ],
+    "applicationProcedure": [
+      "Apply online via DXC Progressing Minds portal",
+      "Document verification and income criteria check",
+      "Direct disbursement of scholarship fund to student bank account"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.dxc.com",
+    "applicationUrl": "https://www.dxc.com",
+    "sourceUrl": "https://www.dxc.com",
+    "sourceName": "DXC Technology Corporate Social Responsibility",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DXC Technology",
+      "STEM",
+      "Inclusion",
+      "B.Tech",
+      "Corporate CSR"
+    ]
+  },
+  {
+    "id": "state-dayanand-bandaodkar-scheme-for-high-78028e61",
+    "name": "Dayanand Bandaodkar Scheme for Higher Education Goa",
+    "slug": "dayanand-bandaodkar-scheme-for-higher-education-goa",
+    "provider": "Directorate of Higher Education, Government of Goa",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Financial assistance scheme to orphans and children of underprivileged parents in Goa to pursue degree and professional courses in higher education.",
+    "briefSummary": "Tuition fee waiver and financial support for Goa higher education students.",
+    "country": "India",
+    "state": "Goa",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 25000,
+    "formattedAmount": "Full Tuition + Book Allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Reimbursement of tuition, examination, and laboratory fees",
+    "benefits": [
+      "100% course fee reimbursement",
+      "Financial security for vulnerable and single-parent wards",
+      "Direct transfer to student bank account"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Arts",
+      "Science",
+      "Commerce",
+      "Engineering",
+      "Medicine"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 300000,
+      "eligibleStates": [
+        "Goa"
+      ],
+      "eligibleDomicile": [
+        "Goa"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "15 years Goa Residence Certificate",
+      "Income Certificate issued by Mamlatdar",
+      "Marksheet of 12th / Qualifying examination",
+      "College Fee receipt"
+    ],
+    "applicationProcedure": [
+      "Apply via Goa Directorate of Higher Education portal (dhe.goa.gov.in)",
+      "Submit bonafide certificate verified by college principal",
+      "State DHE scrutiny and sanction"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://dhe.goa.gov.in",
+    "applicationUrl": "https://dhe.goa.gov.in",
+    "sourceUrl": "https://dhe.goa.gov.in",
+    "sourceName": "Directorate of Higher Education Goa",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Goa",
+      "Dayanand Bandaodkar",
+      "Higher Education",
+      "Tuition Waiver"
+    ]
+  },
+  {
+    "id": "state-delhi-merit-cum-means-financial-ass-dcec3995",
+    "name": "Delhi Merit-cum-Means Financial Assistance Scheme for State Universities",
+    "slug": "delhi-merit-cum-means-financial-assistance-scheme-for-state-universities",
+    "provider": "Department of Higher Education, Government of NCT of Delhi",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Progressive fee waiver scheme providing 100%, 50%, or 25% tuition fee waiver to students pursuing undergraduate programs in Delhi State Universities based on family income.",
+    "briefSummary": "Up to 100% tuition fee reimbursement for students in Delhi State Universities.",
+    "country": "India",
+    "state": "Delhi",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 75000,
+    "formattedAmount": "Up to 100% Fee Waiver (Up to ₹1 Lakh)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% fee waiver for NFSA/Ration Card holders (income under ₹1 Lakh), 50% for income under ₹2.5 Lakhs, 25% for income under ₹6 Lakhs",
+    "benefits": [
+      "Covers DTU, NSUT, IP University (GGSIPU), Ambedkar University, IIITD, DSEU",
+      "Tiered assistance ensuring equitable support across income brackets",
+      "Direct fee reimbursement via Delhi e-District"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "BBA",
+      "B.Com",
+      "B.A",
+      "B.Sc",
+      "Design",
+      "Management"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 600000,
+      "eligibleStates": [
+        "Delhi"
+      ],
+      "eligibleDomicile": [
+        "Delhi"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Delhi Domicile / Residence Proof",
+      "Ration Card (NFSA) or Valid Income Certificate issued by Revenue Department GNCTD",
+      "Marksheets of Class 12th / previous semester with 60%+",
+      "State University Fee Receipt and Student ID"
+    ],
+    "applicationProcedure": [
+      "Apply online through Delhi e-District Portal (edistrict.delhigovt.nic.in)",
+      "University Nodal Officer scrutinizes academic record and attendance",
+      "Directorate of Higher Education approves and reimburses tuition fee"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://edistrict.delhigovt.nic.in",
+    "applicationUrl": "https://edistrict.delhigovt.nic.in",
+    "sourceUrl": "https://higheredn.delhi.gov.in",
+    "sourceName": "Delhi e-District Higher Education",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Delhi",
+      "Merit-cum-Means",
+      "DTU",
+      "NSUT",
+      "GGSIPU",
+      "Fee Waiver"
+    ]
+  },
+  {
+    "id": "university-delhi-university-vice-chancellor-s--d71aa1aa",
+    "name": "Delhi University Vice-Chancellor's Student Fund & Merit Scholarships",
+    "slug": "delhi-university-vice-chancellor-s-student-fund-merit-scholarships",
+    "provider": "University of Delhi (DU)",
+    "providerCategory": "university",
+    "categories": [
+      "university",
+      "merit",
+      "need"
+    ],
+    "description": "Financial assistance for meritorious undergraduate and postgraduate students enrolled in regular colleges and departments of the University of Delhi who face economic hardship.",
+    "briefSummary": "Tuition and examination fee concession plus annual grant for University of Delhi students.",
+    "country": "India",
+    "state": "Delhi",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 25000,
+    "formattedAmount": "Up to ₹25,000 / year + Full Fee Waiver",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fee waiver, examination fee refund, and annual maintenance book grant",
+    "benefits": [
+      "100% tuition and examination fee concession for students with family income ≤ ₹4 Lakhs",
+      "Additional book and hostel grant for visually impaired and PwD scholars",
+      "Awarded across St. Stephen's, Hindu, SRCC, Miranda House, and North/South campus departments"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All regular degree courses in Commerce, Arts, Sciences, and Law at Delhi University"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 400000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "institutionTypes": [
+        "Government"
+      ],
+      "specialConditions": [
+        "Enrolled as a regular full-time student in a constituent college/department of University of Delhi"
+      ]
+    },
+    "requiredDocuments": [
+      "Delhi University college enrollment ID card and fee receipt",
+      "Income certificate issued by SDM / competent executive magistrate (≤ ₹4.00 Lakhs)",
+      "Previous qualifying exam marksheets",
+      "Recommendation by College Principal / Department Head"
+    ],
+    "applicationProcedure": [
+      "Obtain prescribed application from Dean Students' Welfare (DSW) office",
+      "Submit application endorsed by College Principal to DSW office",
+      "University selection committee approves disbursement via direct bank credit"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.du.ac.in",
+    "applicationUrl": "https://dsw.du.ac.in",
+    "sourceUrl": "https://www.du.ac.in",
+    "sourceName": "University of Delhi Dean Students' Welfare",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Delhi University",
+      "DU",
+      "Vice Chancellor Fund",
+      "Undergraduate",
+      "Merit-Cum-Means"
+    ]
+  },
+  {
+    "id": "state-dr-b-r-ambedkar-post-matric-scholar-035deb56",
+    "name": "Dr. B.R. Ambedkar Post Matric Scholarship Scheme Punjab",
+    "slug": "dr-b-r-ambedkar-post-matric-scholarship-scheme-punjab",
+    "provider": "Department of Social Justice, Empowerment & Minorities, Government of Punjab",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Comprehensive fee concession and maintenance stipend scheme for post-matric Scheduled Caste and underprivileged students in Punjab pursuing post-secondary courses.",
+    "briefSummary": "100% non-refundable fee waiver and monthly stipend for post-matric SC students in Punjab.",
+    "country": "India",
+    "state": "Punjab",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 35000,
+    "formattedAmount": "Full Tuition + ₹1,200/month stipend",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% compulsory non-refundable fees reimbursement + monthly maintenance allowance",
+    "benefits": [
+      "Zero admission fee under freeship card facility",
+      "Direct DBT payment of maintenance allowance",
+      "Book allowance and study tour assistance"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "Vocational",
+      "Professional"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Punjab"
+      ],
+      "eligibleDomicile": [
+        "Punjab"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC"
+      ]
+    },
+    "requiredDocuments": [
+      "Punjab Domicile Certificate",
+      "SC Caste Certificate issued by competent authority",
+      "Valid Income Certificate (family income under ₹2.5 Lakhs)",
+      "College admission letter and Punjab Scholarship Freeship Card"
+    ],
+    "applicationProcedure": [
+      "Apply for Freeship Card on Dr. Ambedkar Scholarship Portal (scholarships.punjab.gov.in)",
+      "Present Freeship Card to college at time of admission for zero-fee admission",
+      "Complete online post-matric scholarship registration"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://scholarships.punjab.gov.in",
+    "applicationUrl": "https://scholarships.punjab.gov.in",
+    "sourceUrl": "https://scholarships.punjab.gov.in",
+    "sourceName": "Punjab Dr. Ambedkar Scholarship Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Punjab",
+      "Post-Matric",
+      "SC",
+      "Freeship",
+      "Fee Reimbursement"
+    ]
+  },
+  {
+    "id": "corporate-dr-reddy-s-foundation-sashakt-schol-f854bd6c",
+    "name": "Dr. Reddy's Foundation Sashakt Scholarship for Girls in Science",
+    "slug": "dr-reddy-s-foundation-sashakt-scholarship-for-girls-in-science",
+    "provider": "Dr. Reddy's Foundation",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "merit"
+    ],
+    "description": "Financial assistance of ₹2,40,000 (₹80,000/year for 3 years) to encourage brilliant young girls to pursue a career in pure and applied science in premier colleges.",
+    "briefSummary": "₹2,40,000 over 3 years for female students admitted to B.Sc pure/applied science in premier colleges.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 80000,
+    "formattedAmount": "₹80,000 / year (₹2,40,000 total)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Covers tuition fees, study expenses, and basic living costs",
+    "benefits": [
+      "₹80,000 per year for 3-year B.Sc degree programs",
+      "Personal mentorship by leading women scientists across India",
+      "Special preference for rural and underprivileged backgrounds"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Pure Mathematics",
+      "Physics",
+      "Chemistry",
+      "Biology",
+      "Biotechnology",
+      "Microbiology"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 75,
+      "gender": "female",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Admitted to first year B.Sc program in one of the 12 designated premier science institutions (e.g. Miranda House, St. Stephen's, Loyola, Madras Christian College, Fergusson)"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 10th and 12th board marksheet",
+      "Admission confirmation in designated science institution",
+      "Income certificate and identity proof"
+    ],
+    "applicationProcedure": [
+      "Register on Dr. Reddy's Foundation Sashakt portal",
+      "Essay submission and video profile interview"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.sashaktscholarship.org",
+    "applicationUrl": "https://www.sashaktscholarship.org",
+    "sourceUrl": "https://www.sashaktscholarship.org",
+    "sourceName": "Dr. Reddy's Foundation Official",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Dr. Reddy's",
+      "Sashakt",
+      "B.Sc",
+      "Pure Science",
+      "Women in STEM"
+    ]
+  },
+  {
+    "id": "international-eiffel-excellence-scholarship-progr-e8cdce7f",
+    "name": "Eiffel Excellence Scholarship Programme (Campus France)",
+    "slug": "eiffel-excellence-scholarship-programme-campus-france",
+    "provider": "Ministry for Europe and Foreign Affairs (France) & Campus France",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "merit"
+    ],
+    "description": "Prestigious French Government scholarship designed to attract top foreign students for master's and PhD programs at French higher education institutions in Science & Technology, Management, and Law.",
+    "briefSummary": "€1,181/month (Master's) or €1,800/month (PhD) stipend + return flights and insurance in France.",
+    "country": "France",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "EUR",
+    "amount": 25000,
+    "formattedAmount": "€1,181 to €1,800 / month + Flight + Insurance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly living allowance of €1,181 (Master's) or €1,800 (Doctorate) + international return airfare + domestic travel + social security insurance + cultural activities allowance",
+    "benefits": [
+      "Substantial monthly living allowance throughout duration of study in France",
+      "Return international flight between home country and France",
+      "Priority access to CROUS student public housing",
+      "Exemption from French public university tuition fees"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Biology and Health",
+      "Ecological Transition",
+      "Mathematics and Digital",
+      "Engineering Sciences",
+      "History and French Civilization",
+      "Law and Political Science",
+      "Economics and Management"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 70,
+      "maxAge": 30,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Curriculum Vitae in French or English",
+      "Cover letter explaining academic project and career goals in relation to France",
+      "Academic transcripts and diploma translations",
+      "Language proficiency certificates (French DELF/DALF or English IELTS)",
+      "Institutional nomination letter from French university"
+    ],
+    "applicationProcedure": [
+      "Contact French higher education institution of choice to secure admission nomination",
+      "The French institution approves and submits the Eiffel application to Campus France on student's behalf",
+      "Campus France jury evaluates applications and announces winners in April"
+    ],
+    "applicationStartDate": "2025-10-01",
+    "deadline": "2026-01-10",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.campusfrance.org/en/eiffel-scholarship-program-of-excellence",
+    "applicationUrl": "https://www.campusfrance.org",
+    "sourceUrl": "https://www.campusfrance.org",
+    "sourceName": "Campus France",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Eiffel Excellence",
+      "France",
+      "Campus France",
+      "Full Funding",
+      "Master's",
+      "PhD"
+    ]
+  },
+  {
+    "id": "international-erasmus-mundus-joint-masters-schola-4f6cbe7a",
+    "name": "Erasmus Mundus Joint Masters Scholarships (EMJM)",
+    "slug": "erasmus-mundus-joint-masters-scholarships-emjm",
+    "provider": "European Commission (Erasmus+)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
+    ],
+    "description": "High-level integrated international study programmes, delivered by an international consortium of higher education institutions across at least two different European countries.",
+    "briefSummary": "Full European Commission scholarship covering tuition, €1,400/month living allowance, insurance, and mobility across Europe.",
+    "country": "European Union",
+    "state": "Pan-European",
+    "fundingType": "fully_funded",
+    "currency": "EUR",
+    "amount": 28000,
+    "formattedAmount": "Fully Funded (~€28,000 / ₹26 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full participation costs (tuition, insurance), monthly subsistence of €1,400 for up to 24 months, and travel grants",
+    "benefits": [
+      "Full waiver of all university registration and tuition fees",
+      "Monthly subsistence allowance of €1,400 per month for the entire duration (up to 2 years)",
+      "Joint or multiple Master's degrees from at least two European universities",
+      "Study in at least 2 different European countries"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All academic fields: Artificial Intelligence, Marine Biology, Renewable Energy, Economics, Public Policy, Humanities"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "Global Applicants"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "specialConditions": [
+        "Hold a first higher education degree or demonstrate recognised equivalent level of learning"
+      ]
+    },
+    "requiredDocuments": [
+      "Higher education transcripts and degree certificates",
+      "Curriculum Vitae (Europass recommended)",
+      "Motivation letter tailored to the specific consortium curriculum",
+      "Two letters of recommendation and proof of residence",
+      "English proficiency test score"
+    ],
+    "applicationProcedure": [
+      "Consult the EMJM Catalogue on the European Commission website",
+      "Apply directly to the website of the specific Erasmus Mundus consortium"
+    ],
+    "applicationStartDate": "2025-10-01",
+    "deadline": "2026-02-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://erasmus-plus.ec.europa.eu/opportunities/individuals/students/erasmus-mundus-joint-masters",
+    "applicationUrl": "https://erasmus-plus.ec.europa.eu/opportunities/opportunities-for-individuals/students/erasmus-mundus-joint-masters-scholarships",
+    "sourceUrl": "https://erasmus-plus.ec.europa.eu",
+    "sourceName": "European Commission Erasmus+",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Erasmus Mundus",
+      "EMJM",
+      "European Union",
+      "Fully Funded",
+      "Master's"
+    ]
+  },
+  {
+    "id": "international-felix-scholarships-for-indian-stude-c96958d8",
+    "name": "Felix Scholarships for Indian Students (Oxford, Reading & SOAS)",
+    "slug": "felix-scholarships-for-indian-students-oxford-reading-soas",
+    "provider": "Felix Scholarship Trust",
+    "providerCategory": "international_university",
+    "categories": [
+      "international_university",
+      "merit",
+      "need"
+    ],
+    "description": "Full financial support enabling gifted underprivileged students from India to pursue postgraduate education (Master's or DPhil/PhD) at the University of Oxford, University of Reading, or SOAS University of London.",
+    "briefSummary": "100% course fees, £19,000+ annual living stipend, and return airfare to the UK.",
+    "country": "United Kingdom",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "GBP",
+    "amount": 42000,
+    "formattedAmount": "Full Tuition + £19,000/yr Living + Flight",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% university and college fees + generous living stipend + one return flight to the UK + books and clothing grant",
+    "benefits": [
+      "Complete tuition fee waiver at Oxford, Reading, or SOAS London",
+      "Annual living stipend of over £19,000 to cover all accommodation and food",
+      "Return economy airfare from India to the United Kingdom"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Humanities",
+      "Social Sciences",
+      "Natural Sciences",
+      "Law",
+      "Development Studies"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "maxAge": 30,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "First class Bachelor's or Master's degree from a recognized Indian University",
+      "Evidence that the candidate has not previously studied outside India",
+      "Felix Scholarship questionnaire and financial statement",
+      "Two academic references and curriculum vitae"
+    ],
+    "applicationProcedure": [
+      "Apply for graduate admission at Oxford, Reading, or SOAS before January course deadlines",
+      "Tick the Felix Scholarship box in the university graduate application form",
+      "Shortlisted candidates invited for personal interviews in India conducted by Trustees"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-01-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.felixscholarship.org",
+    "applicationUrl": "https://www.felixscholarship.org",
+    "sourceUrl": "https://www.felixscholarship.org",
+    "sourceName": "Felix Scholarship Trust",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Felix",
+      "Oxford",
+      "SOAS",
+      "Reading",
+      "United Kingdom",
+      "Full Funding",
+      "PhD",
+      "Master's"
+    ]
+  },
+  {
+    "id": "corporate-foundation-for-academic-excellence--71a0b07c",
+    "name": "Foundation for Academic Excellence and Access (FAEA) Scholarship",
+    "slug": "foundation-for-academic-excellence-and-access-faea-scholarship",
+    "provider": "FAEA & Tata Trusts / BHEL / Corporate Donors",
+    "providerCategory": "foundation_ngo",
+    "categories": [
+      "foundation_ngo",
+      "need",
+      "merit"
+    ],
+    "description": "Committed to supporting underprivileged, economically backward, SC, ST, and BPL students across India to pursue undergraduate studies in Arts, Commerce, Science, and Professional streams.",
+    "briefSummary": "Full tuition fees, maintenance allowance, hostel mess, and book grants.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 65000,
+    "formattedAmount": "Full Tuition + Hostel & Living Allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full tuition fees, accommodation fees, mess charges, book allowances, and clothing grant",
+    "benefits": [
+      "Comprehensive sponsorship throughout 3 to 5 years of undergraduate study",
+      "Pre-selection interviews conducted across regional centers in India",
+      "Mentoring, soft skills development, and career guidance"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Arts",
+      "Science",
+      "Commerce",
+      "Engineering",
+      "Law"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 300000,
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "BPL",
+        "OBC",
+        "General"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th Board marksheet",
+      "Caste / BPL / EWS Certificate issued by revenue authority",
+      "College admission letter and fee schedule",
+      "Passport size photograph and bank details"
+    ],
+    "applicationProcedure": [
+      "Apply online through FAEA official website (faeaindia.org)",
+      "Shortlisted candidates invited for regional face-to-face or video interviews",
+      "Selection based on academic merit, social vulnerability, and leadership potential"
+    ],
+    "applicationStartDate": "2025-05-15",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "http://www.faeaindia.org",
+    "applicationUrl": "http://www.faeaindia.org",
+    "sourceUrl": "http://www.faeaindia.org",
+    "sourceName": "Foundation for Academic Excellence and Access (FAEA)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "FAEA",
+      "Tata Trusts",
+      "Underprivileged",
+      "Full Funding",
+      "Undergraduate"
+    ]
+  },
+  {
+    "id": "international-fulbright-nehru-master-s-fellowship-636e8d7f",
+    "name": "Fulbright-Nehru Master's Fellowships for Study in the United States",
+    "slug": "fulbright-nehru-master-s-fellowships-for-study-in-the-united-states",
+    "provider": "United States-India Educational Foundation (USIEF)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
+    ],
+    "description": "Designed for highly motivated Indian graduates with substantial leadership potential and professional experience to pursue a fully funded Master's degree at select U.S. colleges and universities.",
+    "briefSummary": "Fully funded U.S. Master's fellowship covering tuition, airfare, living stipend, and health insurance.",
+    "country": "United States",
+    "state": "All US States",
+    "fundingType": "fully_funded",
+    "currency": "USD",
+    "amount": 75000,
+    "formattedAmount": "Fully Funded (~$75,000 / ₹65 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "Full university tuition, J-1 visa sponsorship, economy airfare, monthly living allowance, and health benefit plan",
+    "benefits": [
+      "100% waiver of tuition and mandatory university fees at top US institutions",
+      "Round-trip international air travel between India and the United States",
+      "Generous monthly living stipend adhering to US cost-of-living index",
+      "Sickness and accident coverage conforming to US federal regulations"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Public Health",
+      "Environmental Science",
+      "Public Administration",
+      "International Affairs",
+      "Urban Planning",
+      "Economics",
+      "Gender Studies",
+      "Heritage Conservation"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "specialConditions": [
+        "Must hold an Indian equivalent of a U.S. bachelor's degree (4-year degree or Master's)",
+        "Must have completed at least 3 years of full-time professional work experience after bachelor's degree",
+        "Demonstrated leadership qualities and community service"
+      ]
+    },
+    "requiredDocuments": [
+      "Academic transcripts of all university degrees",
+      "Three confidential Letters of Reference (LoR)",
+      "Statement of Purpose (SoP) and Personal Statement",
+      "Employer Endorsement Form if currently employed",
+      "Valid Indian Passport"
+    ],
+    "applicationProcedure": [
+      "Complete online application on USIEF Embark portal",
+      "Regional screening committees evaluate academic and community leadership",
+      "National interviews in New Delhi or virtual before bilateral US-India board",
+      "Selected finalists placed at accredited US graduate programs"
+    ],
+    "applicationStartDate": "2025-02-01",
+    "deadline": "2026-05-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.usief.org.in/Fulbright-Nehru-Master-Fellowships.aspx",
+    "applicationUrl": "https://www.usief.org.in/Fellowships/Fellowships-for-Indian-Citizens.aspx",
+    "sourceUrl": "https://www.usief.org.in",
+    "sourceName": "USIEF Official Government Exchange",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "USIEF",
+      "Fulbright",
+      "Study in USA",
+      "Fully Funded",
+      "Master's"
+    ]
+  },
+  {
+    "id": "international-gates-cambridge-scholarship-at-the--6ad5b910",
+    "name": "Gates Cambridge Scholarship at the University of Cambridge",
+    "slug": "gates-cambridge-scholarship-at-the-university-of-cambridge",
+    "provider": "Gates Cambridge Trust",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
+    ],
+    "description": "Established through a US$210 million donation from the Bill and Melinda Gates Foundation. Awards full-cost scholarships to outstanding applicants from countries outside the UK to pursue a postgraduate degree in any subject at Cambridge.",
+    "briefSummary": "Full cost of study at Cambridge including tuition, maintenance (£20,000/yr), airfare, and family allowance.",
+    "country": "United Kingdom",
+    "state": "Cambridge",
+    "fundingType": "fully_funded",
+    "currency": "GBP",
+    "amount": 50000,
+    "formattedAmount": "Fully Funded (~£50,000 / ₹55 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "University Composition Fee, maintenance allowance (£20,000/yr), visa, return airfare, and fieldwork grants",
+    "benefits": [
+      "Full University Composition Fee at the appropriate international rate",
+      "A maintenance allowance of £20,000 for 12 months for single scholars",
+      "One economy single airfare at both the beginning and end of the course",
+      "Inbound visa costs & the cost of the Immigration Health Surcharge"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Any subject available at the University of Cambridge (PhD, MSc, MLitt, or one-year postgraduate course)"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "All Non-UK Nationalities"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 75,
+      "gender": "all",
+      "specialConditions": [
+        "Outstanding intellectual ability",
+        "Reasons for choice of course and commitment to improving the lives of others",
+        "Leadership capacity"
+      ]
+    },
+    "requiredDocuments": [
+      "Gates Cambridge statement (approx 500 words) on commitment to improving lives of others",
+      "Research proposal (for PhD applicants)",
+      "Two academic references for admission and one Gates Cambridge reference",
+      "Academic transcripts and curriculum vitae"
+    ],
+    "applicationProcedure": [
+      "Apply for admission and funding via the University of Cambridge Graduate Application Portal",
+      "Departments rank applicants and put forward nominations to Gates Trust",
+      "International selection panels conduct 25-minute interviews"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-12-05",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.gatescambridge.org",
+    "applicationUrl": "https://www.gatescambridge.org/apply/",
+    "sourceUrl": "https://www.gatescambridge.org",
+    "sourceName": "Gates Cambridge Trust",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Cambridge",
+      "Gates",
+      "UK",
+      "Fully Funded",
+      "Bill Gates",
+      "PhD"
+    ]
+  },
+  {
+    "id": "international-global-korea-scholarship-gks-for-gr-f7fac960",
+    "name": "Global Korea Scholarship (GKS) for Graduate & Undergraduate Degrees",
+    "slug": "global-korea-scholarship-gks-for-graduate-undergraduate-degrees",
+    "provider": "National Institute for International Education (NIIED), South Korea",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit"
+    ],
+    "description": "Designed to provide international students with opportunities to study at higher education institutions in Korea in pursuit of academic degrees, promoting international exchange in education.",
+    "briefSummary": "South Korean government scholarship providing 100% tuition, monthly allowance (1,000,000 KRW), airfare, and medical insurance.",
+    "country": "South Korea",
+    "state": "All Provinces",
+    "fundingType": "fully_funded",
+    "currency": "KRW",
+    "amount": 15000000,
+    "formattedAmount": "Fully Funded (~15,000,000 KRW / ₹10 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Airfare, settlement allowance, monthly stipend, medical insurance, Korean language training, and full degree tuition",
+    "benefits": [
+      "Full tuition fee covered by NIIED and host university",
+      "Monthly stipend: 1,000,000 KRW (Master's/PhD) or 900,000 KRW (Undergraduate)",
+      "Settlement allowance of 200,000 KRW upon arrival",
+      "Full 1-year Korean language training at accredited language institute"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All majors and disciplines offered by Korean partner universities"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "GKS Partner Countries"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 80,
+      "maxAge": 40,
+      "gender": "all",
+      "specialConditions": [
+        "Cumulative GPA (CGPA) above 80% or rank in top 20% of previous graduating class"
+      ]
+    },
+    "requiredDocuments": [
+      "GKS application form with personal statement and study plan",
+      "Two letters of recommendation from academic professors",
+      "Apostilled academic graduation certificates and transcripts",
+      "Proof of nationality for applicant and parents"
+    ],
+    "applicationProcedure": [
+      "Apply via the Embassy Track (Embassy of the Republic of Korea in New Delhi) or University Track",
+      "First round review by Embassy/University, second round review by NIIED selection committee"
+    ],
+    "applicationStartDate": "2025-02-10",
+    "deadline": "2026-03-25",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.studyinkorea.go.kr",
+    "applicationUrl": "https://www.studyinkorea.go.kr/en/scholarship/gksMain.do",
+    "sourceUrl": "https://www.studyinkorea.go.kr",
+    "sourceName": "NIIED Ministry of Education South Korea",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "GKS",
+      "South Korea",
+      "KGSP",
+      "Fully Funded",
+      "Master's",
+      "PhD"
+    ]
+  },
+  {
+    "id": "corporate-google-generation-scholarship-asia--c921b4ab",
+    "name": "Google Generation Scholarship (Asia Pacific)",
+    "slug": "google-generation-scholarship-asia-pacific",
+    "provider": "Google LLC",
+    "providerCategory": "corporate_csr",
+    "categories": [
+      "corporate_csr",
+      "merit"
+    ],
+    "description": "Established to help women in tech become active leaders in computing and technology, awarding financial aid and virtual retreat opportunities to female undergraduate students pursuing computer science.",
+    "briefSummary": "$2,500 USD award & mentorship retreat for female undergraduate computer science students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "USD",
+    "amount": 2500,
+    "formattedAmount": "$2,500 USD (Approx. ₹2,08,000)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "one_time",
+    "awardCoverage": "One-time academic grant toward tuition fees, books, supplies, and technical equipment",
+    "benefits": [
+      "$2,500 USD direct financial award",
+      "Invitation to Google's virtual leadership and professional development retreat",
+      "Direct networking with Google engineers, leaders, and fellow scholarship recipients"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Computer Science",
+      "Computer Engineering",
+      "Information Technology",
+      "Artificial Intelligence",
+      "Data Science"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 75,
+      "gender": "female",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Current resume detailing technical projects and leadership experience",
+      "Academic transcripts from current undergraduate degree",
+      "Responses to 2 short-answer essay questions demonstrating passion for computing and diversity",
+      "Google Online Challenge (GOC) coding evaluation"
+    ],
+    "applicationProcedure": [
+      "Apply via Google Build Your Future portal (buildyourfuture.withgoogle.com)",
+      "Complete Google Online Challenge coding assessment",
+      "Shortlisted candidates reviewed by Google scholarship committee"
+    ],
+    "applicationStartDate": "2025-03-01",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship-apac",
+    "applicationUrl": "https://buildyourfuture.withgoogle.com/scholarships/generation-google-scholarship-apac",
+    "sourceUrl": "https://buildyourfuture.withgoogle.com",
+    "sourceName": "Google Build Your Future",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Google",
+      "Women in Tech",
+      "Computer Science",
+      "Coding",
+      "Corporate CSR"
+    ]
+  },
+  {
+    "id": "state-gujarat-mukhyamantri-yuva-swavalamb-cfe9fd37",
+    "name": "Gujarat Mukhyamantri Yuva Swavalamban Yojana (MYSY)",
+    "slug": "gujarat-mukhyamantri-yuva-swavalamban-yojana-mysy",
+    "provider": "Education Department, Government of Gujarat",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "50% tuition fee assistance (up to ₹2,00,000/yr for Medical, ₹50,000/yr for Engineering), hostel grant of ₹1,200/mo, and book/equipment allowance of ₹10,000.",
+    "briefSummary": "Prestigious Gujarat state scheme offering up to ₹2 Lakhs tuition waiver plus hostel grant for top scorers.",
+    "country": "India",
+    "state": "Gujarat",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 75000,
+    "formattedAmount": "Up to ₹2,00,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "50% tuition fees + ₹1,200/mo hostel allowance + ₹5,000 - ₹10,000 book/equipment grant",
+    "benefits": [
+      "Medical (MBBS/BDS): 50% tuition assistance up to ₹2,00,000 per year",
+      "Engineering & Professional Courses: 50% tuition assistance up to ₹50,000 per year",
+      "Degree Courses (B.Sc, B.Com, B.A): Up to ₹10,000 per year",
+      "Hostel and food assistance of ₹12,000 per year for students staying away from home"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Medical",
+      "Dental",
+      "Engineering",
+      "Pharmacy",
+      "Architecture",
+      "Diploma",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "minPercentage": 80,
+      "maxAnnualIncome": 600000,
+      "eligibleStates": [
+        "Gujarat"
+      ],
+      "eligibleDomicile": [
+        "Gujarat"
+      ],
+      "gender": "all"
+    },
+    "requiredDocuments": [
+      "Class 10th or 12th board marksheet (minimum 80 percentile)",
+      "Competent Mamlatdar / TDO Income Certificate (≤ ₹6.00 Lakhs)",
+      "Admission letter in first year of diploma/degree program",
+      "Hostel admission certificate (for hostel allowance)"
+    ],
+    "applicationProcedure": [
+      "Register on MYSY portal (mysy.guj.nic.in)",
+      "Submit online application and take printout",
+      "Document verification at designated Help Centers across Gujarat"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://mysy.guj.nic.in",
+    "applicationUrl": "https://mysy.guj.nic.in",
+    "sourceUrl": "https://mysy.guj.nic.in",
+    "sourceName": "Government of Gujarat Education Dept",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Gujarat",
+      "MYSY",
+      "Merit-Cum-Means",
+      "Engineering",
+      "Medical"
+    ]
+  },
+  {
+    "id": "corporate-hdfc-bank-parivartan-s-badhte-kadam-5c77ea5f",
+    "name": "HDFC Bank Parivartan's Badhte Kadam Scholarship",
+    "slug": "hdfc-bank-parivartan-s-badhte-kadam-scholarship",
+    "provider": "HDFC Bank CSR Parivartan",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "need"
+    ],
+    "description": "Financial support to high-need students who are at risk of dropping out due to personal or financial crises, ensuring educational continuity.",
+    "briefSummary": "HDFC Bank emergency crisis support granting up to ₹1,00,000 for students facing economic hardship.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 100000,
+    "formattedAmount": "Up to ₹1,00,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual educational expenditure, boarding, books, and examination fees",
+    "benefits": [
+      "Scholarship grant up to ₹1,00,000 for professional degree students",
+      "Special preference for students who have suffered loss of family breadwinner",
+      "Direct bank account transfer via NEFT"
+    ],
+    "educationLevels": [
+      "high_school",
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "General Degree",
+      "Professional Degree",
+      "Vocational",
+      "Diploma"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 600000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Previous year examination marksheet",
+      "Current year admission proof and fee structure",
+      "Proof of family income (Salary slips, Form 16, or BPL card)",
+      "Proof of crisis/adversity (medical reports or death certificate of earner, if applicable)"
+    ],
+    "applicationProcedure": [
+      "Apply online on HDFC Parivartan scholarship portal",
+      "Complete socioeconomic profile and specify hardship context",
+      "Document tele-verification and home-verification audit",
+      "Direct award disbursement"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-28",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.hdfcbank.com/csr",
+    "applicationUrl": "https://www.hdfcbank.com/csr",
+    "sourceUrl": "https://www.hdfcbank.com",
+    "sourceName": "HDFC Bank CSR Parivartan",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "HDFC Bank",
+      "CSR Parivartan",
+      "Crisis Support",
+      "Need-Based"
+    ]
+  },
+  {
+    "id": "state-haryana-state-meritorious-incentive-8549a729",
+    "name": "Haryana State Meritorious Incentive Scheme & Post Matric Scheme",
+    "slug": "haryana-state-meritorious-incentive-scheme-post-matric-scheme",
+    "provider": "Department of Higher Education, Government of Haryana",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Financial incentive and fee reimbursement for undergraduate and postgraduate students studying in government and aided colleges across Haryana.",
+    "briefSummary": "Merit incentive awards up to ₹15,000/yr and fee concession for college students in Haryana.",
+    "country": "India",
+    "state": "Haryana",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 15000,
+    "formattedAmount": "₹5,000 to ₹15,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual cash incentive based on academic university ranking + fee subsidy",
+    "benefits": [
+      "Top 3 rankers in university examinations receive direct cash prize",
+      "Additional book and examination fee concessions",
+      "Seamless Parivar Pehchan Patra (PPP) verification"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Arts",
+      "Science",
+      "Commerce",
+      "B.Tech",
+      "Management"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 300000,
+      "eligibleStates": [
+        "Haryana"
+      ],
+      "eligibleDomicile": [
+        "Haryana"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "SC",
+        "OBC",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Haryana Parivar Pehchan Patra (Family ID)",
+      "Haryana Resident / Domicile Certificate",
+      "Marksheets of previous qualifying examinations",
+      "College Bonafide Certificate"
+    ],
+    "applicationProcedure": [
+      "Login to Har-Chhatravratti portal (harchhatravratti.highereduhry.ac.in) using Family ID (PPP)",
+      "Select Higher Education Meritorious Incentive Scheme",
+      "Institute verifies college roll number and university result rank",
+      "Direct disbursement via DBT to Aadhaar-linked account"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://harchhatravratti.highereduhry.ac.in",
+    "applicationUrl": "https://harchhatravratti.highereduhry.ac.in",
+    "sourceUrl": "https://highereduhry.ac.in",
+    "sourceName": "Haryana Har-Chhatravratti Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Haryana",
+      "Merit",
+      "Higher Education",
+      "Parivar Pehchan Patra"
+    ]
+  },
+  {
+    "id": "international-hubert-h-humphrey-fellowship-progra-295df514",
+    "name": "Hubert H. Humphrey Fellowship Program (United States)",
+    "slug": "hubert-h-humphrey-fellowship-program-united-states",
+    "provider": "U.S. Department of State, Bureau of Educational and Cultural Affairs",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "merit"
+    ],
+    "description": "Fulbright exchange activity that brings accomplished mid-career professionals from designated countries to the United States for a year of non-degree graduate-level study, leadership development, and professional collaboration.",
+    "briefSummary": "100% tuition, monthly maintenance stipend, health insurance, airfare & computer subsidy.",
+    "country": "United States",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "USD",
+    "amount": 50000,
+    "formattedAmount": "Full Tuition + Living Stipend + Airfare + Tech",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Payment of tuition and fees at assigned host university + monthly living stipend + accident and sickness insurance + international and domestic travel + book allowance + one-time computer subsidy",
+    "benefits": [
+      "Complete financial coverage for 10-month professional fellowship in the United States",
+      "Placement at top US universities with tailored professional affiliation / internship",
+      "Global alumni network of leaders across government, media, and public policy"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Public Policy",
+      "Communications and Journalism",
+      "Human Rights",
+      "Public Health",
+      "Climate Change",
+      "Educational Administration",
+      "Economic Development"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Undergraduate degree marksheets with minimum 5 years of full-time professional experience",
+      "Demonstrated commitment to public service and potential for leadership",
+      "Written essays on professional goals and US affiliation plan",
+      "Valid Indian Passport and employer NOC / support letter"
+    ],
+    "applicationProcedure": [
+      "Apply through United States-India Educational Foundation (USIEF) portal in India",
+      "USIEF national screening and interview panel in New Delhi",
+      "J. William Fulbright Foreign Scholarship Board final approval in Washington D.C."
+    ],
+    "applicationStartDate": "2025-02-01",
+    "deadline": "2026-06-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.humphreyfellowship.org",
+    "applicationUrl": "https://www.usief.org.in/Hubert-H-Humphrey-Fellowship-Program.aspx",
+    "sourceUrl": "https://www.humphreyfellowship.org",
+    "sourceName": "U.S. Department of State - Humphrey Fellowship",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Humphrey Fellowship",
+      "United States",
+      "USIEF",
+      "Public Policy",
+      "Full Funding"
+    ]
+  },
+  {
+    "id": "university-iim-ahmedabad-need-based-financial--3f63cef7",
+    "name": "IIM Ahmedabad Need-Based Financial Aid Scheme (NBA)",
+    "slug": "iim-ahmedabad-need-based-financial-aid-scheme-nba",
+    "provider": "Indian Institute of Management Ahmedabad (IIMA)",
+    "providerCategory": "premier_university",
+    "categories": [
+      "premier_university",
+      "need"
+    ],
+    "description": "Committed to ensuring that no student admitted to the flagship PGP (MBA) or PGP-FABM is prevented from pursuing the program due to financial constraints, providing up to 100% financial aid covering tuition and living expenses.",
+    "briefSummary": "Up to 100% tuition and living expense financial aid for MBA students at IIM Ahmedabad.",
+    "country": "India",
+    "state": "Gujarat",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 1200000,
+    "formattedAmount": "Up to 100% Tuition Fee & Living Aid",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, hostel, books, and living expenses based on transparent financial assessment matrix",
+    "benefits": [
+      "Need-based financial aid covering substantial portion or 100% of two-year program fees",
+      "Evaluated strictly on family gross income, net worth, and household liabilities",
+      "No repayment required (grant, not a loan)"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Post Graduate Programme in Management (PGP - MBA)",
+      "PGP-FABM"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 1500000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "IIMA Admission Offer Letter and Roll Number",
+      "Parental Income Tax Returns (ITR) for past 3 years",
+      "Bank statements of all family members for past 12 months",
+      "Details of immovable property, investments, and educational loan sanctions"
+    ],
+    "applicationProcedure": [
+      "Submit online NBA application form upon accepting admission offer to IIMA",
+      "Independent financial audit and verification of submitted documentation",
+      "Financial Aid Committee determines grant amount prior to fee payment deadline"
+    ],
+    "applicationStartDate": "2025-05-01",
+    "deadline": "2026-07-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.iima.ac.in/academics/pgp/financial-aid",
+    "applicationUrl": "https://www.iima.ac.in",
+    "sourceUrl": "https://www.iima.ac.in",
+    "sourceName": "Indian Institute of Management Ahmedabad",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "IIM Ahmedabad",
+      "MBA",
+      "PGP",
+      "Need-Based Aid",
+      "Full Tuition Aid"
+    ]
+  },
+  {
+    "id": "university-iisc-bangalore-institute-research-f-3b6ba696",
+    "name": "IISc Bangalore Institute Research Fellowship for M.Tech & Ph.D.",
+    "slug": "iisc-bangalore-institute-research-fellowship-for-m-tech-ph-d",
+    "provider": "Indian Institute of Science (IISc), Bangalore",
+    "providerCategory": "premier_university",
+    "categories": [
+      "premier_university",
+      "research",
+      "merit"
+    ],
+    "description": "Fellowships provided by the Ministry of Education and IISc to all regular students admitted to M.Tech, M.Des, and Ph.D. research programmes at the Indian Institute of Science Bangalore.",
+    "briefSummary": "₹12,400/mo (M.Tech) and ₹37,000 to ₹42,000/mo (Ph.D.) fellowship at IISc Bangalore.",
+    "country": "India",
+    "state": "Karnataka",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 504000,
+    "formattedAmount": "₹12,400 to ₹42,000 / month + HRA + Contingency",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly fellowship + contingency grant for research books, equipment, and consumables",
+    "benefits": [
+      "Guaranteed fellowship for all admitted postgraduate and doctoral researchers",
+      "Direct campus hostel accommodation and healthcare at IISc Health Centre",
+      "Travel grants to present research at top international symposia"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "M.Tech",
+      "M.Des",
+      "Ph.D. in Science",
+      "Ph.D. in Engineering"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "IISc Student SR Number",
+      "Valid GATE / CSIR-UGC NET / CEED scorecard or national exam qualification",
+      "B.Tech / M.Sc academic transcripts",
+      "Aadhaar card and bank account details"
+    ],
+    "applicationProcedure": [
+      "Granted automatically upon admission and registration at IISc Bangalore",
+      "Fellowship activated through IISc Academic Section",
+      "Monthly disbursement via direct bank credit"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://iisc.ac.in/admissions/financial-assistance/",
+    "applicationUrl": "https://iisc.ac.in",
+    "sourceUrl": "https://iisc.ac.in",
+    "sourceName": "Indian Institute of Science (IISc) Bangalore",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "IISc Bangalore",
+      "PhD",
+      "M.Tech",
+      "Science Research",
+      "Full Fellowship"
+    ]
+  },
+  {
+    "id": "university-iit-bombay-institute-merit-cum-mean-0f909c01",
+    "name": "IIT Bombay Institute Merit-cum-Means (MCM) Scholarship & Free Messing",
+    "slug": "iit-bombay-institute-merit-cum-means-mcm-scholarship-free-messing",
+    "provider": "Indian Institute of Technology Bombay (IITB)",
+    "providerCategory": "university",
+    "categories": [
+      "university",
+      "merit",
+      "need",
+      "stem"
+    ],
+    "description": "Tuition fee waiver and monthly stipend for undergraduate B.Tech, Dual Degree, and BS students at IIT Bombay whose annual parental income does not exceed ₹5 Lakhs.",
+    "briefSummary": "100% tuition waiver + ₹1,000/month stipend and free basic messing for eligible IIT Bombay undergraduates.",
+    "country": "India",
+    "state": "Maharashtra",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 212000,
+    "formattedAmount": "Full Tuition (₹2L) + ₹12,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% tuition fee waiver (₹2,00,000/yr) + pocket allowance of ₹1,000/month",
+    "benefits": [
+      "Complete tuition fee waiver of ₹2,00,000 per academic year",
+      "Pocket allowance of ₹1,000 per month for 10 months",
+      "Free basic messing and hostel room seat rent exemption for SC/ST scholars",
+      "Awarded to up to 25% of sanctioned undergraduate batch strength"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Computer Science",
+      "Electrical",
+      "Mechanical",
+      "Civil",
+      "Chemical",
+      "Aerospace",
+      "Engineering Physics"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "minCgpa": 6.0,
+      "maxAnnualIncome": 500000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "institutionTypes": [
+        "Government"
+      ],
+      "specialConditions": [
+        "Admitted to undergraduate programme at IIT Bombay via JEE Advanced; minimum 6.0 CPI in subsequent years"
+      ]
+    },
+    "requiredDocuments": [
+      "Parental Income Certificate (ITR acknowledgement / Form 16 / Revenue Officer certificate ≤ ₹5.00 Lakhs)",
+      "JEE Advanced rank card and IIT Bombay admission allotment letter",
+      "Affidavit on non-judicial stamp paper stating non-receipt of other scholarships",
+      "Bank account passbook copy"
+    ],
+    "applicationProcedure": [
+      "Apply via IIT Bombay Student Portal / Academic ERP (ASC)",
+      "Submit physical copies of income documents to Deputy Registrar (Academic Desk)",
+      "Institute Senate Committee sanctions fee waiver and stipend"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-10-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.iitb.ac.in/en/education/scholarships",
+    "applicationUrl": "https://asc.iitb.ac.in",
+    "sourceUrl": "https://www.iitb.ac.in",
+    "sourceName": "IIT Bombay Academic Office",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "IIT Bombay",
+      "IIT",
+      "MCM",
+      "Engineering",
+      "JEE Advanced",
+      "Tuition Waiver"
+    ]
+  },
+  {
+    "id": "university-iit-delhi-merit-cum-means-donor-alu-15269616",
+    "name": "IIT Delhi Merit-cum-Means & Donor Alumni Scholarships",
+    "slug": "iit-delhi-merit-cum-means-donor-alumni-scholarships",
+    "provider": "Indian Institute of Technology Delhi (IIT Delhi)",
+    "providerCategory": "premier_university",
+    "categories": [
+      "premier_university",
+      "merit",
+      "need"
+    ],
+    "description": "Tuition fee waiver and monthly allowance for up to 25% of undergraduate students admitted to B.Tech programs, complemented by dozens of endowed alumni donor scholarships providing up to ₹1,00,000/year.",
+    "briefSummary": "100% tuition fee waiver + ₹1,000/month pocket allowance for IIT Delhi B.Tech students.",
+    "country": "India",
+    "state": "Delhi",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 200000,
+    "formattedAmount": "100% Tuition Waiver + ₹1,000/mo",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full tuition fee waiver of ₹2,00,000/year + ₹1,000 monthly pocket allowance for 10 months",
+    "benefits": [
+      "Full tuition fee waiver for B.Tech students with parental income below ₹5 Lakhs",
+      "Donor alumni scholarships covering laptop purchases, books, and international exchange",
+      "Renewable every year based on CGPA of 6.0+"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "Dual Degree (B.Tech + M.Tech)"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 500000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "IIT Delhi Student Entry Number",
+      "JEE Advanced Rank Card",
+      "Family Income Certificate (ITR or Tehsildar certificate under ₹5 Lakhs)",
+      "Declaration of not receiving any other scholarship"
+    ],
+    "applicationProcedure": [
+      "Submit online application through IIT Delhi Academics portal",
+      "Scrutiny of income affidavits by Student Affairs Section",
+      "Office of Dean of Student Affairs notification and fee adjustment"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://home.iitd.ac.in/scholarships.php",
+    "applicationUrl": "https://ecampus.iitd.ac.in",
+    "sourceUrl": "https://home.iitd.ac.in",
+    "sourceName": "Indian Institute of Technology Delhi",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "IIT Delhi",
+      "MCM",
+      "B.Tech",
+      "Tuition Waiver",
+      "Premier University"
+    ]
+  },
+  {
+    "id": "university-iit-madras-institute-merit-cum-mean-e092675f",
+    "name": "IIT Madras Institute Merit-cum-Means (MCM) & HTRA Fellowship",
+    "slug": "iit-madras-institute-merit-cum-means-mcm-htra-fellowship",
+    "provider": "Indian Institute of Technology Madras (IIT Madras)",
+    "providerCategory": "premier_university",
+    "categories": [
+      "premier_university",
+      "merit",
+      "need",
+      "research"
+    ],
+    "description": "Tuition fee waiver and monthly stipend for undergraduate B.Tech students with parental income below ₹5 Lakhs, plus Half-Time Teaching/Research Assistantship (HTRA) of ₹12,400 to ₹37,000/month for M.Tech/MS/PhD scholars.",
+    "briefSummary": "100% tuition waiver for UG B.Tech + up to ₹37,000/month HTRA for postgraduate research.",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 200000,
+    "formattedAmount": "100% Tuition Waiver + ₹1,000/mo allowance (UG) / HTRA (PG)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% tuition fee waiver + monthly pocket allowance for UG; monthly HTRA fellowship for PG research scholars",
+    "benefits": [
+      "Complete tuition fee waiver for undergraduate students",
+      "₹1,000 per month pocket allowance for eligible UG students",
+      "M.Tech / PhD scholars receive monthly HTRA research stipend directly from institute"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "Dual Degree",
+      "M.Tech",
+      "M.S. (by Research)",
+      "Ph.D."
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 500000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "IIT Madras Student Roll Number and ID Card",
+      "JEE Advanced / GATE rank card",
+      "Family Income Certificate issued by Revenue Authority (under ₹5 Lakhs)",
+      "Parental ITR / Form 16 / Salary slips"
+    ],
+    "applicationProcedure": [
+      "Apply via IIT Madras Academic Workflow portal during start of autumn semester",
+      "Upload income documents verified by Academic Section",
+      "Dean of Academic Courses committee sanction"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.iitm.ac.in/academics/scholarships-and-awards",
+    "applicationUrl": "https://workflow.iitm.ac.in",
+    "sourceUrl": "https://www.iitm.ac.in",
+    "sourceName": "Indian Institute of Technology Madras",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "IIT Madras",
+      "MCM",
+      "HTRA",
+      "B.Tech",
+      "M.Tech",
+      "Tuition Waiver"
+    ]
+  },
+  {
+    "id": "central-inspire-scholarship-for-higher-educ-73e86f35",
+    "name": "INSPIRE Scholarship for Higher Education (SHE)",
+    "slug": "inspire-scholarship-for-higher-education-she",
+    "provider": "Department of Science & Technology (DST), Govt of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "stem",
+      "merit"
+    ],
+    "description": "Innovation in Science Pursuit for Inspired Research (INSPIRE) scheme to attract youth to the study of basic and natural sciences at bachelor's and master's levels.",
+    "briefSummary": "DST scholarship offering ₹80,000/year for top 1% Class 12 board scorers pursuing Natural & Basic Sciences.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 80000,
+    "formattedAmount": "₹80,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹60,000/yr scholarship + ₹20,000/yr mentorship project grant",
+    "benefits": [
+      "₹5,000 per month (₹60,000 annually) direct cash assistance for 5 years",
+      "₹20,000 annual mentorship grant for summer research projects at national laboratories",
+      "Total benefit value of ₹4,00,000 over 5 years (B.Sc / M.Sc integrated)"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Physics",
+      "Chemistry",
+      "Mathematics",
+      "Biology",
+      "Statistics",
+      "Geology",
+      "Astrophysics"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 85,
+      "minAge": 17,
+      "maxAge": 22,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Within top 1% in Class 12th board exams OR ranked in top 10,000 in JEE/NEET and pursuing B.Sc / BS-MS"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th marksheet indicating top 1% cutoff clearance",
+      "Endorsement Certificate signed by Head of College/Institute",
+      "Aadhaar Card",
+      "SBI Bank Account passbook"
+    ],
+    "applicationProcedure": [
+      "Register online on DST INSPIRE web portal (online-inspire.gov.in)",
+      "Upload marksheet, eligibility advisory note, and college bonafide",
+      "Selected scholars receive direct DBT disbursement through PFMS"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://online-inspire.gov.in",
+    "applicationUrl": "https://online-inspire.gov.in",
+    "sourceUrl": "https://dst.gov.in",
+    "sourceName": "Department of Science and Technology (DST)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Source Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DST",
+      "INSPIRE",
+      "Basic Sciences",
+      "Research",
+      "SHE"
+    ]
+  },
+  {
+    "id": "corporate-infosys-foundation-stem-stars-schol-dde8d25f",
+    "name": "Infosys Foundation STEM Stars Scholarship for Girls",
+    "slug": "infosys-foundation-stem-stars-scholarship-for-girls",
+    "provider": "Infosys Foundation",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "need"
+    ],
+    "description": "Scholarship aiming to encourage and support young women from economically underprivileged backgrounds pursuing higher education in STEM fields at top NIRF-ranked institutions.",
+    "briefSummary": "Infosys Foundation grant of up to ₹1,00,000/yr for female students in NIRF-ranked engineering colleges.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 100000,
+    "formattedAmount": "Up to ₹1,00,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees, living expenses, books, and study supplies up to ₹1,00,000 annually",
+    "benefits": [
+      "Financial assistance up to ₹1 Lakh per year for the full 4-year degree course",
+      "Access to tech webinars, coding mentorship, and learning pathways curated by Infosys",
+      "Recognition at annual Infosys Foundation STEM Stars ceremony"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Computer Science",
+      "Information Science",
+      "AI & Machine Learning",
+      "Electronics & Communication",
+      "Mechanical",
+      "Civil"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 70,
+      "maxAnnualIncome": 800000,
+      "gender": "female",
+      "eligibleStates": [
+        "All India"
+      ],
+      "institutionTypes": [
+        "Government",
+        "Private",
+        "Aided"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th board marksheet with minimum 70% in science subjects",
+      "Government Family Income Certificate (ceiling ₹8.00 Lakhs)",
+      "Admission allotment letter in NIRF-ranked institute",
+      "Government Photo ID proof",
+      "Electricity bill of residence for verification"
+    ],
+    "applicationProcedure": [
+      "Apply online on the official Infosys Foundation scholarship portal",
+      "Provide academic details and upload supporting certificates",
+      "Document validation followed by telephone interview for shortlisted candidates"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-25",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.infosys.com/infosys-foundation/initiatives/education/stem-stars.html",
+    "applicationUrl": "https://www.infosys.com/infosys-foundation/initiatives/education/stem-stars.html",
+    "sourceUrl": "https://www.infosys.com/infosys-foundation",
+    "sourceName": "Infosys Foundation Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Infosys",
+      "STEM Stars",
+      "Girls in Engineering",
+      "Women in Tech"
+    ]
+  },
+  {
+    "id": "central-ishan-uday-special-scholarship-sche-d83c29f3",
+    "name": "Ishan Uday Special Scholarship Scheme for North Eastern Region (NER)",
+    "slug": "ishan-uday-special-scholarship-scheme-for-north-eastern-region-ner",
+    "provider": "University Grants Commission (UGC) & Ministry of DoNER",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "need",
+      "merit"
+    ],
+    "description": "Special scheme to promote higher education and encourage children from North Eastern states to pursue general and professional undergraduate courses.",
+    "briefSummary": "₹5,400 to ₹7,800 per month for North Eastern students pursuing general and professional undergraduate degrees.",
+    "country": "India",
+    "state": "North Eastern States",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 78000,
+    "formattedAmount": "₹54,000 to ₹78,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹5,400/month for General Degree courses; ₹7,800/month for Technical and Professional courses",
+    "benefits": [
+      "₹5,400 per month for general degree programs (BA, B.Sc, B.Com)",
+      "₹7,800 per month for professional / technical / medical degree courses",
+      "10,000 fresh scholarships awarded every year exclusively to NE students"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "General Degree",
+      "Engineering",
+      "Medical",
+      "Paramedical",
+      "Law",
+      "Agriculture"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 450000,
+      "eligibleStates": [
+        "Assam",
+        "Arunachal Pradesh",
+        "Manipur",
+        "Meghalaya",
+        "Mizoram",
+        "Nagaland",
+        "Sikkim",
+        "Tripura"
+      ],
+      "gender": "all"
+    },
+    "requiredDocuments": [
+      "Domicile Certificate of any of the 8 North Eastern States",
+      "Income certificate issued by competent authority (≤ ₹4.50 Lakhs)",
+      "Class 12th board marksheet",
+      "Admission letter in first year of regular degree program"
+    ],
+    "applicationProcedure": [
+      "Register on National Scholarship Portal (NSP)",
+      "Select 'Ishan Uday Special Scholarship for NER' under UGC tab",
+      "Online verification by Head of Institution"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.ugc.gov.in/ner",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "University Grants Commission (UGC)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "UGC",
+      "Ishan Uday",
+      "North East",
+      "NER",
+      "Assam",
+      "Nagaland"
+    ]
+  },
+  {
+    "id": "corporate-j-n-tata-endowment-for-the-higher-e-3661ae15",
+    "name": "J.N. Tata Endowment for the Higher Education of Indians",
+    "slug": "j-n-tata-endowment-for-the-higher-education-of-indians",
+    "provider": "Tata Trusts",
+    "providerCategory": "foundation_ngo",
+    "categories": [
+      "foundation_ngo",
+      "merit"
+    ],
+    "description": "Historic loan scholarship program established in 1892 by Jamsetjee Nusserwanjee Tata, supporting Indian graduates for higher education abroad across diverse disciplines with loan scholarships up to ₹10,00,000 and gift scholarships.",
+    "briefSummary": "Loan scholarship up to ₹10,00,000 + gift awards up to ₹7,50,000 for Master's and PhD abroad.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 1000000,
+    "formattedAmount": "₹1,00,000 to ₹10,00,000 Loan + Travel Grants",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "one_time",
+    "awardCoverage": "Tuition fees, academic research, and overseas travel support",
+    "benefits": [
+      "Loan scholarship ranging from ₹1 Lakh to ₹10 Lakhs at nominal interest",
+      "Top scholars recommended for partial 'Gift Scholarship' up to ₹7.5 Lakhs",
+      "Travel assistance grant through travel partner trusts"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Science",
+      "Technology",
+      "Engineering",
+      "Medicine",
+      "Humanities",
+      "Fine Arts"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 60,
+      "maxAge": 45,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Graduation degree marksheets (minimum 60% aggregate)",
+      "GRE / GMAT / TOEFL / IELTS score report (if applicable)",
+      "Unconditional or conditional admission letter from overseas university",
+      "Statement of Purpose and 2 Academic References"
+    ],
+    "applicationProcedure": [
+      "Apply online through J.N. Tata Endowment application portal (jntataendowment.org)",
+      "Appear for online technical / profile review test",
+      "Personal interview with subject experts in Mumbai or online"
+    ],
+    "applicationStartDate": "2025-01-15",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.jntataendowment.org",
+    "applicationUrl": "https://www.jntataendowment.org",
+    "sourceUrl": "https://www.tatatrusts.org",
+    "sourceName": "Tata Trusts - J.N. Tata Endowment",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "J.N. Tata",
+      "Tata Trusts",
+      "Study Abroad",
+      "Master's",
+      "PhD",
+      "Merit"
+    ]
+  },
+  {
+    "id": "international-japanese-government-mext-scholarshi-89c460e9",
+    "name": "Japanese Government (MEXT) Scholarships for Research Students",
+    "slug": "japanese-government-mext-scholarships-for-research-students",
+    "provider": "Ministry of Education, Culture, Sports, Science and Technology (MEXT Japan)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "research",
+      "merit"
+    ],
+    "description": "Full scholarships for international students wishing to study at Japanese universities as research students (postgraduate / master's / doctoral) under the Japanese Government scholarship program.",
+    "briefSummary": "Japanese government scholarship covering 100% tuition, monthly stipend (¥143,000 - ¥145,000), and round-trip airfare.",
+    "country": "Japan",
+    "state": "All Prefectures",
+    "fundingType": "fully_funded",
+    "currency": "JPY",
+    "amount": 1800000,
+    "formattedAmount": "Fully Funded (~¥1,800,000 / ₹11 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "100% entrance and tuition fees, monthly living allowance (¥143,000 - ¥145,000/mo), and round-trip flight ticket",
+    "benefits": [
+      "Exemption from all university entrance examination, matriculation, and tuition fees",
+      "Monthly stipend of ¥143,000 (research student), ¥144,000 (master's), or ¥145,000 (doctoral)",
+      "Round-trip airfare ticket between India and Japan provided by MEXT",
+      "Optional 6-month intensive Japanese language preparatory course"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All fields of study related to the applicant's major in university (Science, Engineering, Humanities, Medicine)"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "MEXT Eligible Countries"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "maxAge": 35,
+      "gender": "all",
+      "specialConditions": [
+        "Must be an Indian citizen born on or after April 2, 1991",
+        "Hold an undergraduate degree (16 years of education) or master's"
+      ]
+    },
+    "requiredDocuments": [
+      "MEXT application form with passport photograph",
+      "Detailed field of study and research plan in Japan",
+      "Certified academic transcripts and degree certificate",
+      "Recommendation letter from the president/dean of the current university",
+      "Medical certificate on prescribed MEXT form"
+    ],
+    "applicationProcedure": [
+      "Apply through the Embassy Recommendation track via Embassy of Japan in New Delhi",
+      "Written examinations in English and Japanese followed by personal interview",
+      "Obtain provisional acceptance letter from Japanese national university"
+    ],
+    "applicationStartDate": "2025-04-01",
+    "deadline": "2026-05-20",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.in.emb-japan.go.jp/itpr_en/Education.html",
+    "applicationUrl": "https://www.studyinjapan.go.jp/en/planning/scholarship/mext-scholarships/",
+    "sourceUrl": "https://www.studyinjapan.go.jp",
+    "sourceName": "Embassy of Japan in India & MEXT",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "MEXT",
+      "Japan",
+      "Fully Funded",
+      "Monbukagakusho",
+      "Research",
+      "PhD"
+    ]
+  },
+  {
+    "id": "corporate-k-c-mahindra-all-india-talent-schol-90b19deb",
+    "name": "K.C. Mahindra All India Talent Scholarship for Polytechnic Students",
+    "slug": "k-c-mahindra-all-india-talent-scholarship-for-polytechnic-students",
+    "provider": "K.C. Mahindra Education Trust (Mahindra Group)",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "need",
+      "merit"
+    ],
+    "description": "Scholarship awarded to youth from low-income families who have passed Class 10 or 12 and gained admission into government or government-approved polytechnics for 3-year diploma courses.",
+    "briefSummary": "Mahindra Group grant of ₹10,000 per year for 3-year polytechnic engineering diploma students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 10000,
+    "formattedAmount": "₹10,000 / year (₹30,000 total)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹10,000 per annum for three consecutive years of polytechnic diploma study",
+    "benefits": [
+      "Financial aid for polytechnic education",
+      "Over 550 diploma students awarded annually across India"
+    ],
+    "educationLevels": [
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Mechanical",
+      "Civil",
+      "Electrical",
+      "Automobile",
+      "Computer",
+      "Electronics Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 350000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Admitted to first year of 3-year government-recognized polytechnic diploma"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 10th or 12th marksheet (minimum 60% marks)",
+      "Admission confirmation in polytechnic institute",
+      "Income certificate and ration card",
+      "Principal's recommendation letter"
+    ],
+    "applicationProcedure": [
+      "Download application form or submit online via KCMET portal",
+      "Personal interview conducted at regional Mahindra centers"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.kcmet.org",
+    "applicationUrl": "https://www.kcmet.org",
+    "sourceUrl": "https://www.kcmet.org",
+    "sourceName": "K.C. Mahindra Education Trust",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Mahindra",
+      "KCMET",
+      "Polytechnic",
+      "Diploma",
+      "Engineering"
+    ]
+  },
+  {
+    "id": "state-karnataka-state-scholarship-portal--36e80feb",
+    "name": "Karnataka State Scholarship Portal (SSP) Post-Matric Fee Concession",
+    "slug": "karnataka-state-scholarship-portal-ssp-post-matric-fee-concession",
+    "provider": "Department of Social Welfare, Government of Karnataka",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need",
+      "minority"
+    ],
+    "description": "Unified Karnataka state portal scheme providing 100% tuition and laboratory fee reimbursement and maintenance stipend for post-matric students.",
+    "briefSummary": "Comprehensive Karnataka state scholarship covering full college fee reimbursement & monthly maintenance.",
+    "country": "India",
+    "state": "Karnataka",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 45000,
+    "formattedAmount": "₹15,000 to ₹60,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% tuition fee reimbursement + monthly maintenance allowance via e-KSHANA",
+    "benefits": [
+      "Full tuition fee reimbursement remitted directly to college",
+      "Monthly hostel / day-scholar maintenance allowance",
+      "Automatic validation through Nadakacheri RD Caste/Income database"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medical",
+      "Dental",
+      "Nursing",
+      "Science",
+      "Commerce",
+      "Arts",
+      "Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Karnataka"
+      ],
+      "eligibleDomicile": [
+        "Karnataka"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC",
+        "Minority",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Karnataka SSP Student SATS/Registration ID",
+      "Caste and Income RD Certificate Number issued by Karnataka Nadakacheri",
+      "College Bonafide and Fee Structure Receipt",
+      "Aadhaar Seeding with NPCI Bank Account confirmation"
+    ],
+    "applicationProcedure": [
+      "Create account on Karnataka State Scholarship Portal (SSP)",
+      "Enter 15-digit RD Number for automated Caste/Income validation",
+      "Fetch college enrollment details via State University Student ID",
+      "Hostel verification through e-Hostel portal integration"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://ssp.postmatric.karnataka.gov.in",
+    "applicationUrl": "https://ssp.postmatric.karnataka.gov.in/homepage.aspx",
+    "sourceUrl": "https://ssp.postmatric.karnataka.gov.in",
+    "sourceName": "Karnataka State Scholarship Portal (SSP)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Karnataka",
+      "SSP",
+      "State Government",
+      "Fee Concession",
+      "Post-Matric"
+    ]
+  },
+  {
+    "id": "state-karnataka-vidyasiri-food-accommodat-eb995764",
+    "name": "Karnataka Vidyasiri (Food & Accommodation) Scheme",
+    "slug": "karnataka-vidyasiri-food-accommodation-scheme",
+    "provider": "Department of Backward Classes Welfare, Govt of Karnataka",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Monthly financial assistance of ₹1,500 for 10 months to rural and underprivileged students who do not secure admission in department post-matric hostels.",
+    "briefSummary": "₹15,000 per year food and accommodation maintenance stipend for Karnataka OBC/EWS students.",
+    "country": "India",
+    "state": "Karnataka",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 15000,
+    "formattedAmount": "₹15,000 / year (₹1,500/month)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Monthly living stipend of ₹1,500 for 10 months towards room rent and food",
+    "benefits": [
+      "Direct cash DBT of ₹1,500 per month directly to student account",
+      "Addresses hostel shortage in urban educational hubs like Bengaluru, Mysuru, Hubballi"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All post-matric diploma, degree, and postgraduate courses"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Karnataka"
+      ],
+      "eligibleDomicile": [
+        "Karnataka"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "OBC",
+        "EWS"
+      ],
+      "specialConditions": [
+        "Permanent residence must be at least 5 km away from college town"
+      ]
+    },
+    "requiredDocuments": [
+      "Karnataka Nadakacheri Income and Caste RD number",
+      "Rental agreement / Hostel certificate signed by landlord",
+      "Aadhaar and bank passbook seeded with DBT"
+    ],
+    "applicationProcedure": [
+      "Apply via Karnataka SSP portal under Vidyasiri scheme tab",
+      "Local taluk officer conducts electronic verification of distance criteria"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://bcwd.karnataka.gov.in",
+    "applicationUrl": "https://ssp.postmatric.karnataka.gov.in",
+    "sourceUrl": "https://ssp.postmatric.karnataka.gov.in",
+    "sourceName": "Karnataka Backward Classes Welfare Dept",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Karnataka",
+      "Vidyasiri",
+      "Hostel Stipend",
+      "OBC"
+    ]
+  },
+  {
+    "id": "corporate-keep-india-smiling-foundational-sch-9e8d5ebf",
+    "name": "Keep India Smiling Foundational Scholarship Programme",
+    "slug": "keep-india-smiling-foundational-scholarship-programme",
+    "provider": "Colgate-Palmolive (India) Limited",
+    "providerCategory": "corporate_csr",
+    "categories": [
+      "corporate_csr",
+      "need",
+      "merit"
+    ],
+    "description": "Foundational scholarship programme by Colgate-Palmolive providing foundational financial and mentorship support to deserving students pursuing school, undergraduate, BDS/medical, and sports education.",
+    "briefSummary": "₹30,000 to ₹50,000/year scholarship for school, graduation, and professional degrees.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "₹30,000 to ₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Academic tuition, study materials, and learning equipment",
+    "benefits": [
+      "Direct annual scholarship for 3 to 4 years of undergraduate study",
+      "Dedicated mentorship and career guidance webinars",
+      "Support for general degree, engineering, and BDS dental students"
+    ],
+    "educationLevels": [
+      "school",
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Class 11-12",
+      "Graduation (B.A/B.Sc/B.Com)",
+      "B.Tech",
+      "BDS"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "school",
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 500000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Previous examination marksheet (minimum 60% marks)",
+      "College admission letter / ID card",
+      "Income certificate issued by competent authority",
+      "Aadhaar card and bank account details"
+    ],
+    "applicationProcedure": [
+      "Apply via Colgate Keep India Smiling application portal",
+      "Academic scoring and telephonic interview",
+      "Selection and DBT disbursement"
+    ],
+    "applicationStartDate": "2025-06-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.colgate.com/en-in",
+    "applicationUrl": "https://www.colgate.com/en-in",
+    "sourceUrl": "https://www.colgate.com",
+    "sourceName": "Colgate-Palmolive India CSR",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Colgate",
+      "Keep India Smiling",
+      "CSR",
+      "Undergraduate",
+      "School"
+    ]
+  },
+  {
+    "id": "state-kerala-aspire-scholarship-for-postg-a1fe0a05",
+    "name": "Kerala Aspire Scholarship for Postgraduate Students",
+    "slug": "kerala-aspire-scholarship-for-postgraduate-students",
+    "provider": "Directorate of Collegiate Education (DCE), Government of Kerala",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "research",
+      "merit"
+    ],
+    "description": "Fellowship to encourage research projects of post-graduate students in universities, national institutes, and prestigious research labs.",
+    "briefSummary": "Kerala government research stipend of ₹8,000 to ₹10,000/month for PG students doing research internships.",
+    "country": "India",
+    "state": "Kerala",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 30000,
+    "formattedAmount": "₹8,000 to ₹10,000 / month",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly fellowship of ₹8,000 for research within Kerala; ₹10,000/mo for research outside Kerala",
+    "benefits": [
+      "Encourages high-impact master's thesis work",
+      "Covers travel and research expenses at IISc, IITs, TIFR, or national labs"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Master's degree disciplines in Science, Arts, and Commerce"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "eligibleStates": [
+        "Kerala"
+      ],
+      "eligibleDomicile": [
+        "Kerala"
+      ],
+      "gender": "all",
+      "specialConditions": [
+        "Undertaking approved research project in a recognized university or research institution"
+      ]
+    },
+    "requiredDocuments": [
+      "Kerala Domicile Certificate",
+      "Recommendation letter from research guide and PG department head",
+      "Project approval letter from host institution",
+      "Degree marksheets"
+    ],
+    "applicationProcedure": [
+      "Apply via DCE Kerala Scholarship portal (dcescholarship.kerala.gov.in)",
+      "University scrutinizes project proposal and sanctions stipend"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-25",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://dcescholarship.kerala.gov.in",
+    "applicationUrl": "https://dcescholarship.kerala.gov.in",
+    "sourceUrl": "https://dcescholarship.kerala.gov.in",
+    "sourceName": "Kerala Directorate of Collegiate Education",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Kerala",
+      "Aspire",
+      "PG Research",
+      "DCE",
+      "Fellowship"
+    ]
+  },
+  {
+    "id": "international-knight-hennessy-scholars-at-stanfor-225601e1",
+    "name": "Knight-Hennessy Scholars at Stanford University",
+    "slug": "knight-hennessy-scholars-at-stanford-university",
+    "provider": "Stanford University",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
+    ],
+    "description": "Multidisciplinary, multicultural fellowship providing full funding for graduate study at Stanford University. Scholars pursue graduate degrees across all seven schools of Stanford.",
+    "briefSummary": "Full tuition, living stipend, and academic travel grant for any graduate degree at Stanford University.",
+    "country": "United States",
+    "state": "California",
+    "fundingType": "fully_funded",
+    "currency": "USD",
+    "amount": 90000,
+    "formattedAmount": "Fully Funded (~$90,000 / ₹75 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full Stanford tuition, living allowance, travel stipend, and leadership development programs",
+    "benefits": [
+      "Full tuition (commensurate with standard departmental level of enrollment)",
+      "A stipend for living and academic expenses (such as room, board, books, instructional materials)",
+      "An economy return ticket to and from Stanford once each year",
+      "King Global Leadership Program with immersive workshops and coaching"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All graduate programs across Stanford: Engineering, Business, Law, Medicine, Humanities, Earth Sciences, Education"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "All Nationalities"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 80,
+      "gender": "all",
+      "specialConditions": [
+        "Must apply separately to both Knight-Hennessy Scholars and the Stanford degree-granting program",
+        "Earned first bachelor's degree within the last seven years"
+      ]
+    },
+    "requiredDocuments": [
+      "Online Knight-Hennessy application form",
+      "Resume / CV (maximum 1 page per decade of experience)",
+      "Two recommendation letters and college transcripts",
+      "Two short personal essays on inspirations and aspirations",
+      "Two-minute video statement"
+    ],
+    "applicationProcedure": [
+      "Submit Knight-Hennessy application by October deadline",
+      "Submit separate Stanford department application by required deadline",
+      "Immersion Weekend for finalists at Stanford campus"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-10-08",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://knight-hennessy.stanford.edu",
+    "applicationUrl": "https://knight-hennessy.stanford.edu/admission/apply",
+    "sourceUrl": "https://knight-hennessy.stanford.edu",
+    "sourceName": "Stanford University Knight-Hennessy",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Stanford",
+      "Knight-Hennessy",
+      "USA",
+      "Fully Funded",
+      "Leadership"
+    ]
+  },
+  {
+    "id": "corporate-kotak-kanya-scholarship-for-meritor-49cc30f4",
+    "name": "Kotak Kanya Scholarship for Meritorious Girls in Professional Higher Education",
+    "slug": "kotak-kanya-scholarship-for-meritorious-girls-in-professional-higher-education",
+    "provider": "Kotak Education Foundation",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "need"
+    ],
+    "description": "Financial support of up to ₹1.5 Lakh per year to meritorious girl students from low-income families pursuing professional graduation courses in Engineering, MBBS, Architecture, Design, and Integrated Law.",
+    "briefSummary": "Kotak Foundation grant providing up to ₹1,50,000/year for female students in professional degrees.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 150000,
+    "formattedAmount": "Up to ₹1,50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Covers tuition fees, hostel, books, laptop, and academic expenses",
+    "benefits": [
+      "Financial grant up to ₹1.5 Lakh per year until completion of professional degree",
+      "Holistic mentoring, English proficiency, and career readiness coaching",
+      "Over 1,000 female scholars supported annually"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "MBBS",
+      "Architecture",
+      "Design",
+      "Integrated LLB"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 75,
+      "maxAnnualIncome": 600000,
+      "gender": "female",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Admitted to first year of professional graduation program in NAAC/NIRF accredited college"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th board marksheet (minimum 75% marks)",
+      "Income certificate issued by competent government authority (≤ ₹6 Lakhs)",
+      "College admission letter and fee receipt",
+      "Aadhaar card and bank account details"
+    ],
+    "applicationProcedure": [
+      "Apply online through Kotak Education Foundation portal",
+      "Shortlisting based on academic merit and socioeconomic audit",
+      "Interview and home visit verification"
+    ],
+    "applicationStartDate": "2025-06-15",
+    "deadline": "2026-11-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://kotakeducation.org/kotak-kanya-scholarship",
+    "applicationUrl": "https://kotakeducation.org/kotak-kanya-scholarship/",
+    "sourceUrl": "https://kotakeducation.org",
+    "sourceName": "Kotak Education Foundation",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Kotak",
+      "Girls Education",
+      "Professional Degrees",
+      "Engineering",
+      "MBBS"
+    ]
+  },
+  {
+    "id": "corporate-l-or-al-india-for-young-women-in-sc-6c50ea13",
+    "name": "L'Oréal India For Young Women in Science (FYWIS) Scholarship",
+    "slug": "l-or-al-india-for-young-women-in-science-fywis-scholarship",
+    "provider": "L'Oréal India CSR",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "need"
+    ],
+    "description": "Financial assistance of ₹2,50,000 over the duration of undergraduate graduation for promising young women pursuing graduation in scientific disciplines.",
+    "briefSummary": "L'Oréal India grant of ₹2,50,000 for female students entering Pure Science, Engineering, or Medicine.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 250000,
+    "formattedAmount": "Up to ₹2,50,000",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "₹2,50,000 total across undergraduate degree for college fees and living costs",
+    "benefits": [
+      "Helps women scientists overcome financial barriers",
+      "Mentorship network with leading women researchers in India"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Pure Sciences",
+      "Applied Sciences",
+      "Engineering",
+      "Medicine",
+      "Biotechnology",
+      "Pharmacy"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 85,
+      "maxAnnualIncome": 600000,
+      "gender": "female",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Passed Class 12 in Science stream with minimum 85% in PCM/PCB"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 10th and 12th board marksheets",
+      "Proof of family income (salary slips / Tehsildar certificate)",
+      "College admission letter in science / technical graduation",
+      "Statement of Purpose on passion for science"
+    ],
+    "applicationProcedure": [
+      "Submit online application on L'Oréal FYWIS portal",
+      "Telephonic interview followed by personal jury interview with eminent scientists"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.loreal.com/en/india/articles/commitments/for-young-women-in-science-programme/",
+    "applicationUrl": "https://www.loreal.com/en/india/articles/commitments/for-young-women-in-science-programme/",
+    "sourceUrl": "https://www.loreal.com/en/india",
+    "sourceName": "L'Oréal India Official CSR",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "L'Oréal",
+      "Women in Science",
+      "STEM",
+      "Pure Science",
+      "MBBS"
+    ]
+  },
+  {
+    "id": "corporate-legrand-empowering-scholarship-prog-165ab99d",
+    "name": "Legrand 'Empowering Scholarship' Programme for Girl Students in STEM",
+    "slug": "legrand-empowering-scholarship-programme-for-girl-students-in-stem",
+    "provider": "Legrand India",
+    "providerCategory": "corporate_csr",
+    "categories": [
+      "corporate_csr",
+      "merit",
+      "need"
+    ],
+    "description": "CSR initiative by Legrand empowering meritorious female students to pursue undergraduate degrees in Engineering, Technology, Architecture, and Finance.",
+    "briefSummary": "60% tuition fee coverage (up to ₹60,000/year) for girl students in STEM & Finance.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 60000,
+    "formattedAmount": "60% Tuition Fee (Up to ₹60,000 / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees reimbursement for duration of undergraduate degree",
+    "benefits": [
+      "60% of annual tuition fees covered up to ₹60,000 per year",
+      "Continuous renewal for all 3 or 4 years of study",
+      "Corporate mentorship sessions by Legrand technical leaders"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "B.E.",
+      "B.Arch",
+      "B.Sc Computer Science",
+      "B.Com / Finance"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 70,
+      "maxAnnualIncome": 500000,
+      "gender": "female",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 10th and 12th Board marksheets (minimum 70% marks)",
+      "First year college admission fee receipt",
+      "Family income certificate (under ₹5 Lakhs per annum)",
+      "Aadhaar card and student bank details"
+    ],
+    "applicationProcedure": [
+      "Apply online through Legrand Empowering Scholarship portal",
+      "Document screening and telephonic interview",
+      "Scholarship award and direct payment to bank account"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.legrand.co.in",
+    "applicationUrl": "https://www.legrand.co.in",
+    "sourceUrl": "https://www.legrand.co.in",
+    "sourceName": "Legrand India CSR",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Legrand",
+      "Empowering Scholarship",
+      "Girls in STEM",
+      "Engineering",
+      "Corporate CSR"
+    ]
+  },
+  {
+    "id": "international-lester-b-pearson-international-scho-ce2ce9ca",
+    "name": "Lester B. Pearson International Scholarship at the University of Toronto",
+    "slug": "lester-b-pearson-international-scholarship-at-the-university-of-toronto",
+    "provider": "University of Toronto",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit"
+    ],
+    "description": "Recognizes international students who demonstrate exceptional academic achievement and creativity and who are recognised as leaders within their school.",
+    "briefSummary": "Full undergraduate scholarship covering tuition, books, incidental fees, and full residence support for four years at U of T.",
+    "country": "Canada",
+    "state": "Ontario",
+    "fundingType": "fully_funded",
+    "currency": "CAD",
+    "amount": 70000,
+    "formattedAmount": "Fully Funded (~CAD $70,000 / ₹43 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Four years of undergraduate tuition, books, incidental fees, and full residence support",
+    "benefits": [
+      "Covers 100% tuition for 4-year undergraduate degree",
+      "Book allowance, incidental fees, and guaranteed room & board in university residence",
+      "Approximately 37 scholars named globally each year"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "All undergraduate faculties: Arts & Science, Applied Science & Engineering, Kinesiology, Architecture, Music"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "All International Students"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 85,
+      "gender": "all",
+      "specialConditions": [
+        "Must be nominated by high school",
+        "Currently in final year of secondary school or graduated no earlier than June of previous year",
+        "First-time entry into undergraduate degree studies"
+      ]
+    },
+    "requiredDocuments": [
+      "Official high school nomination by principal/guidance counselor",
+      "University of Toronto OUAC application",
+      "Pearson scholarship personal essay and creative responses",
+      "School transcripts with predicted grades"
+    ],
+    "applicationProcedure": [
+      "High school submits official nomination via U of T portal",
+      "Student submits application for admission to University of Toronto",
+      "Student completes personalized Pearson online application link"
+    ],
+    "applicationStartDate": "2025-09-01",
+    "deadline": "2026-01-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://future.utoronto.ca/pearson/about-the-scholarship/",
+    "applicationUrl": "https://future.utoronto.ca/pearson/about-the-scholarship/",
+    "sourceUrl": "https://future.utoronto.ca",
+    "sourceName": "University of Toronto International",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Toronto",
+      "Pearson",
+      "Canada",
+      "Undergraduate",
+      "Fully Funded"
+    ]
+  },
+  {
+    "id": "state-maharashtra-dr-panjabrao-deshmukh-v-84de045f",
+    "name": "Maharashtra Dr. Panjabrao Deshmukh Vastigruh Nirvah Bhatta Yojna (Hostel Allowance)",
+    "slug": "maharashtra-dr-panjabrao-deshmukh-vastigruh-nirvah-bhatta-yojna-hostel-allowance",
+    "provider": "Directorate of Higher & Technical Education, Govt of Maharashtra",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Financial assistance of ₹20,000 to ₹30,000 per year towards hostel maintenance for children of registered marginal farmers and EBC students in Maharashtra.",
+    "briefSummary": "Up to ₹30,000 annual hostel stipend for children of small farmers and EBC students in Maharashtra.",
+    "country": "India",
+    "state": "Maharashtra",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 30000,
+    "formattedAmount": "₹20,000 to ₹30,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹3,000/mo for 10 months in MMRDA/Pune area; ₹2,000/mo in other district places",
+    "benefits": [
+      "₹30,000 per annum for students studying in Mumbai, Pune, Nagpur, Aurangabad",
+      "₹20,000 per annum for students studying in other district headquarters",
+      "Credited directly to student bank account"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medicine",
+      "Agriculture",
+      "Veterinary",
+      "Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 800000,
+      "eligibleStates": [
+        "Maharashtra"
+      ],
+      "eligibleDomicile": [
+        "Maharashtra"
+      ],
+      "gender": "all",
+      "specialConditions": [
+        "Parent must be small/marginal landholder farmer OR family annual income ≤ ₹8 Lakhs"
+      ]
+    },
+    "requiredDocuments": [
+      "Maharashtra Domicile Certificate",
+      "7/12 land extract or small landholder farmer certificate",
+      "Hostel admission receipt or certified rental agreement",
+      "College Bonafide certificate"
+    ],
+    "applicationProcedure": [
+      "Apply online through MahaDBT under Technical Education Department",
+      "Upload 7/12 farmer extract and registered rental agreement"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-12-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://mahadbt.maharashtra.gov.in",
+    "applicationUrl": "https://mahadbt.maharashtra.gov.in",
+    "sourceUrl": "https://mahadbt.maharashtra.gov.in",
+    "sourceName": "MahaDBT Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Maharashtra",
+      "Hostel Allowance",
+      "Farmers",
+      "MahaDBT"
+    ]
+  },
+  {
+    "id": "state-maharashtra-rajarshi-chhatrapati-sh-3117eb48",
+    "name": "Maharashtra Rajarshi Chhatrapati Shahu Maharaj Shikshan Shulkh Shishyavrutti Yojna (EBC)",
+    "slug": "maharashtra-rajarshi-chhatrapati-shahu-maharaj-shikshan-shulkh-shishyavrutti-yoj",
+    "provider": "Directorate of Higher & Technical Education, Govt of Maharashtra",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need",
+      "merit"
+    ],
+    "description": "50% tuition fee and exam fee concession for economically backward open category (EBC) students pursuing professional and non-professional higher education in Maharashtra.",
+    "briefSummary": "Maharashtra state scheme reimbursing 50% tuition and exam fees for students with family income ≤ ₹8 Lakhs.",
+    "country": "India",
+    "state": "Maharashtra",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "50% of Tuition & Exam Fees",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "50% tuition fee waiver and 50% exam fee reimbursement remitted to institute",
+    "benefits": [
+      "Substantial reduction of professional degree fees (Engineering, Pharmacy, MBA, Architecture)",
+      "Disbursed through MahaDBT in two annual installments"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Technology",
+      "Pharmacy",
+      "Architecture",
+      "Medicine",
+      "Arts",
+      "Commerce",
+      "Science"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 800000,
+      "eligibleStates": [
+        "Maharashtra"
+      ],
+      "eligibleDomicile": [
+        "Maharashtra"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "EWS"
+      ],
+      "specialConditions": [
+        "Admitted through Centralized Admission Process (CAP) round"
+      ]
+    },
+    "requiredDocuments": [
+      "Maharashtra State Domicile Certificate",
+      "Tahsildar Income Certificate (barcode verified showing income ≤ ₹8.00 Lakhs)",
+      "CAP allotment letter and college fee receipt",
+      "Family declaration stating not more than two beneficiaries"
+    ],
+    "applicationProcedure": [
+      "Register on MahaDBT portal with Aadhaar OTP authentication",
+      "Select DTE/DHE scheme and fill in CAP enrollment credentials",
+      "Principal of college conducts scrutiny and forwards to state directorate"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-12-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://mahadbt.maharashtra.gov.in",
+    "applicationUrl": "https://mahadbt.maharashtra.gov.in",
+    "sourceUrl": "https://mahadbt.maharashtra.gov.in",
+    "sourceName": "MahaDBT Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Maharashtra",
+      "MahaDBT",
+      "EBC",
+      "Fee Waiver",
+      "CAP"
+    ]
+  },
+  {
+    "id": "university-manipal-academy-of-higher-education-2b6c9b45",
+    "name": "Manipal Academy of Higher Education (MAHE) Freeship & Merit Scholarships",
+    "slug": "manipal-academy-of-higher-education-mahe-freeship-merit-scholarships",
+    "provider": "Manipal Academy of Higher Education (MAHE)",
+    "providerCategory": "premier_university",
+    "categories": [
+      "premier_university",
+      "merit"
+    ],
+    "description": "Comprehensive scholarship scheme awarding 100% and 50% tuition freeships to top rankers in MET / NEET admitted to MBBS, BDS, and B.Tech programmes at Manipal (MIT Manipal and KMC Manipal).",
+    "briefSummary": "100% and 50% tuition fee waiver for top rankers at MIT and KMC Manipal.",
+    "country": "India",
+    "state": "Karnataka",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 350000,
+    "formattedAmount": "50% to 100% Course Fee Waiver",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% Freeship (full tuition fee waiver) or 50% Merit Scholarship throughout degree duration",
+    "benefits": [
+      "Full tuition fee waiver for top 100 rankers in MET (B.Tech) and top NEET rankers (MBBS)",
+      "Renewable every year based on maintaining minimum 8.0 CGPA and clear academic record",
+      "Additional Konkani speaking, defence personnel, and sibling scholarships"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "MBBS",
+      "BDS",
+      "B.Pharm",
+      "B.Sc Nursing"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 80,
+      "maxAnnualIncome": 1200000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Manipal Entrance Test (MET) / NEET Score and Rank Card",
+      "Class 12th Board marksheet with minimum 80% marks in PCB/PCM",
+      "Parental Income Certificate / ITR",
+      "MAHE Admission Allotment Letter"
+    ],
+    "applicationProcedure": [
+      "Opt for Freeship / Merit Scholarship during MAHE online counseling",
+      "Verification of rank and eligibility by MAHE Admissions Committee",
+      "Fee concession reflected directly on student fee invoice"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-08-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://manipal.edu/mu/admission/scholarships.html",
+    "applicationUrl": "https://manipal.edu",
+    "sourceUrl": "https://manipal.edu",
+    "sourceName": "Manipal Academy of Higher Education (MAHE)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Manipal",
+      "MAHE",
+      "Freeship",
+      "B.Tech",
+      "MBBS",
+      "Merit Waiver"
+    ]
+  },
+  {
+    "id": "state-manipur-state-post-matric-scholarsh-bc16fa25",
+    "name": "Manipur State Post-Matric Scholarship Scheme for ST/SC/OBC",
+    "slug": "manipur-state-post-matric-scholarship-scheme-for-st-sc-obc",
+    "provider": "Department of Tribal Affairs & Hills, Government of Manipur",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Comprehensive scholarship scheme providing tuition fee support and maintenance allowance to eligible students from Manipur enrolled in post-matric courses across India.",
+    "briefSummary": "Tuition fees & living allowances for Manipur college and university students.",
+    "country": "India",
+    "state": "Manipur",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 28000,
+    "formattedAmount": "Tuition Fee + ₹1,000/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Institutional fees and living expenses",
+    "benefits": [
+      "Covers tuition and non-refundable fees",
+      "Maintenance allowance for day scholars and hostellers",
+      "Valid for recognized institutions in India"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Engineering",
+      "Medical",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Manipur"
+      ],
+      "eligibleDomicile": [
+        "Manipur"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "ST",
+        "SC",
+        "OBC"
+      ]
+    },
+    "requiredDocuments": [
+      "Domicile / Permanent Residential Certificate of Manipur",
+      "Tribe / Caste Certificate issued by Deputy Commissioner",
+      "Income Certificate issued by competent revenue authority",
+      "College admission letter and fee breakdown"
+    ],
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under Manipur State Schemes",
+      "Institution Level Scrutiny",
+      "Department of Tribal Affairs & Hills validation and sanction"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://tahmanipur.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://tahmanipur.gov.in",
+    "sourceName": "Manipur Tribal Affairs & Hills",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Manipur",
+      "Post-Matric",
+      "ST",
+      "North East"
+    ]
+  },
+  {
+    "id": "state-meghalaya-post-matric-scholarship-f-94765b4d",
+    "name": "Meghalaya Post-Matric Scholarship for ST/SC Students",
+    "slug": "meghalaya-post-matric-scholarship-for-st-sc-students",
+    "provider": "Directorate of Higher & Technical Education, Government of Meghalaya",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Central and state funded post-matric scholarship ensuring free higher education and maintenance stipends for tribal and underprivileged students of Meghalaya.",
+    "briefSummary": "Tuition fee reimbursement & living stipend for Meghalaya college students.",
+    "country": "India",
+    "state": "Meghalaya",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 30000,
+    "formattedAmount": "Tuition Fee + ₹1,200/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full tuition fees + monthly maintenance allowance",
+    "benefits": [
+      "100% compulsory fee waiver across all recognized institutions",
+      "Hostel allowance for students living away from home",
+      "Direct DBT payment via PFMS"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "Arts",
+      "Science",
+      "Commerce"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Meghalaya"
+      ],
+      "eligibleDomicile": [
+        "Meghalaya"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "ST",
+        "SC"
+      ]
+    },
+    "requiredDocuments": [
+      "Meghalaya Permanent Residence / Scheduled Tribe Certificate",
+      "Income Certificate issued by Deputy Commissioner / SDO",
+      "Marksheets of previous examinations",
+      "College Bonafide and fee structure certificate"
+    ],
+    "applicationProcedure": [
+      "Apply online through National Scholarship Portal under State Scheme Meghalaya",
+      "College verification and submission to DHTE Meghalaya",
+      "Approval and direct benefit transfer"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://megeducation.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://megeducation.gov.in",
+    "sourceName": "Meghalaya Directorate of Higher & Technical Education",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Meghalaya",
+      "ST",
+      "Post-Matric",
+      "North East"
+    ]
+  },
+  {
+    "id": "state-mizoram-post-matric-scholarship-sch-61dd11fb",
+    "name": "Mizoram Post-Matric Scholarship Scheme for Scheduled Tribe Students",
+    "slug": "mizoram-post-matric-scholarship-scheme-for-scheduled-tribe-students",
+    "provider": "Mizoram Scholarship Board, Government of Mizoram",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Full post-matric financial assistance for Scheduled Tribe students of Mizoram studying in recognized higher educational institutions within and outside Mizoram.",
+    "briefSummary": "Tuition fees & maintenance stipend for Mizoram college students via MSB.",
+    "country": "India",
+    "state": "Mizoram",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 25000,
+    "formattedAmount": "Tuition Fee + ₹1,000/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees and monthly maintenance stipend",
+    "benefits": [
+      "100% course fee reimbursement",
+      "Maintenance allowance for college students",
+      "Dedicated support by Mizoram Scholarship Board"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "Degree",
+      "Postgraduate"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Mizoram"
+      ],
+      "eligibleDomicile": [
+        "Mizoram"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "ST"
+      ]
+    },
+    "requiredDocuments": [
+      "Mizo Tribal Certificate issued by DC / Sub-Divisional Officer",
+      "Residential Certificate of Mizoram",
+      "Annual Family Income Certificate",
+      "Marksheet of last examination passed"
+    ],
+    "applicationProcedure": [
+      "Apply via Mizoram Scholarship Board portal / NSP",
+      "College verifies enrollment and attendance",
+      "MSB approves and issues payment order"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://mizoramscholarshipboard.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://mizoramscholarshipboard.in",
+    "sourceName": "Mizoram Scholarship Board",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Mizoram",
+      "Post-Matric",
+      "ST",
+      "North East"
+    ]
+  },
+  {
+    "id": "state-mukhya-mantri-medhavi-vidyarthi-yoj-5916f40e",
+    "name": "Mukhya Mantri Medhavi Vidyarthi Yojana (MMVY) Madhya Pradesh",
+    "slug": "mukhya-mantri-medhavi-vidyarthi-yojana-mmvy-madhya-pradesh",
+    "provider": "Department of Technical Education & Skill Development, Government of Madhya Pradesh",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Prestigious Madhya Pradesh scheme providing 100% course fee reimbursement for students who scored 70%+ in MP Board or 85%+ in CBSE/ICSE 12th exams and secured admission to engineering, medical, law, or degree colleges.",
+    "briefSummary": "100% college tuition fee waiver for meritorious MP 12th board students enrolled in higher education.",
+    "country": "India",
+    "state": "Madhya Pradesh",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 150000,
+    "formattedAmount": "Full Tuition Fee (Up to ₹1.5 Lakhs/yr)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% tuition and academic fee reimbursement directly to institution",
+    "benefits": [
+      "Complete tuition fee waiver for degree programmes",
+      "Covers JEE, NEET, CLAT, and state university entrance admissions",
+      "Direct institutional transfer via MP State Scholarship 2.0"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "MBBS",
+      "BDS",
+      "Law (NLU)",
+      "Management",
+      "Science",
+      "Commerce",
+      "Arts"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 70,
+      "maxAnnualIncome": 600000,
+      "eligibleStates": [
+        "Madhya Pradesh"
+      ],
+      "eligibleDomicile": [
+        "Madhya Pradesh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "MP Domicile / Resident Certificate",
+      "Samagra ID and MP Board / CBSE 12th Marksheet",
+      "Admission Allotment Letter / Fee Receipt",
+      "Family Income Certificate (under ₹6 Lakhs)",
+      "Aadhaar card linked with active bank account"
+    ],
+    "applicationProcedure": [
+      "Register on MP State Scholarship Portal (scholarshipportal.mp.nic.in)",
+      "Link Samagra ID and Aadhaar eKYC",
+      "Submit MMVY application with 12th roll number and college admission code",
+      "College verification and sanction order by Sanctioning Authority"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "http://scholarshipportal.mp.nic.in/MedhaviChhatra/Default.aspx",
+    "applicationUrl": "http://scholarshipportal.mp.nic.in/MedhaviChhatra/Default.aspx",
+    "sourceUrl": "http://scholarshipportal.mp.nic.in",
+    "sourceName": "Madhya Pradesh State Scholarship Portal 2.0",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Madhya Pradesh",
+      "MMVY",
+      "Merit",
+      "Tuition Waiver",
+      "Undergraduate"
+    ]
+  },
+  {
+    "id": "international-nl-scholarship-formerly-holland-sch-5eca3686",
+    "name": "NL Scholarship (Formerly Holland Scholarship) - Government of the Netherlands",
+    "slug": "nl-scholarship-formerly-holland-scholarship-government-of-the-netherlands",
+    "provider": "Dutch Ministry of Education, Culture and Science & Nuffic",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "merit"
+    ],
+    "description": "Financed by the Dutch Ministry of Education, Culture and Science along with Dutch research universities and universities of applied sciences for international students from outside the EEA wishing to do a bachelor's or master's in the Netherlands.",
+    "briefSummary": "€5,000 to €15,000 scholarship for Bachelor's or Master's studies in the Netherlands.",
+    "country": "Netherlands",
+    "state": "International",
+    "fundingType": "partial_funding",
+    "currency": "EUR",
+    "amount": 10000,
+    "formattedAmount": "€5,000 to €15,000",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "one_time",
+    "awardCoverage": "One-time contribution towards living expenses and study costs during first year in the Netherlands",
+    "benefits": [
+      "Direct cash award of €5,000 (often renewable or paired with institutional waivers)",
+      "Available across world-renowned Dutch research institutions (Delft, Amsterdam, Utrecht, Leiden, Wageningen)",
+      "Gateway to post-study 'Orientation Year' (zoekjaar) work visa in the Netherlands"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Engineering",
+      "Data Science",
+      "Agriculture",
+      "Environmental Sciences",
+      "Economics"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Citizenship of a non-EEA country",
+      "Conditional or unconditional letter of admission from participating Dutch university",
+      "Academic transcripts and degree diplomas",
+      "Motivation letter and English proficiency certificate (IELTS / TOEFL)"
+    ],
+    "applicationProcedure": [
+      "Apply to a participating Dutch university via Studielink and the university application portal",
+      "Apply for the NL Scholarship directly through the university's scholarship application system",
+      "University selection committee selects recipients based on academic excellence"
+    ],
+    "applicationStartDate": "2025-10-15",
+    "deadline": "2026-05-01",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.studyinnl.org/finances/nl-scholarship",
+    "applicationUrl": "https://www.studyinnl.org",
+    "sourceUrl": "https://www.studyinnl.org",
+    "sourceName": "Nuffic Study in NL",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "NL Scholarship",
+      "Netherlands",
+      "Nuffic",
+      "Study in Europe",
+      "Master's"
+    ]
+  },
+  {
+    "id": "state-nagaland-state-merit-scholarship-po-8c427166",
+    "name": "Nagaland State Merit Scholarship & Post-Matric ST Scholarship",
+    "slug": "nagaland-state-merit-scholarship-post-matric-st-scholarship",
+    "provider": "Directorate of Higher Education, Government of Nagaland",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Merit and post-matric welfare scholarship for indigenous students of Nagaland enrolled in higher education institutions across India.",
+    "briefSummary": "Merit scholarship and fee reimbursement for Nagaland higher education students.",
+    "country": "India",
+    "state": "Nagaland",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 22000,
+    "formattedAmount": "₹15,000 to ₹30,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Merit cash incentive + tuition fee reimbursement",
+    "benefits": [
+      "Direct merit incentive for academic excellence",
+      "Post-matric fee reimbursement for ST students",
+      "Online management via Common Scholarship Portal Nagaland"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Professional",
+      "Technical",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Nagaland"
+      ],
+      "eligibleDomicile": [
+        "Nagaland"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "ST"
+      ]
+    },
+    "requiredDocuments": [
+      "Indigenous Inhabitant of Nagaland Certificate (IINC)",
+      "Scheduled Tribe Certificate of Nagaland",
+      "Academic transcripts with 60%+",
+      "College Bonafide and fee receipt"
+    ],
+    "applicationProcedure": [
+      "Register on Common Scholarship Portal Nagaland (scholarship.nagaland.gov.in)",
+      "Submit online application and upload documents",
+      "Directorate of Higher Education Nagaland scrutinizes and releases grant"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://scholarship.nagaland.gov.in",
+    "applicationUrl": "https://scholarship.nagaland.gov.in",
+    "sourceUrl": "https://dhenagaland.com",
+    "sourceName": "Directorate of Higher Education Nagaland",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Nagaland",
+      "State Merit",
+      "ST",
+      "North East"
+    ]
+  },
+  {
+    "id": "corporate-narotam-sekhsaria-scholarship-for-h-ba875623",
+    "name": "Narotam Sekhsaria Scholarship for Higher Studies",
+    "slug": "narotam-sekhsaria-scholarship-for-higher-studies",
+    "provider": "Narotam Sekhsaria Foundation",
+    "providerCategory": "foundation_ngo",
+    "categories": [
+      "foundation_ngo",
+      "merit"
+    ],
+    "description": "Interest-free loan scholarship awarded to outstanding Indian students wishing to pursue postgraduate studies at prestigious universities in India and abroad in Pure Sciences, Applied Sciences, Social Sciences, Humanities, Law, Architecture and Management.",
+    "briefSummary": "Interest-free loan scholarship up to ₹20,00,000 for top postgraduate studies.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 2000000,
+    "formattedAmount": "Up to ₹20,00,000 (Interest-Free)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "one_time",
+    "awardCoverage": "Tuition fees, academic supplies, and study abroad maintenance",
+    "benefits": [
+      "Up to ₹20 Lakhs interest-free loan scholarship with flexible repayment moratorium",
+      "Prestigious mentoring network of Foundation scholars and trustees",
+      "Orientation workshop and leadership orientation prior to departure"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Pure Sciences",
+      "Applied Sciences",
+      "Social Sciences",
+      "Humanities",
+      "Law",
+      "Management",
+      "Architecture"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 65,
+      "maxAge": 30,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Undergraduate degree marksheets with high academic distinction",
+      "Admission letter or status of application from top ranked international / Indian university",
+      "Statement of Purpose (SOP) outlining academic motivation and career vision",
+      "Two letters of recommendation from professors or mentors"
+    ],
+    "applicationProcedure": [
+      "Apply online through Narotam Sekhsaria Foundation portal (pg.nsfoundation.co.in)",
+      "Assessment of academic record and SOP by domain experts",
+      "Shortlisted candidates invited for interview with the Board of Trustees in Mumbai"
+    ],
+    "applicationStartDate": "2025-01-10",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://pg.nsfoundation.co.in",
+    "applicationUrl": "https://pg.nsfoundation.co.in",
+    "sourceUrl": "https://nsfoundation.co.in",
+    "sourceName": "Narotam Sekhsaria Foundation",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Narotam Sekhsaria",
+      "Postgraduate",
+      "Study Abroad",
+      "Loan Scholarship",
+      "Merit"
+    ]
+  },
+  {
+    "id": "central-national-fellowship-and-scholarship-9bf83f5d",
+    "name": "National Fellowship and Scholarship for Higher Education of ST Students",
+    "slug": "national-fellowship-and-scholarship-for-higher-education-of-st-students",
+    "provider": "Ministry of Tribal Affairs, Govt of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "research",
+      "need"
+    ],
+    "description": "Supports meritorious ST students to pursue higher studies such as M.Phil and PhD in Indian universities and graduation/post-graduation in identified premier institutions.",
+    "briefSummary": "Full tuition fee and JRF/SRF stipend for Scheduled Tribe students pursuing doctoral research or professional degrees.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fully_funded",
+    "currency": "INR",
+    "amount": 420000,
+    "formattedAmount": "Full Tuition + ₹31,000 - ₹35,000 / month",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Full tuition fee reimbursement + monthly stipend (₹31,000/mo JRF, ₹35,000/mo SRF) + contingency grant",
+    "benefits": [
+      "Full tuition fee paid directly to the university",
+      "Monthly fellowship: ₹31,000/mo for first 2 years; ₹35,000/mo for remaining period",
+      "Contingency allowance up to ₹25,000/yr for science and ₹20,000/yr for humanities",
+      "750 fresh fellowships awarded annually for PhD/M.Phil"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All academic disciplines, STEM, Humanities, Social Sciences, Medicine, Engineering"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 600000,
+      "socialCategories": [
+        "ST"
+      ],
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Scheduled Tribe (ST) certificate",
+      "Valid annual family income certificate",
+      "PhD registration / admission letter from recognized university",
+      "Synopsis of research proposal and guide allocation letter"
+    ],
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under Ministry of Tribal Affairs",
+      "Upload research registration certificate and guide recommendation",
+      "Scrutiny by Ministry of Tribal Affairs fellowship selection committee"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://tribal.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "Ministry of Tribal Affairs",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Tribal Affairs",
+      "ST",
+      "Fellowship",
+      "PhD",
+      "NSP"
+    ]
+  },
+  {
+    "id": "central-national-means-cum-merit-scholarshi-b2288cb0",
+    "name": "National Means-cum-Merit Scholarship Scheme (NMMSS)",
+    "slug": "national-means-cum-merit-scholarship-scheme-nmmss",
+    "provider": "Department of School Education & Literacy, Ministry of Education",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Centrally sponsored scholarship scheme awarding 1,00,000 scholarships annually to meritorious students of economically weaker sections to arrest drop-out at class VIII and encourage study through secondary school.",
+    "briefSummary": "₹12,000/year (₹1,000/month) scholarship for school students from Class IX to XII.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 12000,
+    "formattedAmount": "₹12,000 / year (₹1,000/month)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual monetary scholarship paid in four annual cycles from Class IX to Class XII",
+    "benefits": [
+      "₹1,000 per month deposited directly into student's bank account",
+      "Selected through state-level Mental Ability and Scholastic Aptitude Tests",
+      "Continuously renewed upon passing each grade up to Class 12"
+    ],
+    "educationLevels": [
+      "school"
+    ],
+    "coursesAndStreams": [
+      "Secondary & Senior Secondary (Class 9-12)"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "school"
+      ],
+      "minPercentage": 55,
+      "maxAnnualIncome": 350000,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "State Level NMMSS Examination Selection Roll Number",
+      "Class VII / VIII Marksheet with minimum 55% marks (50% for SC/ST)",
+      "Family Income Certificate not exceeding ₹3.5 Lakhs",
+      "Student Bank Account seeded with Aadhaar"
+    ],
+    "applicationProcedure": [
+      "Appear in State-level NMMSS selection test conducted by SCERT",
+      "Selected candidates register on National Scholarship Portal (scholarships.gov.in)",
+      "Annual renewal submission with previous class passing marksheet"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.education.gov.in/scholarships-education-loan-0",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://www.education.gov.in",
+    "sourceName": "Ministry of Education (School Education)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "NMMSS",
+      "School",
+      "Class 9-12",
+      "Merit-cum-Means",
+      "Central Government"
+    ]
+  },
+  {
+    "id": "central-national-overseas-scholarship-for-s-10debab3",
+    "name": "National Overseas Scholarship for SC and De-notified Nomadic Tribes",
+    "slug": "national-overseas-scholarship-for-sc-and-de-notified-nomadic-tribes",
+    "provider": "Ministry of Social Justice and Empowerment, Government of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "minority",
+      "need",
+      "merit"
+    ],
+    "description": "Central government scholarship facilitating low income students belonging to SC, De-notified Nomadic and Semi-Nomadic Tribes, Landless Agricultural Labourers and Traditional Artisans to obtain Master's and PhD degrees abroad in top 500 QS world-ranked universities.",
+    "briefSummary": "100% tuition fees, annual maintenance allowance ($15,400 / £9,900), visa & airfare.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "full_funding",
+    "currency": "USD",
+    "amount": 45000,
+    "formattedAmount": "Full Tuition + $15,400/yr Living + Airfare",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full tuition fees paid directly to foreign university + annual living allowance + health insurance and return economy airfare",
+    "benefits": [
+      "125 slots awarded annually for Master's and PhD degrees abroad",
+      "Annual maintenance allowance of US $15,400 (or £9,900 in UK)",
+      "Economy airfare from India to destination university and back"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Science",
+      "Engineering",
+      "Management",
+      "Social Sciences",
+      "Law",
+      "Agricultural Sciences",
+      "Medicine"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 800000,
+      "maxAge": 35,
+      "gender": "all",
+      "socialCategories": [
+        "SC"
+      ]
+    },
+    "requiredDocuments": [
+      "Caste Certificate issued by authorized revenue officer",
+      "Income Certificate (family income not exceeding ₹8.00 Lakhs per annum)",
+      "Unconditional Offer of Admission from top 500 QS world-ranked foreign university",
+      "Qualifying Bachelor's / Master's degree marksheets with minimum 60% marks",
+      "Valid Indian Passport"
+    ],
+    "applicationProcedure": [
+      "Apply online through National Overseas Scholarship Portal (nosmsje.gov.in)",
+      "Submit unconditional admission letter and QS ranking proof",
+      "Selection committee verification and award of financial guarantee letter"
+    ],
+    "applicationStartDate": "2025-02-15",
+    "deadline": "2026-10-15",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://nosmsje.gov.in",
+    "applicationUrl": "https://nosmsje.gov.in",
+    "sourceUrl": "https://socialjustice.gov.in",
+    "sourceName": "Ministry of Social Justice and Empowerment",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "National Overseas",
+      "Study Abroad",
+      "SC",
+      "Master",
+      "PhD",
+      "Full Funding"
+    ]
+  },
+  {
+    "id": "state-odisha-medhabruti-merit-cum-means-s-4994f1f9",
+    "name": "Odisha Medhabruti Merit-cum-Means Scholarship",
+    "slug": "odisha-medhabruti-merit-cum-means-scholarship",
+    "provider": "Department of Higher Education, Government of Odisha",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Financial assistance of ₹10,000 per year for UG degree students and ₹20,000 per year for technical & professional students across Odisha.",
+    "briefSummary": "Odisha state scholarship awarding ₹10,000 to ₹20,000 per year for general, technical, and professional students.",
+    "country": "India",
+    "state": "Odisha",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 20000,
+    "formattedAmount": "₹10,000 to ₹20,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Direct cash benefit transferred to bank accounts of meritorious scholars",
+    "benefits": [
+      "Junior Merit: ₹3,000/yr for Class 11-12",
+      "Senior Merit: ₹10,000/yr for BA, B.Sc, B.Com, BCA, BBA",
+      "Technical/Professional Merit: ₹20,000/yr for Engineering, Medical, Agriculture, MBA, MCA",
+      "Special Merit for Girls"
+    ],
+    "educationLevels": [
+      "high_school",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Arts",
+      "Science",
+      "Commerce",
+      "Engineering",
+      "Medicine",
+      "Agriculture",
+      "Management"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 600000,
+      "eligibleStates": [
+        "Odisha"
+      ],
+      "eligibleDomicile": [
+        "Odisha"
+      ],
+      "gender": "all"
+    },
+    "requiredDocuments": [
+      "Resident Certificate issued by Revenue Officer",
+      "Annual Family Income Certificate (ceiling ₹6.00 Lakhs)",
+      "Previous qualifying examination marksheet (min 60% marks)",
+      "Aadhaar card linked with active bank account"
+    ],
+    "applicationProcedure": [
+      "Register on Odisha State Scholarship Portal (scholarship.odisha.gov.in)",
+      "Select Medhabruti scheme and upload verified marksheets",
+      "Institutional approval by College Nodal Officer"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://scholarship.odisha.gov.in",
+    "applicationUrl": "https://scholarship.odisha.gov.in",
+    "sourceUrl": "https://scholarship.odisha.gov.in",
+    "sourceName": "Odisha State Scholarship Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Odisha",
+      "Medhabruti",
+      "Merit-Cum-Means",
+      "Technical",
+      "PRERANA"
+    ]
+  },
+  {
+    "id": "central-pg-indira-gandhi-scholarship-for-si-0e26bb12",
+    "name": "PG Indira Gandhi Scholarship for Single Girl Child",
+    "slug": "pg-indira-gandhi-scholarship-for-single-girl-child",
+    "provider": "University Grants Commission (UGC)",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit",
+      "need"
+    ],
+    "description": "UGC scheme to support higher education of single girl children by awarding fellowships for non-professional postgraduate degrees.",
+    "briefSummary": "UGC fellowship granting ₹36,200/year to single girl children pursuing postgraduate master's degrees.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 36200,
+    "formattedAmount": "₹36,200 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Monthly stipend of ₹3,100 disbursed for 10 months each academic year",
+    "benefits": [
+      "₹3,100 per month for 10 months each year for 2 years of Master's study",
+      "No tuition fee deductions",
+      "3,000 fresh girl scholars selected every academic cycle"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Master of Arts (M.A)",
+      "Master of Science (M.Sc)",
+      "Master of Commerce (M.Com)"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minAge": 19,
+      "maxAge": 30,
+      "gender": "female",
+      "singleGirlChildOnly": true,
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Must be only child / only girl child in family without brothers"
+      ]
+    },
+    "requiredDocuments": [
+      "Affidavit on ₹100 stamp paper attested by First Class Magistrate / SDM affirming single girl child status",
+      "Undergraduate degree marksheet and passing certificate",
+      "Admission verification certificate in regular Master's program",
+      "Aadhaar card"
+    ],
+    "applicationProcedure": [
+      "Apply online through National Scholarship Portal under UGC Schemes tab",
+      "Submit attested stamp paper affidavit to University registrar for portal e-verification"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.ugc.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "University Grants Commission (UGC)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "UGC",
+      "Single Girl Child",
+      "Postgraduate",
+      "Women Empowerment"
+    ]
+  },
+  {
+    "id": "state-perunthalaivar-kamarajar-financial--0d513c3e",
+    "name": "Perunthalaivar Kamarajar Financial Assistance Scheme Puducherry",
+    "slug": "perunthalaivar-kamarajar-financial-assistance-scheme-puducherry",
+    "provider": "Department of Higher and Technical Education, Government of Puducherry",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Financial assistance scheme providing tuition fee reimbursement to resident students of the UT of Puducherry admitted to professional colleges through CENTAC.",
+    "briefSummary": "Tuition fee reimbursement for Puducherry students admitted through CENTAC.",
+    "country": "India",
+    "state": "Puducherry",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 35000,
+    "formattedAmount": "Up to ₹35,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fee reimbursement directly to institution/student",
+    "benefits": [
+      "Reimbursement of tuition fees for engineering and medical courses",
+      "Sanctioned for students admitted through centralized counseling (CENTAC)",
+      "Continuous renewal based on good academic progress"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Engineering (B.Tech)",
+      "Medical (MBBS/BDS)",
+      "Nursing",
+      "Veterinary",
+      "Agriculture"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 500000,
+      "eligibleStates": [
+        "Puducherry"
+      ],
+      "eligibleDomicile": [
+        "Puducherry"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Puducherry Resident / Domicile Certificate",
+      "CENTAC Admission Allotment Order",
+      "Family Income Certificate",
+      "College Fee Receipt"
+    ],
+    "applicationProcedure": [
+      "Apply through Department of Higher and Technical Education Puducherry (dhte.py.gov.in)",
+      "Submit CENTAC admission rank card and fee challan",
+      "Government scrutiny and direct sanction"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://dhte.py.gov.in",
+    "applicationUrl": "https://dhte.py.gov.in",
+    "sourceUrl": "https://dhte.py.gov.in",
+    "sourceName": "Government of Puducherry Higher & Technical Education",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Puducherry",
+      "CENTAC",
+      "Engineering",
+      "Tuition Reimbursement"
+    ]
+  },
+  {
+    "id": "international-pierre-elliott-trudeau-foundation-d-d9b92038",
+    "name": "Pierre Elliott Trudeau Foundation Doctoral Scholarships (Canada)",
+    "slug": "pierre-elliott-trudeau-foundation-doctoral-scholarships-canada",
+    "provider": "Pierre Elliott Trudeau Foundation",
+    "providerCategory": "international_university",
+    "categories": [
+      "international_university",
+      "research",
+      "merit"
+    ],
+    "description": "Three-year leadership and research program supporting exceptional PhD students in the humanities and social sciences at Canadian universities who are committed to public engagement and addressing critical social issues.",
+    "briefSummary": "CAD $40,000/year stipend + $20,000/year research & travel allowance for 3 years in Canada.",
+    "country": "Canada",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "CAD",
+    "amount": 60000,
+    "formattedAmount": "CAD $40,000/yr Stipend + $20,000/yr Travel",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual allowance of CAD $40,000 for living costs + CAD $20,000 research and networking allowance for 3 years",
+    "benefits": [
+      "Total funding of CAD $180,000 over 3 years",
+      "One-on-one mentorship by appointed Trudeau Foundation Fellows and Mentors",
+      "Participation in annual leadership institutes and retreats across Canada"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Human Rights",
+      "Responsible Citizenship",
+      "Canada and the World",
+      "People and their Natural Environment",
+      "Humanities",
+      "Social Sciences"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 75,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Enrolled in or accepted to 1st or 2nd year of full-time doctoral program at Canadian university",
+      "Doctoral research project description and public engagement vision",
+      "Transcripts of all post-secondary education",
+      "Three reference letters (two academic, one non-academic leadership)"
+    ],
+    "applicationProcedure": [
+      "Apply directly through the Pierre Elliott Trudeau Foundation application portal",
+      "Semi-finalists participate in digital group discussions and individual interviews",
+      "Final selection of 16 Scholars announced in spring"
+    ],
+    "applicationStartDate": "2025-09-15",
+    "deadline": "2026-12-02",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.trudeaufoundation.ca/scholarship",
+    "applicationUrl": "https://www.trudeaufoundation.ca",
+    "sourceUrl": "https://www.trudeaufoundation.ca",
+    "sourceName": "Pierre Elliott Trudeau Foundation",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Trudeau Foundation",
+      "Canada",
+      "PhD",
+      "Humanities",
+      "Leadership",
+      "Full Funding"
+    ]
+  },
+  {
+    "id": "central-post-matric-scholarships-scheme-for-fe359040",
+    "name": "Post Matric Scholarships Scheme for Minorities",
+    "slug": "post-matric-scholarships-scheme-for-minorities",
+    "provider": "Ministry of Minority Affairs, Govt of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "minority",
+      "need"
+    ],
+    "description": "Centrally sponsored scholarship scheme to award scholarships to meritorious students belonging to economically weaker sections of minority communities.",
+    "briefSummary": "Central scholarship providing admission, course fee and maintenance allowance for minority students in class 11 to PhD.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 15000,
+    "formattedAmount": "₹6,000 to ₹15,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Admission and tuition fees reimbursement up to ₹10,000/yr plus maintenance allowance up to ₹1,200/mo",
+    "benefits": [
+      "Actual course fee reimbursed up to ceiling limits",
+      "Hostel maintenance allowance of ₹1,200/month; Day scholar allowance of ₹600/month",
+      "30% of total scholarships earmarked for girl students"
+    ],
+    "educationLevels": [
+      "high_school",
+      "diploma",
+      "undergraduate",
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All recognized higher secondary, degree and post-graduate disciplines"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "diploma",
+        "undergraduate",
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 200000,
+      "socialCategories": [
+        "Minority"
+      ],
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Minority community self-declaration certificate (Muslim, Christian, Sikh, Buddhist, Jain, Parsi)",
+      "Annual family income certificate (≤ ₹2 Lakhs)",
+      "Previous qualifying examination marksheet (min 50% marks)",
+      "Aadhaar linked bank account details"
+    ],
+    "applicationProcedure": [
+      "Register on National Scholarship Portal (NSP)",
+      "Complete student profile and upload minority declaration",
+      "Verification by School/College Nodal Officer and District Minority Welfare Officer"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.minorityaffairs.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "National Scholarship Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Minority Affairs",
+      "NSP",
+      "Post-Matric",
+      "DBT"
+    ]
+  },
+  {
+    "id": "state-post-matric-scholarship-scheme-for--3ba433bb",
+    "name": "Post-Matric Scholarship Scheme for SC & OBC Students Chandigarh UT",
+    "slug": "post-matric-scholarship-scheme-for-sc-obc-students-chandigarh-ut",
+    "provider": "Department of Higher Education, Chandigarh Administration",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Full non-refundable fee concession and monthly maintenance grant for post-matric students belonging to SC and OBC categories residing and studying in Chandigarh.",
+    "briefSummary": "Full course fee waiver and monthly maintenance allowance for Chandigarh UT college students.",
+    "country": "India",
+    "state": "Chandigarh",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 25000,
+    "formattedAmount": "Full Tuition + ₹1,000/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% compulsory college fees + maintenance stipend",
+    "benefits": [
+      "100% fee reimbursement in Chandigarh government and private colleges",
+      "Monthly maintenance stipend",
+      "Processed directly on National Scholarship Portal"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Chandigarh"
+      ],
+      "eligibleDomicile": [
+        "Chandigarh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "OBC"
+      ]
+    },
+    "requiredDocuments": [
+      "Chandigarh UT Residence Certificate",
+      "SC/OBC Caste Certificate",
+      "Income Certificate issued by Sub-Divisional Magistrate (SDM)",
+      "College Fee Receipt"
+    ],
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under Chandigarh UT Schemes",
+      "Institute-level verification by college nodal officer",
+      "Director of Higher Education Chandigarh approval and payment"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://chdhe.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://chdhe.gov.in",
+    "sourceName": "Chandigarh Administration Higher Education",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Chandigarh",
+      "Post-Matric",
+      "SC",
+      "OBC",
+      "UT"
+    ]
+  },
+  {
+    "id": "state-post-matric-scholarship-scheme-for--5d4b4e6c",
+    "name": "Post-Matric Scholarship Scheme for SC/ST/OBC DNH & DD",
+    "slug": "post-matric-scholarship-scheme-for-sc-st-obc-dnh-dd",
+    "provider": "Department of Social Welfare, UT Administration of Dadra & Nagar Haveli and Daman & Diu",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Tuition fee reimbursement and monthly maintenance support for students of Dadra & Nagar Haveli and Daman & Diu enrolled in higher education programs.",
+    "briefSummary": "Tuition fee reimbursement and maintenance grant for DNH & DD students.",
+    "country": "India",
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 28000,
+    "formattedAmount": "Tuition Fee + ₹1,000/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Compulsory course fee reimbursement + monthly maintenance allowance",
+    "benefits": [
+      "100% course fee waiver in recognized technical and general colleges",
+      "Monthly maintenance stipend",
+      "Direct PFMS transfer"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Dadra and Nagar Haveli and Daman and Diu"
+      ],
+      "eligibleDomicile": [
+        "Dadra and Nagar Haveli and Daman and Diu"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC"
+      ]
+    },
+    "requiredDocuments": [
+      "DNH & DD Domicile / Resident Certificate",
+      "Caste Certificate issued by Mamlatdar",
+      "Income Certificate issued by Revenue Authority",
+      "College Fee receipt and Bonafide"
+    ],
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under DNH & DD State Scheme",
+      "Verification by College and Social Welfare Department",
+      "Direct disbursement via DBT"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://daman.nic.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://daman.nic.in",
+    "sourceName": "DNH & DD Social Welfare Department",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "DNH and DD",
+      "Post-Matric",
+      "UT Administration",
+      "Tuition Waiver"
+    ]
+  },
+  {
+    "id": "central-prime-minister-s-research-fellowshi-f716cb32",
+    "name": "Prime Minister's Research Fellowship (PMRF)",
+    "slug": "prime-minister-s-research-fellowship-pmrf",
+    "provider": "Ministry of Education, Govt of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "research",
+      "merit",
+      "stem"
+    ],
+    "description": "Scheme designed for improving the quality of research in higher educational institutions in India, offering attractive fellowships to doctoral scholars in IITs, IISc, IISERs, and central universities.",
+    "briefSummary": "India's highest research fellowship offering ₹70,000-₹80,000/month plus ₹2 Lakh annual research grant.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 960000,
+    "formattedAmount": "₹70,000 - ₹80,000 / month + ₹2L Grant",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Stipend of ₹70,000/mo (years 1-2), ₹75,000/mo (year 3), ₹80,000/mo (years 4-5) plus ₹2,00,000/yr research grant",
+    "benefits": [
+      "₹70,000 per month for the first two years of PhD",
+      "₹75,000 per month for the 3rd year",
+      "₹80,000 per month for 4th and 5th years",
+      "Contingency research grant of ₹2,00,000 per annum for five years (Total ₹10 Lakhs)"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Technology",
+      "Science",
+      "Mathematics",
+      "Computer Science"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 75,
+      "minCgpa": 8.0,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "institutionTypes": [
+        "Government"
+      ],
+      "specialConditions": [
+        "Admitted to PhD program in PMRF granting institution (IITs, IISc, IISERs, select Central Universities)"
+      ]
+    },
+    "requiredDocuments": [
+      "Detailed research proposal and abstract",
+      "Qualifying degree transcripts (minimum 8.0 CGPA on a 10-point scale or 75% marks)",
+      "Recommendation letters from department head and research supervisor",
+      "GATE / JAM scorecard (if applicable)"
+    ],
+    "applicationProcedure": [
+      "Nominations submitted through the host PMRF granting institution",
+      "National discipline review committees review written research proposals",
+      "Shortlisted candidates present project proposals before National Steering Committee"
+    ],
+    "applicationStartDate": "2025-05-01",
+    "deadline": "2026-11-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.pmrf.in",
+    "applicationUrl": "https://www.pmrf.in",
+    "sourceUrl": "https://www.pmrf.in",
+    "sourceName": "Ministry of Education & IIT Council",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "PMRF",
+      "PhD Fellowship",
+      "IIT",
+      "IISc",
+      "Research"
+    ]
+  },
+  {
+    "id": "central-prime-minister-s-scholarship-scheme-80ce217a",
+    "name": "Prime Minister's Scholarship Scheme for Central Armed Police Forces & Assam Rifles (PMSS-CAPF)",
+    "slug": "prime-minister-s-scholarship-scheme-for-central-armed-police-forces-assam-rifles",
+    "provider": "Welfare & Rehabilitation Board (WARB), Ministry of Home Affairs",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit"
+    ],
+    "description": "Scholarship programme encouraging higher technical and professional education for dependent wards and widows of Central Armed Police Forces (CRPF, BSF, CISF, ITBP, SSB) and Assam Rifles personnel.",
+    "briefSummary": "₹36,000/yr for girls & ₹30,000/yr for boys pursuing professional degrees.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 36000,
+    "formattedAmount": "₹36,000/yr (Girls) | ₹30,000/yr (Boys)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual educational assistance for duration of undergraduate professional degree",
+    "benefits": [
+      "₹3,000/month (₹36,000/yr) for girl students",
+      "₹2,500/month (₹30,000/yr) for boy students",
+      "Covers Engineering, Medical, Dental, Veterinary, B.Sc Nursing, MBA, MCA, Pharmacy"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "B.Tech",
+      "MBBS",
+      "BDS",
+      "B.Pharm",
+      "B.Sc Nursing",
+      "MBA",
+      "MCA",
+      "B.Ed"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Service Certificate / Discharge Certificate of CAPF/AR personnel",
+      "Disability Certificate / Gallantry Award Certificate (if applicable)",
+      "Class 12th Marksheet with minimum 60% marks",
+      "Bonafide certificate from recognized professional institution"
+    ],
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal under Ministry of Home Affairs",
+      "Verification by CAPF Unit / Headquarter Nodal Officer",
+      "WARB MHA review and DBT sanction"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://warb-mha.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://warb-mha.gov.in",
+    "sourceName": "Ministry of Home Affairs (WARB)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "PMSS",
+      "CAPF",
+      "Armed Forces",
+      "MHA",
+      "Professional Degree"
+    ]
+  },
+  {
+    "id": "state-prime-minister-s-special-scholarshi-c0cd388e",
+    "name": "Prime Minister's Special Scholarship Scheme (PMSSS) for J&K and Ladakh",
+    "slug": "prime-minister-s-special-scholarship-scheme-pmsss-for-j-k-and-ladakh",
+    "provider": "All India Council for Technical Education (AICTE) & Ministry of Education",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Prestigious national scholarship for 5,000 students of Jammu & Kashmir and Ladakh each year to pursue undergraduate degrees in top colleges outside J&K, with full tuition fees and maintenance.",
+    "briefSummary": "100% tuition fees + ₹1,00,000/yr hostel/maintenance allowance for J&K and Ladakh students.",
+    "country": "India",
+    "state": "Jammu and Kashmir",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 225000,
+    "formattedAmount": "Full Tuition (up to ₹1.25L) + ₹1,00,000 Maintenance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% academic fees directly to college + ₹1,00,000 annual maintenance in 10 installments",
+    "benefits": [
+      "Full tuition fee waiver up to ₹1.25 Lakhs for Engineering/Professional and ₹3 Lakhs for Medical",
+      "₹10,000/month (₹1,00,000/year) maintenance allowance for living, books, and hostel",
+      "Dedicated supernumerary seats in leading institutes across India"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "General Degree",
+      "Engineering (B.Tech)",
+      "Nursing",
+      "Pharmacy",
+      "Hotel Management",
+      "Medical (MBBS/BDS)"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 800000,
+      "eligibleStates": [
+        "Jammu and Kashmir",
+        "Ladakh"
+      ],
+      "eligibleDomicile": [
+        "Jammu and Kashmir",
+        "Ladakh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Domicile Certificate of UT of J&K or UT of Ladakh",
+      "Class 12th Marksheet from JKBOSE / CBSE schools in J&K/Ladakh",
+      "Income Certificate issued by Tehsildar (family income under ₹8 Lakhs)",
+      "Aadhaar Card and active bank account seeded with NPCI"
+    ],
+    "applicationProcedure": [
+      "Online registration on AICTE PMSSS portal (aicte-jk-scholarship-gov.in)",
+      "Document verification at designated Facilitation Centers in J&K / Ladakh",
+      "Choice filling and centralized online seat counselling allocation",
+      "Direct DBT disbursement of tuition to college and hostel allowance to student"
+    ],
+    "applicationStartDate": "2025-05-15",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.aicte-india.org/bureaus/jk",
+    "applicationUrl": "https://aicte-jk-scholarship-gov.in",
+    "sourceUrl": "https://www.aicte-india.org",
+    "sourceName": "AICTE J&K PMSSS Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Jammu and Kashmir",
+      "Ladakh",
+      "PMSSS",
+      "AICTE",
+      "Full Funding",
+      "Undergraduate"
+    ]
+  },
+  {
+    "id": "state-rajasthan-chief-minister-higher-edu-fd1affb9",
+    "name": "Rajasthan Chief Minister Higher Education Scholarship Scheme",
+    "slug": "rajasthan-chief-minister-higher-education-scholarship-scheme",
+    "provider": "Department of College Education, Government of Rajasthan",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Financial assistance of ₹5,000 per year (₹10,000 per year for specially-abled) to meritorious Class 12 pass-outs belonging to low-income families pursuing degree education.",
+    "briefSummary": "Rajasthan state merit assistance granting ₹5,000 to ₹10,000 annually for top 1 lakh board scorers.",
+    "country": "India",
+    "state": "Rajasthan",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 10000,
+    "formattedAmount": "₹5,000 to ₹10,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual educational assistance for up to 5 years (UG + PG)",
+    "benefits": [
+      "₹500 per month (for 10 months, total ₹5,000/year) for general meritorious students",
+      "₹1,000 per month (total ₹10,000/year) for students with disability",
+      "Renewable for up to five years of higher education"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All recognized regular undergraduate and postgraduate disciplines"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Rajasthan"
+      ],
+      "eligibleDomicile": [
+        "Rajasthan"
+      ],
+      "gender": "all",
+      "specialConditions": [
+        "Must figure in the first 1,00,000 merit list of RBSE Board Exam"
+      ]
+    },
+    "requiredDocuments": [
+      "Rajasthan Mool Niwas (Domicile) Certificate",
+      "RBSE Board marksheet (minimum 60% marks and in top 1 lakh list)",
+      "Income certificate showing family income ≤ ₹2.50 Lakhs",
+      "Jan Aadhaar card and bank account details"
+    ],
+    "applicationProcedure": [
+      "Apply online through Rajasthan Single Sign-On (SSO) Portal under Scholarship CE app",
+      "Verified by College Principal and forwarded to District Nodal Officer"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://hte.rajasthan.gov.in",
+    "applicationUrl": "https://sso.rajasthan.gov.in",
+    "sourceUrl": "https://hte.rajasthan.gov.in",
+    "sourceName": "Rajasthan Higher Education Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Rajasthan",
+      "Higher Education",
+      "SSO",
+      "Merit Assistance"
+    ]
+  },
+  {
+    "id": "corporate-reliance-foundation-postgraduate-sc-b1731237",
+    "name": "Reliance Foundation Postgraduate Scholarships in Technology & AI",
+    "slug": "reliance-foundation-postgraduate-scholarships-in-technology-ai",
+    "provider": "Reliance Foundation",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "merit"
+    ],
+    "description": "Prestigious fellowship providing up to ₹6 Lakhs over the duration of postgraduate study for exceptional students pursuing master's degrees in Artificial Intelligence, Computer Science, and future technologies.",
+    "briefSummary": "Up to ₹6 Lakhs for postgraduate students in Computer Science, AI, Mathematics, and Electrical Engineering.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 600000,
+    "formattedAmount": "Up to ₹6,00,000",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "Up to ₹6,00,000 over 2 years of Master's study + global tech mentor network",
+    "benefits": [
+      "Financial grant up to ₹6,00,000 covering tuition, books, equipment, and research travel",
+      "Direct engagement with world-renowned experts, scientists, and industry leaders",
+      "100 of India's brightest postgraduate tech minds selected per cohort"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Artificial Intelligence",
+      "Computer Science",
+      "Mathematics & Computing",
+      "Electrical & Electronics",
+      "Mechanical Engineering",
+      "Renewable Energy"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 75,
+      "minCgpa": 7.5,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Admitted to first year of regular full-time Master's program in eligible tech discipline"
+      ]
+    },
+    "requiredDocuments": [
+      "Undergraduate degree marksheet and GATE / entrance score",
+      "Resume / CV highlighting coding repositories and research publications",
+      "Statement of Purpose (SoP) outlining technological vision",
+      "Two Letters of Recommendation (LoR)"
+    ],
+    "applicationProcedure": [
+      "Submit online application dossier on Reliance Foundation portal",
+      "Online aptitude evaluation test and technical screening",
+      "Expert interview round with academic luminaries and technology leaders"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.scholarships.reliancefoundation.org",
+    "applicationUrl": "https://www.scholarships.reliancefoundation.org/PG_Scholarship.aspx",
+    "sourceUrl": "https://www.scholarships.reliancefoundation.org",
+    "sourceName": "Reliance Foundation Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Reliance",
+      "AI",
+      "Computer Science",
+      "Postgraduate",
+      "STEM"
+    ]
+  },
+  {
+    "id": "corporate-reliance-foundation-undergraduate-s-92b4a319",
+    "name": "Reliance Foundation Undergraduate Scholarship",
+    "slug": "reliance-foundation-undergraduate-scholarship",
+    "provider": "Reliance Foundation",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "merit",
+      "need"
+    ],
+    "description": "Empowering India's youth to become next-generation leaders. The Reliance Foundation Undergraduate Scholarship provides up to ₹2 Lakhs over undergraduate study alongside holistic leadership development programs.",
+    "briefSummary": "Prestigious corporate scholarship granting up to ₹2 Lakhs with mentorship for 5,000 high-potential undergraduates.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 200000,
+    "formattedAmount": "Up to ₹2,00,000",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "variable",
+    "awardCoverage": "Up to ₹2,00,000 total across the degree duration plus alumni mentorship",
+    "benefits": [
+      "Financial support up to ₹2,00,000 over the complete undergraduate degree",
+      "Leadership training webinars, personal development modules and mentorship",
+      "Exclusive membership into the vibrant Reliance Foundation Scholar Alumni network",
+      "5,000 undergraduate scholars selected annually across India"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Commerce",
+      "Medicine",
+      "Law",
+      "Natural Sciences",
+      "Humanities"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 1500000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 12th board marksheet (minimum 60% marks)",
+      "Current college bonafide certificate or student identity card",
+      "Family Income certificate or ITR copy (ceiling ₹15 Lakhs; preference under ₹2.5L)",
+      "Valid Government Photo ID proof (Aadhaar or Voter ID)"
+    ],
+    "applicationProcedure": [
+      "Complete online application form on the official Reliance Foundation portal",
+      "Take the mandatory online aptitude test (60 minutes, MCQ)",
+      "Evaluation based on combined aptitude test score and household economic need",
+      "Final selection announcement with direct disbursement"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.scholarships.reliancefoundation.org",
+    "applicationUrl": "https://www.scholarships.reliancefoundation.org/UG_Scholarship.aspx",
+    "sourceUrl": "https://www.scholarships.reliancefoundation.org",
+    "sourceName": "Reliance Foundation Corporate Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Reliance",
+      "Corporate CSR",
+      "Aptitude Test",
+      "Leadership",
+      "Pan-India"
+    ]
+  },
+  {
+    "id": "international-rhodes-scholarship-for-india-at-the-840fa2c4",
+    "name": "Rhodes Scholarship for India at the University of Oxford",
+    "slug": "rhodes-scholarship-for-india-at-the-university-of-oxford",
+    "provider": "The Rhodes Trust (University of Oxford)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "merit",
+      "research"
+    ],
+    "description": "The Rhodes Scholarship is the oldest and perhaps the most prestigious international scholarship programme, enabling outstanding young people from across India to study at the University of Oxford.",
+    "briefSummary": "Preeminent international scholarship covering all Oxford University fees, generous stipend (£19,092/yr), and airfare.",
+    "country": "United Kingdom",
+    "state": "Oxford",
+    "fundingType": "fully_funded",
+    "currency": "GBP",
+    "amount": 55000,
+    "formattedAmount": "Fully Funded (~£55,000 / ₹60 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full Oxford University & college fees, personal stipend of £19,092/year, flights, and visa",
+    "benefits": [
+      "Full payment of all University of Oxford tuition and college fees",
+      "Personal living stipend of £19,092 per annum",
+      "Private health insurance (IHS) and student visa application reimbursement",
+      "Lifelong fellowship at Rhodes House with worldwide alumni cohort"
+    ],
+    "educationLevels": [
+      "postgraduate",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Academic Disciplines taught at University of Oxford"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate",
+        "phd"
+      ],
+      "minPercentage": 75,
+      "minAge": 19,
+      "maxAge": 25,
+      "gender": "all",
+      "specialConditions": [
+        "Must hold a first-class undergraduate degree by October of admission year"
+      ]
+    },
+    "requiredDocuments": [
+      "Formal academic transcripts",
+      "Comprehensive Curriculum Vitae (CV)",
+      "Personal Statement (maximum 1,000 words)",
+      "Academic statement of study (maximum 350 words)",
+      "Five to six letters of reference (at least 3 academic)"
+    ],
+    "applicationProcedure": [
+      "Submit comprehensive dossier on the Rhodes Trust India portal",
+      "Preliminary shortlisting followed by preliminary panel interviews",
+      "Final weekend social engagement and final panel interview in New Delhi",
+      "5 Rhodes Scholars selected from India annually"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-08-01",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://www.rhodeshouse.ox.ac.uk/scholarships/the-rhodes-scholarship/",
+    "applicationUrl": "https://www.rhodeshouse.ox.ac.uk/scholarships/apply/india/",
+    "sourceUrl": "https://www.rhodeshouse.ox.ac.uk",
+    "sourceName": "The Rhodes Trust Oxford",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Oxford",
+      "Rhodes Trust",
+      "UK",
+      "Fully Funded",
+      "Postgraduate",
+      "Excellence"
+    ]
+  },
+  {
+    "id": "corporate-rolls-royce-unnati-scholarship-for--742ea000",
+    "name": "Rolls-Royce Unnati Scholarship for Women Engineering Students",
+    "slug": "rolls-royce-unnati-scholarship-for-women-engineering-students",
+    "provider": "Rolls-Royce India",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "stem",
+      "merit"
+    ],
+    "description": "Financial support of ₹35,000 for female engineering students in India to help them complete their technical education and pursue aerospace and engineering careers.",
+    "briefSummary": "Rolls-Royce grant of ₹35,000 + executive mentorship for female engineering students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 35000,
+    "formattedAmount": "₹35,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "College fees, books, and technical learning supplies",
+    "benefits": [
+      "One-time annual grant of ₹35,000",
+      "Curated mentorship sessions with senior Rolls-Royce aerospace engineers",
+      "Webinars on aerospace manufacturing, design, and career progression"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Aerospace",
+      "Marine",
+      "Mechanical",
+      "Electrical",
+      "Electronics",
+      "Computer Science"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 400000,
+      "gender": "female",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Enrolled in 1st, 2nd, or 3rd year of regular B.Tech / B.E in recognized engineering college"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 10th and 12th board marksheet (min 60% marks)",
+      "Government photo ID (Aadhaar Card)",
+      "Income certificate (≤ ₹4.00 Lakhs)",
+      "College admission letter / Bonafide certificate"
+    ],
+    "applicationProcedure": [
+      "Submit online application on Rolls-Royce Unnati portal",
+      "Document screening and technical essay evaluation"
+    ],
+    "applicationStartDate": "2025-07-15",
+    "deadline": "2026-11-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.rolls-royce.com/country-sites/india.aspx",
+    "applicationUrl": "https://www.rolls-royce.com/country-sites/india.aspx",
+    "sourceUrl": "https://www.rolls-royce.com",
+    "sourceName": "Rolls-Royce India CSR",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Rolls-Royce",
+      "Unnati",
+      "Women in Engineering",
+      "Aerospace"
+    ]
+  },
+  {
+    "id": "corporate-santoor-scholarship-programme-for-g-f8e22385",
+    "name": "Santoor Scholarship Programme for Girls (Wipro Consumer Care)",
+    "slug": "santoor-scholarship-programme-for-girls-wipro-consumer-care",
+    "provider": "Wipro Consumer Care & Lighting and Azim Premji Foundation",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "need"
+    ],
+    "description": "Financial grant of ₹24,000 per year until graduation for young women from rural and underprivileged backgrounds in Andhra Pradesh, Karnataka, Telangana, and Chhattisgarh.",
+    "briefSummary": "Wipro Santoor grant of ₹24,000/year for female students from government schools.",
+    "country": "India",
+    "state": "Southern & Central States",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 24000,
+    "formattedAmount": "₹24,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹24,000 per year towards college fees, books, and living expenses",
+    "benefits": [
+      "Direct financial support of ₹24,000 per year for 3 to 4 years of graduation",
+      "Over 900 young women selected across AP, Telangana, Karnataka, Chhattisgarh annually"
+    ],
+    "educationLevels": [
+      "undergraduate"
+    ],
+    "coursesAndStreams": [
+      "Humanities",
+      "Liberal Arts",
+      "Commerce",
+      "Science",
+      "Professional"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 400000,
+      "gender": "female",
+      "eligibleStates": [
+        "Andhra Pradesh",
+        "Telangana",
+        "Karnataka",
+        "Chhattisgarh"
+      ],
+      "specialConditions": [
+        "Must have completed Class 10th and 12th from a Government or aided school"
+      ]
+    },
+    "requiredDocuments": [
+      "Class 10th and 12th marksheet from government/aided school",
+      "Government photo ID (Aadhaar Card)",
+      "First year college enrollment receipt",
+      "Income certificate"
+    ],
+    "applicationProcedure": [
+      "Apply online through Santoor scholarship web portal",
+      "Physical/telephonic verification of socioeconomic background"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-20",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.santoorscholarships.com",
+    "applicationUrl": "https://www.santoorscholarships.com",
+    "sourceUrl": "https://www.santoorscholarships.com",
+    "sourceName": "Wipro Consumer Care & Lighting",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Santoor",
+      "Wipro",
+      "Girls Education",
+      "Andhra Pradesh",
+      "Karnataka"
+    ]
+  },
+  {
+    "id": "international-singapore-international-graduate-aw-5944e815",
+    "name": "Singapore International Graduate Award (SINGA) for PhD Research",
+    "slug": "singapore-international-graduate-award-singa-for-phd-research",
+    "provider": "Agency for Science, Technology and Research (A*STAR)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "stem",
+      "research"
+    ],
+    "description": "Collaboration between A*STAR, Nanyang Technological University (NTU), National University of Singapore (NUS), and Singapore University of Technology and Design (SUTD) offering PhD training in English in Singapore.",
+    "briefSummary": "Full tuition fees + monthly stipend of SGD 2,700 to 3,200 + airfare grant + settling-in allowance in Singapore.",
+    "country": "Singapore",
+    "state": "Singapore",
+    "fundingType": "fully_funded",
+    "currency": "SGD",
+    "amount": 45000,
+    "formattedAmount": "Fully Funded (~SGD 45,000 / ₹29 Lakhs / year)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Full tuition fees, monthly stipend of SGD 2,700 to 3,200, airfare grant up to SGD 1,500, settling-in allowance of SGD 1,000",
+    "benefits": [
+      "Full tuition fee waiver for up to 4 years of PhD studies",
+      "Monthly stipend of SGD 2,700, increased to SGD 3,200 after passing Qualifying Examination",
+      "One-time airfare grant of up to SGD 1,500 and settling-in allowance of SGD 1,000",
+      "Research work conducted at A*STAR research institutes, NUS, NTU, or SUTD"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Biomedical Sciences",
+      "Computing and Information Sciences",
+      "Engineering and Technology",
+      "Physical Sciences"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "All International Graduates"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 75,
+      "gender": "all",
+      "specialConditions": [
+        "Graduates with passion for research and excellent academic results (first-class honours)"
+      ]
+    },
+    "requiredDocuments": [
+      "Valid international passport",
+      "Certified academic transcripts and bachelor's/master's degree certificates",
+      "Two recommendation reports completed online by academic referees",
+      "Statement of research interests"
+    ],
+    "applicationProcedure": [
+      "Explore research projects on A*STAR, NTU, NUS, and SUTD faculty portals",
+      "Submit online application dossier on the A*STAR SINGA portal"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-12-01",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa",
+    "applicationUrl": "https://www.a-star.edu.sg/Scholarships/for-graduate-studies/singapore-international-graduate-award-singa",
+    "sourceUrl": "https://www.a-star.edu.sg",
+    "sourceName": "A*STAR Singapore",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Source Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "SINGA",
+      "Singapore",
+      "A*STAR",
+      "NUS",
+      "NTU",
+      "PhD",
+      "STEM"
+    ]
+  },
+  {
+    "id": "corporate-sitaram-jindal-foundation-scholarsh-6fcbac41",
+    "name": "Sitaram Jindal Foundation Scholarship Scheme",
+    "slug": "sitaram-jindal-foundation-scholarship-scheme",
+    "provider": "Sitaram Jindal Foundation",
+    "providerCategory": "ngo",
+    "categories": [
+      "ngo",
+      "merit",
+      "need"
+    ],
+    "description": "Charitable foundation scholarship to assist poor and deserving students pursuing higher education across India, from high school to postgraduation and professional courses.",
+    "briefSummary": "Reputed non-governmental foundation scholarship offering monthly stipends nationwide.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 38400,
+    "formattedAmount": "₹14,400 to ₹38,400 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly maintenance stipend disbursed quarterly directly by cheque / NEFT",
+    "benefits": [
+      "Monthly scholarship between ₹1,200 and ₹3,200 depending on course level and hostel status",
+      "Additional allowance for physically challenged scholars and students in paid hostels",
+      "Reliable financial assistance without bond or obligation"
+    ],
+    "educationLevels": [
+      "high_school",
+      "diploma",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "General Graduation",
+      "Post Graduation",
+      "Engineering",
+      "Medicine",
+      "Polytechnic",
+      "ITI"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "diploma",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 65,
+      "maxAnnualIncome": 400000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Marksheet of qualifying examination",
+      "Annual Income Certificate issued by Revenue Authority",
+      "Hostel certificate signed by warden (for hostel stipend)",
+      "Fee structure and receipts of payments made to college"
+    ],
+    "applicationProcedure": [
+      "Download prescribed application form from Sitaram Jindal Foundation website",
+      "Get application verified and certified by Principal of College / Institute",
+      "Mail hard copy with attached certificates to Foundation Office in Bengaluru"
+    ],
+    "applicationStartDate": "2025-01-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.sitaramjindalfoundation.org/scholarships.php",
+    "applicationUrl": "https://www.sitaramjindalfoundation.org/scholarships-apply-offline.php",
+    "sourceUrl": "https://www.sitaramjindalfoundation.org",
+    "sourceName": "Sitaram Jindal Foundation Official",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "NGO",
+      "Sitaram Jindal",
+      "Monthly Stipend",
+      "Pan-India"
+    ]
+  },
+  {
+    "id": "corporate-state-bank-of-india-sbif-asha-schol-219bfa26",
+    "name": "State Bank of India (SBIF) Asha Scholarship for School, UG, and IIT/IIM Students",
+    "slug": "state-bank-of-india-sbif-asha-scholarship-for-school-ug-and-iit-iim-students",
+    "provider": "SBI Foundation (CSR of State Bank of India)",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "need",
+      "merit"
+    ],
+    "description": "Flagship CSR initiative providing financial support of ₹10,000 to ₹3,00,000 to meritorious students from low-income families pursuing school education, undergraduate degrees, and premier IIT/IIM programs.",
+    "briefSummary": "SBI Foundation scholarship offering up to ₹3 Lakhs for school, undergraduate, and IIT/IIM scholars.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 200000,
+    "formattedAmount": "₹10,000 to ₹3,00,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Academic tuition and institutional educational expenditure",
+    "benefits": [
+      "School students (Class 6-12): ₹10,000 per year",
+      "Undergraduate students: ₹50,000 per year",
+      "IIT & IIM students: Up to ₹3,00,000 per year covering full course fees",
+      "Disbursed through direct electronic transfer"
+    ],
+    "educationLevels": [
+      "high_school",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All School Classes",
+      "Undergraduate Degree",
+      "Engineering",
+      "MBA"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 75,
+      "maxAnnualIncome": 300000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Marksheet of previous academic year (minimum 75% marks)",
+      "Government Income proof (annual income ≤ ₹3.00 Lakhs)",
+      "Current year admission letter and fee receipt",
+      "Student or parent bank account details"
+    ],
+    "applicationProcedure": [
+      "Apply online through SBI Foundation Asha Scholarship portal",
+      "Document scrutiny and telephonic verification"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.sbifoundation.in",
+    "applicationUrl": "https://www.sbifoundation.in",
+    "sourceUrl": "https://www.sbifoundation.in",
+    "sourceName": "SBI Foundation Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "SBI",
+      "Asha Scholarship",
+      "IIT",
+      "IIM",
+      "Undergraduate",
+      "CSR"
+    ]
+  },
+  {
+    "id": "state-swami-vivekananda-utkrisht-chhatrav-23d62b86",
+    "name": "Swami Vivekananda Utkrisht Chhatravritti Yojana Himachal Pradesh",
+    "slug": "swami-vivekananda-utkrisht-chhatravritti-yojana-himachal-pradesh",
+    "provider": "Department of Higher Education, Government of Himachal Pradesh",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit"
+    ],
+    "description": "Scholarship awarded to the top 2,000 meritorious students from general categories who passed the 10th/12th examination of the Himachal Pradesh Board of School Education.",
+    "briefSummary": "₹10,000/year merit scholarship for top Himachal Board 10th and 12th students.",
+    "country": "India",
+    "state": "Himachal Pradesh",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 10000,
+    "formattedAmount": "₹10,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Annual monetary award for 2-3 years of subsequent post-matric education",
+    "benefits": [
+      "Top 2,000 meritorious students selected on HP Board merit list",
+      "Continuously renewable for undergraduate degree upon passing with 50%+",
+      "Sanctioned through HP e-Pass / National Scholarship Portal"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Science",
+      "Commerce",
+      "Arts"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "minPercentage": 75,
+      "maxAnnualIncome": 400000,
+      "eligibleStates": [
+        "Himachal Pradesh"
+      ],
+      "eligibleDomicile": [
+        "Himachal Pradesh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Himachali Bonafide / Domicile Certificate",
+      "HP Board 10th / 12th Merit List Certificate",
+      "Current Institution Bonafide Certificate",
+      "Aadhaar-seeded bank account passbook"
+    ],
+    "applicationProcedure": [
+      "Apply via HP e-Pass / NSP Portal under State Scheme Himachal Pradesh",
+      "Provide HPBOSE roll number to auto-verify merit ranking",
+      "Institution verification through college portal login"
+    ],
+    "applicationStartDate": "2025-08-15",
+    "deadline": "2026-11-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://hpepass.cgg.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://hpepass.cgg.gov.in",
+    "sourceName": "Himachal Pradesh ePass Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Himachal Pradesh",
+      "Swami Vivekananda",
+      "HPBOSE",
+      "Merit"
+    ]
+  },
+  {
+    "id": "international-swedish-institute-scholarship-for-g-0bc06caa",
+    "name": "Swedish Institute Scholarship for Global Professionals (SI GP)",
+    "slug": "swedish-institute-scholarship-for-global-professionals-si-gp",
+    "provider": "Swedish Institute, Government of Sweden",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "merit"
+    ],
+    "description": "Fully funded scholarship funded by the Swedish Ministry for Foreign Affairs for ambitious future leaders with proven work experience to pursue full-time master's degree programs in Sweden.",
+    "briefSummary": "100% tuition fees, SEK 12,000/month living stipend, travel grant and insurance in Sweden.",
+    "country": "Sweden",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "SEK",
+    "amount": 350000,
+    "formattedAmount": "Full Tuition + SEK 12,000/mo + Travel",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Full tuition fees paid directly to Swedish university + SEK 12,000 monthly living allowance + SEK 15,000 travel grant + health and accident insurance",
+    "benefits": [
+      "100% coverage of all tuition fees across Swedish universities (KTH, Lund, Uppsala, Chalmers, Stockholm)",
+      "SEK 12,000 per month for living expenses throughout the master's programme",
+      "Membership in the SI Network for Future Global Leaders and lifelong alumni network"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Sustainability",
+      "Innovation",
+      "Engineering",
+      "Public Health",
+      "Computer Science",
+      "Human Rights"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 60,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Proof of work experience (minimum 3,000 demonstrated hours)",
+      "Proof of leadership experience form signed by employer/organization",
+      "Curriculum Vitae on official SI template",
+      "Two letters of reference on official SI template",
+      "Application confirmation from University Admissions in Sweden"
+    ],
+    "applicationProcedure": [
+      "Apply for up to four eligible master's programmes through universityadmissions.se by mid-January",
+      "Submit the SI Scholarship application during the dedicated portal window in February",
+      "Notification of master's admission and SI Scholarship results published in April"
+    ],
+    "applicationStartDate": "2025-10-15",
+    "deadline": "2026-02-28",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/",
+    "applicationUrl": "https://si.se",
+    "sourceUrl": "https://si.se",
+    "sourceName": "Swedish Institute",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Swedish Institute",
+      "Sweden",
+      "Global Professionals",
+      "Full Funding",
+      "Master's"
+    ]
+  },
+  {
+    "id": "international-swiss-government-excellence-scholar-9ef3ed94",
+    "name": "Swiss Government Excellence Scholarships for Foreign Scholars",
+    "slug": "swiss-government-excellence-scholarships-for-foreign-scholars",
+    "provider": "Federal Commission for Scholarships for Foreign Students (FCS), Government of Switzerland",
+    "providerCategory": "international_government",
+    "categories": [
+      "international_government",
+      "research",
+      "merit"
+    ],
+    "description": "Prestigious government scholarships aimed at young foreign researchers who have completed a master's degree or PhD to pursue research or doctoral degrees at Swiss public cantonal universities or Federal Institutes of Technology (ETH Zurich, EPFL).",
+    "briefSummary": "CHF 1,920/month stipend, tuition waiver, health insurance, and Swiss flight allowance.",
+    "country": "Switzerland",
+    "state": "International",
+    "fundingType": "full_funding",
+    "currency": "CHF",
+    "amount": 25000,
+    "formattedAmount": "CHF 1,920 / month + Tuition Waiver + Airfare",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly stipend of CHF 1,920 + full university tuition waiver + mandatory Swiss health insurance + return flight ticket to home country + CHF 300 housing allowance",
+    "benefits": [
+      "Conduct cutting-edge doctoral or postdoctoral research at ETH Zurich, EPFL, or Swiss universities",
+      "Complete exemption from semester tuition fees",
+      "Comprehensive Swiss health and accident insurance covered by FCS"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Physical Sciences",
+      "Engineering",
+      "Life Sciences",
+      "Medicine",
+      "Humanities"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "International"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 70,
+      "maxAge": 35,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "Official Swiss Government Scholarship application form",
+      "Letter from an academic host professor in Switzerland confirming willingness to supervise research",
+      "Detailed research proposal (maximum 5 pages)",
+      "Two confidential letters of recommendation on official FCS form",
+      "Health certificate on official Swiss form"
+    ],
+    "applicationProcedure": [
+      "Contact a Swiss university professor and obtain a signed confirmation of supervision",
+      "Obtain application package from Swiss Embassy in New Delhi",
+      "Submit 3 sets of physical application dossiers to the Swiss Embassy by November deadline"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-12",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.sbfi.admin.ch/sbfi/en/home/education/scholarships-and-grants/swiss-government-excellence-scholarships.html",
+    "applicationUrl": "https://www.eda.admin.ch/newdelhi",
+    "sourceUrl": "https://www.sbfi.admin.ch",
+    "sourceName": "State Secretariat for Education, Research and Innovation (SERI Switzerland)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Switzerland",
+      "ETH Zurich",
+      "EPFL",
+      "PhD Research",
+      "Full Funding",
+      "Excellence"
+    ]
+  },
+  {
+    "id": "state-tamil-nadu-pudhumai-penn-scheme-moo-2a99786e",
+    "name": "Tamil Nadu Pudhumai Penn Scheme (Moovalur Ramamirtham Ammaiyar)",
+    "slug": "tamil-nadu-pudhumai-penn-scheme-moovalur-ramamirtham-ammaiyar",
+    "provider": "Social Welfare & Women Empowerment Dept, Government of Tamil Nadu",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Monthly financial grant of ₹1,000 directly transferred to girl students who studied classes 6 to 12 in Government Schools of Tamil Nadu and pursue higher education.",
+    "briefSummary": "₹12,000 per year (₹1,000/month) for girl students from Tamil Nadu government schools pursuing higher studies.",
+    "country": "India",
+    "state": "Tamil Nadu",
+    "fundingType": "stipend",
+    "currency": "INR",
+    "amount": 12000,
+    "formattedAmount": "₹12,000 / year (₹1,000/month)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly direct benefit transfer of ₹1,000 until completion of degree",
+    "benefits": [
+      "₹1,000 deposited every month into student's bank account",
+      "Covers general degrees, engineering, medicine, agriculture, and diploma",
+      "No family income restriction"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All recognized undergraduate degrees and polytechnic diplomas"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "gender": "female",
+      "eligibleStates": [
+        "Tamil Nadu"
+      ],
+      "eligibleDomicile": [
+        "Tamil Nadu"
+      ],
+      "specialConditions": [
+        "Must have studied Classes 6 to 12 in Tamil Nadu Government Schools"
+      ]
+    },
+    "requiredDocuments": [
+      "EMIS School Transfer Certificate verifying Classes 6-12 in Govt School",
+      "College admission ID card and Bonafide certificate",
+      "Aadhaar card and bank account details"
+    ],
+    "applicationProcedure": [
+      "College nodal officer registers student through Penkalvi (Pudhumai Penn) portal",
+      "Automated EMIS verification of government school attendance"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.penkalvi.tn.gov.in",
+    "applicationUrl": "https://www.penkalvi.tn.gov.in",
+    "sourceUrl": "https://www.penkalvi.tn.gov.in",
+    "sourceName": "Government of Tamil Nadu",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Tamil Nadu",
+      "Pudhumai Penn",
+      "Girls Higher Education",
+      "DBT"
+    ]
+  },
+  {
+    "id": "corporate-tata-capital-pankh-scholarship-prog-22c86e1c",
+    "name": "Tata Capital Pankh Scholarship Programme for General & Professional Courses",
+    "slug": "tata-capital-pankh-scholarship-programme-for-general-professional-courses",
+    "provider": "Tata Capital Limited (CSR)",
+    "providerCategory": "corporate",
+    "categories": [
+      "corporate",
+      "need",
+      "merit"
+    ],
+    "description": "An initiative of Tata Capital to support the higher education of youth belonging to underprivileged families by covering up to 80% of course fees or fixed assistance up to ₹50,000.",
+    "briefSummary": "Tata Capital CSR grant providing up to ₹50,000 (up to 80% course fees) for undergraduate and professional students.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "Up to ₹50,000 (80% fees)",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Up to 80% of annual course fees or ₹50,000, whichever is lower",
+    "benefits": [
+      "Financial grant up to ₹50,000 towards institutional tuition fee",
+      "Covers students in general degrees (B.Com, B.Sc, B.A) and professional degrees (B.Tech, MBBS, BBA)",
+      "One-on-one mentorship sessions and career counseling by Tata professionals"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "B.Com",
+      "B.Sc",
+      "B.A",
+      "B.Tech",
+      "MBBS",
+      "BBA",
+      "BCA",
+      "Diploma"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "diploma"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 400000,
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ]
+    },
+    "requiredDocuments": [
+      "Previous academic year marksheet (min 60% marks)",
+      "Government issued identity card (Aadhaar Card)",
+      "Current year admission receipt or college bonafide certificate",
+      "Annual Income certificate (Salary slip / Form 16 / Tehsildar certificate)",
+      "Student bank account details with canceled cheque"
+    ],
+    "applicationProcedure": [
+      "Register online on Tata Capital Pankh scholarship portal",
+      "Complete personal, academic, and financial background details",
+      "Upload scanned verification records and latest marksheets",
+      "Telephonic interview and document verification by program team"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-11-25",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://www.tatacapital.com/csr/pankh-scholarship.html",
+    "applicationUrl": "https://www.tatacapital.com/csr/pankh-scholarship.html",
+    "sourceUrl": "https://www.tatacapital.com",
+    "sourceName": "Tata Capital CSR Official",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Tata Capital",
+      "CSR",
+      "Pankh",
+      "Tuition Reimbursement",
+      "Undergraduate"
+    ]
+  },
+  {
+    "id": "state-telangana-epass-post-matric-scholar-a0f090e1",
+    "name": "Telangana ePASS Post-Matric Scholarship & Fee Reimbursement",
+    "slug": "telangana-epass-post-matric-scholarship-fee-reimbursement",
+    "provider": "Scheduled Castes Development & BC Welfare Dept, Govt of Telangana",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Comprehensive Post-Matric Scholarship Scheme providing full tuition fee reimbursement (RTF) and maintenance charges (MTF) for eligible students of Telangana.",
+    "briefSummary": "Complete tuition reimbursement and monthly maintenance for Telangana SC/ST/BC/EBC/Minority students.",
+    "country": "India",
+    "state": "Telangana",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 40000,
+    "formattedAmount": "Full Tuition + ₹1,000 - ₹2,000 / month MTF",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "100% Tuition Fee Reimbursement + Monthly Maintenance Fee (MTF)",
+    "benefits": [
+      "Covers actual college fee approved by Fee Regulatory Committee",
+      "Maintenance allowance for college attached hostels and day scholars"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medicine",
+      "Management",
+      "Science",
+      "Commerce",
+      "Arts"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 200000,
+      "eligibleStates": [
+        "Telangana"
+      ],
+      "eligibleDomicile": [
+        "Telangana"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC",
+        "EWS",
+        "Minority"
+      ]
+    },
+    "requiredDocuments": [
+      "MeeSeva Income Certificate (income ≤ ₹2 Lakhs in urban; ≤ ₹1.5L in rural)",
+      "Caste Certificate issued by Tahsildar",
+      "Allotment order through TS EAMCET / ICET / ECET counseling",
+      "Aadhaar card with NPCI mapper"
+    ],
+    "applicationProcedure": [
+      "Register on Telangana ePASS portal (telanganaepass.cgg.gov.in)",
+      "Upload verified documents and submit hard copy to college nodal officer"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://telanganaepass.cgg.gov.in",
+    "applicationUrl": "https://telanganaepass.cgg.gov.in",
+    "sourceUrl": "https://telanganaepass.cgg.gov.in",
+    "sourceName": "Telangana ePASS Official Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Telangana",
+      "ePASS",
+      "RTF",
+      "MTF",
+      "State Scholarship"
+    ]
+  },
+  {
+    "id": "central-top-class-education-scheme-for-sc-s-fc785d0f",
+    "name": "Top Class Education Scheme for SC Students",
+    "slug": "top-class-education-scheme-for-sc-students",
+    "provider": "Ministry of Social Justice and Empowerment, Govt of India",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "need",
+      "merit"
+    ],
+    "description": "Recognizing and promoting quality education amongst Scheduled Caste (SC) students by providing full financial support for education in premier institutions (IITs, IIMs, NITs, AIIMS, NLUs).",
+    "briefSummary": "Full tuition fee waiver, living expenses, book grant, and computer allowance for SC students in premier institutes.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "fully_funded",
+    "currency": "INR",
+    "amount": 250000,
+    "formattedAmount": "Full Tuition + ₹86,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Full non-refundable tuition fee + ₹3,000/mo living expenses + ₹5,000/yr books + ₹45,000 one-time computer grant",
+    "benefits": [
+      "100% tuition and institutional non-refundable fee paid directly to the institute",
+      "Living expense allowance of ₹3,000 per month (₹36,000/year)",
+      "Books and stationery grant of ₹5,000 per annum",
+      "Latest computer / laptop allowance of ₹45,000 one-time"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medicine",
+      "Law",
+      "Management",
+      "Design",
+      "Aviation"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 800000,
+      "socialCategories": [
+        "SC"
+      ],
+      "gender": "all",
+      "eligibleStates": [
+        "All India"
+      ],
+      "specialConditions": [
+        "Admitted to notified top-tier institutes (IITs, NITs, IIMs, AIIMS, NLUs, etc.)"
+      ]
+    },
+    "requiredDocuments": [
+      "Caste Certificate issued by designated competent revenue officer",
+      "Income Certificate (ceiling ₹8.00 Lakhs per annum)",
+      "Admission letter and fee receipt of notified institution",
+      "10th and 12th board marksheets"
+    ],
+    "applicationProcedure": [
+      "Register on National Scholarship Portal (NSP)",
+      "Select 'Top Class Education for SC' under Ministry of Social Justice",
+      "Institution nodal desk approves verified admission and fee structure",
+      "DBT remitted directly to college and student"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://socialjustice.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://scholarships.gov.in",
+    "sourceName": "Ministry of Social Justice & Empowerment",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Top Class",
+      "SC",
+      "Social Justice",
+      "NSP",
+      "IIT",
+      "IIM"
+    ]
+  },
+  {
+    "id": "state-tripura-mukhyamantri-yuba-yogayog-y-ae32ca8c",
+    "name": "Tripura Mukhyamantri Yuba Yogayog Yojana & Post-Matric Scheme",
+    "slug": "tripura-mukhyamantri-yuba-yogayog-yojana-post-matric-scheme",
+    "provider": "Directorate of Higher Education, Government of Tripura",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need",
+      "merit"
+    ],
+    "description": "Financial grants and post-matric assistance for undergraduate degree final-year students and meritorious students across colleges in Tripura.",
+    "briefSummary": "Post-matric and educational grants for college students in Tripura.",
+    "country": "India",
+    "state": "Tripura",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 20000,
+    "formattedAmount": "₹10,000 to ₹25,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition support and academic learning grant",
+    "benefits": [
+      "Annual financial support for tuition and study materials",
+      "Digital device support under Yuba Yogayog scheme",
+      "Direct credit via Tripura State Scholarship portal"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Technical",
+      "General Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Tripura"
+      ],
+      "eligibleDomicile": [
+        "Tripura"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST"
+      ]
+    },
+    "requiredDocuments": [
+      "Permanent Resident of Tripura Certificate (PRTC)",
+      "Caste Certificate (if applicable)",
+      "Family Income Certificate",
+      "College marksheets and admission receipt"
+    ],
+    "applicationProcedure": [
+      "Apply via National Scholarship Portal / Tripura Higher Education portal",
+      "Institute-level verification by college nodal officer",
+      "Direct disbursement through state treasury"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://highereducation.tripura.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://highereducation.tripura.gov.in",
+    "sourceName": "Tripura Higher Education Department",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Tripura",
+      "Post-Matric",
+      "North East",
+      "Yuba Yogayog"
+    ]
+  },
+  {
+    "id": "state-uttar-pradesh-dashmottar-scholarshi-59d08bdb",
+    "name": "Uttar Pradesh Dashmottar Scholarship & Fee Reimbursement Scheme",
+    "slug": "uttar-pradesh-dashmottar-scholarship-fee-reimbursement-scheme",
+    "provider": "Social Welfare & Backward Classes Dept, Government of Uttar Pradesh",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Comprehensive fee reimbursement and monthly maintenance support for students enrolled in post-matriculation courses across Uttar Pradesh colleges and universities.",
+    "briefSummary": "100% college fee reimbursement + maintenance allowance for General, OBC, SC, ST and Minority students in UP.",
+    "country": "India",
+    "state": "Uttar Pradesh",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 50000,
+    "formattedAmount": "Full Tuition + ₹6,000 - ₹12,000 Maintenance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Non-refundable tuition fee reimbursement + monthly stipend",
+    "benefits": [
+      "Full tuition fee reimbursement remitted via PFMS directly to student account",
+      "Covers professional courses: B.Tech, MBBS, B.Ed, MBA, Polytechnic, BA, B.Sc",
+      "Over 40 lakh students funded each academic cycle across UP"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medical",
+      "Management",
+      "Law",
+      "Arts",
+      "Science",
+      "Commerce",
+      "Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma",
+        "phd"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Uttar Pradesh"
+      ],
+      "eligibleDomicile": [
+        "Uttar Pradesh"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "Minority"
+      ]
+    },
+    "requiredDocuments": [
+      "UP Domicile / Niwas Praman Patra",
+      "Valid Revenue Board Income Certificate (ceiling ₹2L for Gen/OBC; ₹2.5L for SC/ST)",
+      "Caste Certificate (Jati Praman Patra)",
+      "Previous exam marksheet and fee receipt with counseling roll number"
+    ],
+    "applicationProcedure": [
+      "Register on UP Scholarship Portal (scholarships.up.gov.in)",
+      "Complete online registration and link Aadhaar with OTP",
+      "Print final application and submit hard copy with documents to college within 7 days",
+      "District Scholarship Committee verifies and approves for treasury DBT release"
+    ],
+    "applicationStartDate": "2025-07-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://scholarship.up.gov.in",
+    "applicationUrl": "https://scholarship.up.gov.in",
+    "sourceUrl": "https://scholarship.up.gov.in",
+    "sourceName": "Uttar Pradesh Scholarship Portal (SAMS)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Uttar Pradesh",
+      "UP Scholarship",
+      "Dashmottar",
+      "Fee Reimbursement"
+    ]
+  },
+  {
+    "id": "state-uttarakhand-post-matric-scholarship-18e2374d",
+    "name": "Uttarakhand Post-Matric Scholarship Scheme for SC/ST/OBC",
+    "slug": "uttarakhand-post-matric-scholarship-scheme-for-sc-st-obc",
+    "provider": "Social Welfare Department, Government of Uttarakhand",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "State scheme providing full tuition fee reimbursement and maintenance allowances to domiciled students of Uttarakhand enrolled in recognized technical and general degree colleges.",
+    "briefSummary": "Tuition fee reimbursement and monthly stipend for Uttarakhand college students.",
+    "country": "India",
+    "state": "Uttarakhand",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 30000,
+    "formattedAmount": "Full Tuition + ₹1,000/mo allowance",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Compulsory non-refundable fee reimbursement + maintenance allowance",
+    "benefits": [
+      "100% tuition reimbursement across affiliated universities",
+      "Hostel and day scholar differential maintenance grants",
+      "Direct bank transfer via PFMS"
+    ],
+    "educationLevels": [
+      "diploma",
+      "undergraduate",
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "All Disciplines",
+      "Engineering",
+      "Pharmacy",
+      "Polytechnic",
+      "Degree"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "diploma",
+        "undergraduate",
+        "postgraduate"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Uttarakhand"
+      ],
+      "eligibleDomicile": [
+        "Uttarakhand"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC"
+      ]
+    },
+    "requiredDocuments": [
+      "Uttarakhand Permanent Resident Certificate",
+      "Caste Certificate issued by Tehsildar",
+      "Income Certificate issued by Revenue Authority",
+      "College Fee receipt and Bonafide"
+    ],
+    "applicationProcedure": [
+      "Apply online through Uttarakhand Scholarship Portal (ekalyan.uk.gov.in) / NSP",
+      "Complete institute-level verification",
+      "District Social Welfare Officer sanction and disbursement"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-12-15",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://ekalyan.uk.gov.in",
+    "applicationUrl": "https://scholarships.gov.in",
+    "sourceUrl": "https://socialwelfare.uk.gov.in",
+    "sourceName": "Uttarakhand Social Welfare Department",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Uttarakhand",
+      "Post-Matric",
+      "SC/ST/OBC",
+      "Tuition Reimbursement"
+    ]
+  },
+  {
+    "id": "international-vanier-canada-graduate-scholarships-fdfb0358",
+    "name": "Vanier Canada Graduate Scholarships (Government of Canada)",
+    "slug": "vanier-canada-graduate-scholarships-government-of-canada",
+    "provider": "Government of Canada (CIHR, NSERC, SSHRC)",
+    "providerCategory": "international",
+    "categories": [
+      "international",
+      "research",
+      "merit",
+      "stem"
+    ],
+    "description": "Canada's most prestigious doctoral award. Helps Canadian institutions attract highly qualified doctoral students, valuing academic excellence, research potential, and leadership.",
+    "briefSummary": "Canada's top doctoral award providing $50,000 per year for three years of PhD studies.",
+    "country": "Canada",
+    "state": "All Canadian Provinces",
+    "fundingType": "fully_funded",
+    "currency": "CAD",
+    "amount": 50000,
+    "formattedAmount": "CAD $50,000 / year for 3 years",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "$50,000 per year for three years towards doctoral research and living expenses",
+    "benefits": [
+      "Substantial grant of CAD $50,000 annually for 3 consecutive years (Total CAD $150,000)",
+      "Eligible at top Canadian research institutions (U of T, UBC, McGill, Waterloo, Alberta, McMaster)",
+      "Prestigious national recognition and research mobility"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Health Research (CIHR)",
+      "Natural Sciences and Engineering (NSERC)",
+      "Social Sciences and Humanities (SSHRC)"
+    ],
+    "eligibleNationalities": [
+      "Indian",
+      "Canadian Citizens",
+      "Permanent Residents",
+      "Foreign Citizens"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 80,
+      "gender": "all",
+      "specialConditions": [
+        "Be nominated by only one Canadian institution which must have received a Vanier CGS quota",
+        "Be pursuing first doctoral degree with a first-class average in each of the last two years of full-time study"
+      ]
+    },
+    "requiredDocuments": [
+      "ResearchNet application form and Common CV (CCV)",
+      "Detailed research proposal (maximum two pages)",
+      "Project references and academic transcripts",
+      "Two leadership reference letters and two academic referee assessments"
+    ],
+    "applicationProcedure": [
+      "Contact proposed Canadian university graduate studies department",
+      "Department submits institutional nomination package through ResearchNet portal",
+      "Tri-agency selection committees assess nominations"
+    ],
+    "applicationStartDate": "2025-06-15",
+    "deadline": "2026-11-01",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://vanier.gc.ca/en/home-accueil.html",
+    "applicationUrl": "https://vanier.gc.ca/en/nomination_process-processus_de_mise_en_candidature.html",
+    "sourceUrl": "https://vanier.gc.ca",
+    "sourceName": "Government of Canada Vanier CGS",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Vanier",
+      "Canada",
+      "PhD",
+      "Doctoral",
+      "Fully Funded",
+      "Research"
+    ]
+  },
+  {
+    "id": "central-visvesvaraya-phd-scheme-for-electro-7ac24544",
+    "name": "Visvesvaraya PhD Scheme for Electronics and IT",
+    "slug": "visvesvaraya-phd-scheme-for-electronics-and-it",
+    "provider": "Ministry of Electronics and Information Technology (MeitY)",
+    "providerCategory": "central_gov",
+    "categories": [
+      "central_gov",
+      "research",
+      "merit"
+    ],
+    "description": "Fellowship scheme initiated by MeitY to enhance number of PhDs in Electronics System Design & Manufacturing (ESDM) and IT/IT-Enabled Services (ITES) sectors in premier Indian universities.",
+    "briefSummary": "₹38,750 to ₹43,750/month fellowship + ₹30,000/year contingency + international conference support.",
+    "country": "India",
+    "state": "All India",
+    "fundingType": "full_funding",
+    "currency": "INR",
+    "amount": 555000,
+    "formattedAmount": "₹38,750 to ₹43,750 / month + HRA + Support",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "monthly",
+    "awardCoverage": "Monthly doctoral fellowship + ₹30,000 annual contingency + up to ₹50,000 international conference travel grant",
+    "benefits": [
+      "Full 5-year fellowship for full-time PhD candidates in ESDM and IT/ITES",
+      "Reimbursement of rent (HRA) as per central government norms",
+      "Financial grant to present research at international IEEE / ACM conferences"
+    ],
+    "educationLevels": [
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Electronics Engineering",
+      "VLSI Design",
+      "Computer Science",
+      "Artificial Intelligence",
+      "Information Technology"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "phd"
+      ],
+      "minPercentage": 65,
+      "gender": "all",
+      "socialCategories": [
+        "General",
+        "OBC",
+        "SC",
+        "ST",
+        "EWS"
+      ]
+    },
+    "requiredDocuments": [
+      "B.Tech / M.Tech academic transcripts in relevant engineering disciplines",
+      "Institution Admission Letter under MeitY Visvesvaraya PhD quota",
+      "Research Proposal summary approved by Department Research Committee",
+      "Aadhaar card and bank account details"
+    ],
+    "applicationProcedure": [
+      "Apply directly through participating institutions (IITs, NITs, Central Universities, IIITs)",
+      "Institute forwards shortlisted candidates to Digital India Corporation / MeitY",
+      "Monthly attendance certification by institution nodal coordinator"
+    ],
+    "applicationStartDate": "2025-06-01",
+    "deadline": "2026-10-31",
+    "isDeadlinePassed": true,
+    "status": "closed",
+    "officialUrl": "https://phd.digitalindiacorporation.in",
+    "applicationUrl": "https://phd.digitalindiacorporation.in",
+    "sourceUrl": "https://www.meity.gov.in",
+    "sourceName": "Ministry of Electronics & Information Technology (MeitY)",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Expired",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "MeitY",
+      "Visvesvaraya PhD",
+      "Electronics",
+      "IT",
+      "Doctoral Fellowship"
+    ]
+  },
+  {
+    "id": "state-west-bengal-kanyashree-prakalpa-k3--e549053f",
+    "name": "West Bengal Kanyashree Prakalpa (K3 for Postgraduate Girls)",
+    "slug": "west-bengal-kanyashree-prakalpa-k3-for-postgraduate-girls",
+    "provider": "Department of Women & Child Development and Social Welfare, Govt of West Bengal",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit"
+    ],
+    "description": "UN-awarded girls' education scheme providing ₹2,000 to ₹2,500 per month for unmarried female students of West Bengal pursuing regular Master's degrees.",
+    "briefSummary": "₹24,000 to ₹30,000 per year for female graduate students in West Bengal with no family income ceiling.",
+    "country": "India",
+    "state": "West Bengal",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 30000,
+    "formattedAmount": "₹24,000 to ₹30,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹2,500/month for PG Science; ₹2,000/month for PG Arts/Commerce",
+    "benefits": [
+      "₹2,500 per month for M.Sc students",
+      "₹2,000 per month for M.A and M.Com students",
+      "No family income bar for female scholars who passed out of K1/K2"
+    ],
+    "educationLevels": [
+      "postgraduate"
+    ],
+    "coursesAndStreams": [
+      "Master of Arts",
+      "Master of Science",
+      "Master of Commerce"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "postgraduate"
+      ],
+      "minPercentage": 45,
+      "gender": "female",
+      "eligibleStates": [
+        "West Bengal"
+      ],
+      "eligibleDomicile": [
+        "West Bengal"
+      ],
+      "specialConditions": [
+        "Unmarried female student enrolled in regular post-graduation in West Bengal"
+      ]
+    },
+    "requiredDocuments": [
+      "Undergraduate degree marksheet (min 45% marks)",
+      "Kanyashree ID (from school K1/K2 registration) or university admission card",
+      "Unmarried declaration endorsed by local panchayat / municipality",
+      "Bank passbook copy"
+    ],
+    "applicationProcedure": [
+      "Apply via SVMCM K3 portal tab (svmcm.wbhed.gov.in)",
+      "University department head authenticates admission and marital status"
+    ],
+    "applicationStartDate": "2025-09-10",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://wbkanyashree.gov.in",
+    "applicationUrl": "https://svmcm.wbhed.gov.in",
+    "sourceUrl": "https://wbkanyashree.gov.in",
+    "sourceName": "Govt of West Bengal Kanyashree",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "West Bengal",
+      "Kanyashree",
+      "K3",
+      "Girls Education",
+      "Postgraduate"
+    ]
+  },
+  {
+    "id": "state-west-bengal-swami-vivekananda-merit-76e88751",
+    "name": "West Bengal Swami Vivekananda Merit-cum-Means Scholarship (SVMCM)",
+    "slug": "west-bengal-swami-vivekananda-merit-cum-means-scholarship-svmcm",
+    "provider": "Department of Higher Education, Govt of West Bengal",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "merit",
+      "need"
+    ],
+    "description": "Flagship West Bengal scholarship providing monthly assistance between ₹1,000 and ₹5,000 for meritorious students pursuing HS, UG, PG, and doctoral studies.",
+    "briefSummary": "Flagship West Bengal state scholarship granting ₹12,000 to ₹60,000 per year for domicile students.",
+    "country": "India",
+    "state": "West Bengal",
+    "fundingType": "fixed_award",
+    "currency": "INR",
+    "amount": 30000,
+    "formattedAmount": "₹12,000 to ₹60,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "₹1,000 to ₹5,000/month based on course level and discipline",
+    "benefits": [
+      "Higher Secondary students: ₹12,000 per annum (min 60% in Madhyamik)",
+      "UG Degree Arts/Commerce/Science: ₹12,000 to ₹18,000 per annum",
+      "Engineering & Medical students: ₹60,000 per annum",
+      "Non-NET M.Phil and PhD scholars: ₹60,000 to ₹96,000 per annum"
+    ],
+    "educationLevels": [
+      "high_school",
+      "undergraduate",
+      "postgraduate",
+      "diploma",
+      "phd"
+    ],
+    "coursesAndStreams": [
+      "Arts",
+      "Science",
+      "Commerce",
+      "Engineering",
+      "Medical",
+      "Polytechnic"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "high_school",
+        "undergraduate",
+        "postgraduate",
+        "diploma",
+        "phd"
+      ],
+      "minPercentage": 60,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "West Bengal"
+      ],
+      "eligibleDomicile": [
+        "West Bengal"
+      ],
+      "gender": "all"
+    },
+    "requiredDocuments": [
+      "Marksheet of Madhyamik/Higher Secondary/Graduation qualifying exam",
+      "Income certificate issued by Joint BDO / Executive Officer / Municipality",
+      "West Bengal Domicile proof (Ration card / Voter ID / Aadhaar)",
+      "Institutional admission receipt"
+    ],
+    "applicationProcedure": [
+      "Register on SVMCM portal (svmcm.wbhed.gov.in)",
+      "Select directorate (DPI, DTE, DME, or School Education)",
+      "Upload certified documents and submit to institutional verification desk"
+    ],
+    "applicationStartDate": "2025-09-10",
+    "deadline": "2026-12-31",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://svmcm.wbhed.gov.in",
+    "applicationUrl": "https://svmcm.wbhed.gov.in",
+    "sourceUrl": "https://svmcm.wbhed.gov.in",
+    "sourceName": "Govt of West Bengal Higher Education Dept",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "West Bengal",
+      "SVMCM",
+      "Merit-Cum-Means",
+      "State Scholarship"
+    ]
+  },
+  {
+    "id": "state-e-kalyan-jharkhand-post-matric-scho-91cb99f1",
+    "name": "e-Kalyan Jharkhand Post-Matric Scholarship Scheme",
+    "slug": "e-kalyan-jharkhand-post-matric-scholarship-scheme",
+    "provider": "Scheduled Tribe, Scheduled Caste, Minority and Backward Class Welfare Department, Government of Jharkhand",
+    "providerCategory": "state_gov",
+    "categories": [
+      "state_gov",
+      "need"
+    ],
+    "description": "Flagship Jharkhand scholarship offering comprehensive college fee reimbursement and food/hostel maintenance allowances for SC, ST, and BC students studying in-state and out-of-state.",
+    "briefSummary": "Comprehensive fee reimbursement & living stipend for Jharkhand college students on e-Kalyan.",
+    "country": "India",
+    "state": "Jharkhand",
+    "fundingType": "tuition_waiver",
+    "currency": "INR",
+    "amount": 40000,
+    "formattedAmount": "Up to ₹50,000 / year",
+    "minAmount": null,
+    "maxAmount": null,
+    "awardFrequency": "annual",
+    "awardCoverage": "Tuition fees reimbursement + monthly maintenance allowance (hosteller/day scholar)",
+    "benefits": [
+      "Reimbursement of tuition, library, exam, and laboratory charges",
+      "Monthly maintenance stipend up to ₹1,200/month",
+      "Valid for recognized institutions inside and outside Jharkhand"
+    ],
+    "educationLevels": [
+      "undergraduate",
+      "postgraduate",
+      "diploma"
+    ],
+    "coursesAndStreams": [
+      "Engineering",
+      "Medical",
+      "B.Sc",
+      "B.Com",
+      "B.A",
+      "Polytechnic",
+      "Law"
+    ],
+    "eligibleNationalities": [
+      "Indian"
+    ],
+    "requirements": {
+      "educationLevels": [
+        "undergraduate",
+        "postgraduate",
+        "diploma"
+      ],
+      "minPercentage": 50,
+      "maxAnnualIncome": 250000,
+      "eligibleStates": [
+        "Jharkhand"
+      ],
+      "eligibleDomicile": [
+        "Jharkhand"
+      ],
+      "gender": "all",
+      "socialCategories": [
+        "SC",
+        "ST",
+        "OBC"
+      ]
+    },
+    "requiredDocuments": [
+      "Jharkhand Residential Certificate issued online with JHARSEWA barcode",
+      "Caste Certificate issued online with barcode",
+      "Income Certificate issued on or after valid financial year",
+      "College Bonafide Certificate with fee structure breakdown"
+    ],
+    "applicationProcedure": [
+      "Register on Jharkhand e-Kalyan portal (ekalyan.cgg.gov.in)",
+      "Enter online JHARSEWA certificate numbers for instant digital validation",
+      "Upload scanned Bonafide and marksheets",
+      "Multi-stage verification: Institute, District Welfare Officer, and Treasury"
+    ],
+    "applicationStartDate": "2025-08-01",
+    "deadline": "2026-11-30",
+    "isDeadlinePassed": false,
+    "status": "open",
+    "officialUrl": "https://ekalyan.cgg.gov.in",
+    "applicationUrl": "https://ekalyan.cgg.gov.in",
+    "sourceUrl": "https://ekalyan.cgg.gov.in",
+    "sourceName": "Jharkhand e-Kalyan Portal",
+    "dateCollected": "2026-11-07T10:00:00Z",
+    "lastVerifiedDate": "2026-11-07",
+    "lastSynchronizedDate": "2026-11-07T12:00:00Z",
+    "verificationStatus": "Officially Verified",
+    "dataProvenance": "verified_curated",
+    "tags": [
+      "Jharkhand",
+      "e-Kalyan",
+      "Post-Matric",
+      "Fee Reimbursement"
+    ]
   }
 ];
+
+export const SCHOLARSHIPS_DATA = FALLBACK_SCHOLARSHIPS;

@@ -24,7 +24,26 @@ const INDIAN_STATES = [
   'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala',
   'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
   'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
-  'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi'
+  'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh',
+  'Puducherry', 'Chandigarh', 'Andaman and Nicobar Islands', 'Dadra and Nagar Haveli and Daman and Diu'
+];
+
+const COUNTRIES = [
+  { val: 'all', label: 'All Regions / Countries' },
+  { val: 'India', label: 'India Opportunities' },
+  { val: 'International', label: 'All International (Study Abroad)' },
+  { val: 'United Kingdom', label: 'United Kingdom (UK)' },
+  { val: 'United States', label: 'United States (USA)' },
+  { val: 'Germany', label: 'Germany (DAAD)' },
+  { val: 'France', label: 'France (Campus France)' },
+  { val: 'Netherlands', label: 'Netherlands' },
+  { val: 'Sweden', label: 'Sweden (SI)' },
+  { val: 'Switzerland', label: 'Switzerland' },
+  { val: 'Canada', label: 'Canada' },
+  { val: 'Australia', label: 'Australia' },
+  { val: 'Singapore', label: 'Singapore (A*STAR)' },
+  { val: 'Japan', label: 'Japan (MEXT)' },
+  { val: 'South Korea', label: 'South Korea (GKS)' }
 ];
 
 export const DiscoverPage: React.FC = () => {
@@ -168,6 +187,41 @@ export const DiscoverPage: React.FC = () => {
             </div>
           </div>
 
+          {/* Country / Region Filter */}
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+              Country / Region
+            </label>
+            <select
+              value={filters.country}
+              onChange={e => setFilters(prev => ({ ...prev, country: e.target.value }))}
+              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+            >
+              {COUNTRIES.map(c => (
+                <option key={c.val} value={c.val}>{c.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Funding Type Filter */}
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+              Funding Structure
+            </label>
+            <select
+              value={filters.fundingType}
+              onChange={e => setFilters(prev => ({ ...prev, fundingType: e.target.value as any }))}
+              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
+            >
+              <option value="all">All Funding Types</option>
+              <option value="full_funding">Full Funding (Tuition + Living + Travel)</option>
+              <option value="tuition_waiver">Tuition Fee Waiver / Reimbursement</option>
+              <option value="fixed_award">Direct Cash Grant / Annual Stipend</option>
+              <option value="partial_funding">Partial Fee Award</option>
+              <option value="loan_scholarship">Interest-Free Loan Scholarship</option>
+            </select>
+          </div>
+
           {/* Provider Category Filter */}
           <div className="space-y-2">
             <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
@@ -179,11 +233,13 @@ export const DiscoverPage: React.FC = () => {
               className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="all">All Provider Types</option>
-              <option value="central_gov">Central Government (NSP/Ministry)</option>
+              <option value="central_gov">Central Government (NSP/Ministries)</option>
               <option value="state_gov">State Government Portals</option>
-              <option value="corporate">Corporate CSR (Tata, Reliance, etc.)</option>
-              <option value="ngo">NGO / Foundation</option>
-              <option value="international">International Fellowships</option>
+              <option value="corporate_csr">Corporate CSR Programs</option>
+              <option value="foundation_ngo">Philanthropic Foundations & NGOs</option>
+              <option value="premier_university">Premier University Aid</option>
+              <option value="international_government">International Government</option>
+              <option value="international_university">World University Fellowships</option>
             </select>
           </div>
 
@@ -346,6 +402,35 @@ export const DiscoverPage: React.FC = () => {
               </div>
 
               <div>
+                <label className="font-bold text-slate-700 block mb-1">Country / Region</label>
+                <select
+                  value={filters.country}
+                  onChange={e => setFilters(prev => ({ ...prev, country: e.target.value }))}
+                  className="w-full p-2.5 rounded-xl border border-slate-200"
+                >
+                  {COUNTRIES.map(c => (
+                    <option key={c.val} value={c.val}>{c.label}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label className="font-bold text-slate-700 block mb-1">Funding Structure</label>
+                <select
+                  value={filters.fundingType}
+                  onChange={e => setFilters(prev => ({ ...prev, fundingType: e.target.value as any }))}
+                  className="w-full p-2.5 rounded-xl border border-slate-200"
+                >
+                  <option value="all">All Funding Types</option>
+                  <option value="full_funding">Full Funding</option>
+                  <option value="tuition_waiver">Tuition Fee Waiver</option>
+                  <option value="fixed_award">Direct Cash Grant</option>
+                  <option value="partial_funding">Partial Fee Award</option>
+                  <option value="loan_scholarship">Loan Scholarship</option>
+                </select>
+              </div>
+
+              <div>
                 <label className="font-bold text-slate-700 block mb-1">Provider Type</label>
                 <select
                   value={filters.providerCategory}
@@ -355,9 +440,11 @@ export const DiscoverPage: React.FC = () => {
                   <option value="all">All Providers</option>
                   <option value="central_gov">Central Government</option>
                   <option value="state_gov">State Government</option>
-                  <option value="corporate">Corporate CSR</option>
-                  <option value="ngo">NGO / Foundation</option>
-                  <option value="international">International</option>
+                  <option value="corporate_csr">Corporate CSR</option>
+                  <option value="foundation_ngo">Philanthropic NGOs</option>
+                  <option value="premier_university">Premier University</option>
+                  <option value="international_government">International Government</option>
+                  <option value="international_university">World University</option>
                 </select>
               </div>
 

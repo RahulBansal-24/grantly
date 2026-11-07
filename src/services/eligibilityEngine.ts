@@ -58,7 +58,7 @@ export class EligibilityEngine {
 
     // 6. Social Category / Reservation
     if (req.socialCategories && req.socialCategories.length > 0 && !req.socialCategories.includes('Any')) {
-      criteria.push(this.evaluateSocialCategoryRequirement(req.socialCategories, profile?.socialCategory));
+      criteria.push(this.evaluateSocialCategoryRequirement(req.socialCategories as any, profile?.socialCategory));
     }
 
     // 7. Course / Stream

@@ -30,8 +30,9 @@ export const HomePage: React.FC = () => {
   // Dynamic real stats calculated directly from verified data
   const totalFundingValue = scholarships.reduce((acc, s) => acc + s.amount, 0);
   const centralGovCount = scholarships.filter(s => s.providerCategory === 'central_gov').length;
-  const corporateCount = scholarships.filter(s => s.providerCategory === 'corporate').length;
+  const corporateCount = scholarships.filter(s => s.providerCategory === 'corporate' || s.providerCategory === 'corporate_csr' || s.providerCategory === 'foundation_ngo').length;
   const stateGovCount = scholarships.filter(s => s.providerCategory === 'state_gov').length;
+  const internationalCount = scholarships.filter(s => s.providerCategory === 'international' || s.providerCategory === 'international_government' || s.providerCategory === 'international_university').length;
 
   const featured = processedScholarships.slice(0, 3);
 
@@ -40,28 +41,28 @@ export const HomePage: React.FC = () => {
       id: 'central_gov',
       name: 'Central Government',
       count: centralGovCount,
-      desc: 'National Scholarship Portal (NSP), Ministry of Education, AICTE',
+      desc: 'National Scholarship Portal (NSP), Ministry of Education, AICTE, DST',
       icon: <Building className="text-blue-600" size={24} />
     },
     {
-      id: 'corporate',
-      name: 'Corporate CSR Grants',
+      id: 'corporate_csr',
+      name: 'Corporate CSR & Foundations',
       count: corporateCount,
-      desc: 'Tata, Reliance, Infosys, Adobe & HDFC Parivartan',
+      desc: 'Tata, Reliance, Infosys, Adobe, Google & HDFC Parivartan',
       icon: <Award className="text-purple-600" size={24} />
     },
     {
       id: 'state_gov',
-      name: 'State Government',
+      name: 'State Government Schemes',
       count: stateGovCount,
-      desc: 'Karnataka SSP, Maharashtra MahaDBT, Bengal SVMCM',
+      desc: '35 Indian States & UTs (Karnataka, Maharashtra, UP, WB, MP)',
       icon: <GraduationCap className="text-emerald-600" size={24} />
     },
     {
-      id: 'international',
+      id: 'international_government',
       name: 'International Fellowships',
-      count: scholarships.filter(s => s.providerCategory === 'international').length,
-      desc: 'Rhodes Oxford, Fulbright-Nehru USA Master’s',
+      count: internationalCount,
+      desc: 'Chevening, Rhodes, Fulbright, DAAD Germany, Eiffel France',
       icon: <Globe2 className="text-rose-600" size={24} />
     }
   ];

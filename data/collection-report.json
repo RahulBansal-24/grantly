@@ -1,0 +1,68 @@
+{
+  "reportId": "CR-1794045936",
+  "collectionTimestamp": "2026-11-07T15:35:36.096923Z",
+  "evaluationDate": "2026-11-07",
+  "summary": {
+    "totalScholarships": 113,
+    "indianScholarships": 89,
+    "internationalScholarships": 24,
+    "activeScholarships": 75,
+    "upcomingScholarships": 0,
+    "closedOrExpiredScholarships": 38,
+    "officiallyVerified": 73,
+    "sourceVerified": 2,
+    "needsVerification": 0,
+    "expiredRecords": 38,
+    "duplicatesRemoved": 0,
+    "totalSourcesProcessed": 48,
+    "sourcesSkipped": 0
+  },
+  "breakdownByCategory": {
+    "central_gov": 21,
+    "merit": 80,
+    "stem": 16,
+    "need": 69,
+    "corporate": 14,
+    "corporate_csr": 5,
+    "state_gov": 36,
+    "university": 4,
+    "international": 14,
+    "research": 22,
+    "international_government": 8,
+    "minority": 4,
+    "international_university": 2,
+    "foundation_ngo": 3,
+    "premier_university": 5,
+    "ngo": 1
+  },
+  "breakdownByCountry": {
+    "India": 89,
+    "Australia": 2,
+    "United Kingdom": 6,
+    "Germany": 2,
+    "France": 1,
+    "European Union": 1,
+    "United States": 3,
+    "South Korea": 1,
+    "Japan": 1,
+    "Canada": 3,
+    "Netherlands": 1,
+    "Singapore": 1,
+    "Sweden": 1,
+    "Switzerland": 1
+  },
+  "breakdownByEducationLevel": {
+    "postgraduate": 72,
+    "undergraduate": 74,
+    "diploma": 32,
+    "phd": 34,
+    "school": 4,
+    "high_school": 7
+  },
+  "dataIntegrityAudit": {
+    "uniqueIdsValid": true,
+    "allUrlsValid": true,
+    "allDeadlinesFormatted": true,
+    "deterministicSchemaCompliant": true
+  }
+}
