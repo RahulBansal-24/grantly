@@ -41,6 +41,10 @@ export interface StudentProfile {
   isGuest: boolean;
 }
 
+export interface StudentProfileRecord extends StudentProfile {
+  id: string;
+}
+
 export type ApplicationStatus =
   | 'saved'
   | 'planning'

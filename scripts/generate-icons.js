@@ -2,10 +2,18 @@ import fs from 'fs';
 import path from 'path';
 import { execSync } from 'child_process';
 
-const outDir = path.resolve('public');
-if (!fs.existsSync(outDir)) {
-  fs.mkdirSync(outDir, { recursive: true });
-}
+const targets = [
+  path.resolve('frontend/public'),
+  path.resolve('public')
+].filter(d => fs.existsSync(d) || d.includes('frontend'));
+
+targets.forEach(outDir => {
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
+});
+
+const outDir = targets[0];
 
 // Generate high-fidelity PWA & Apple Touch PNG icons matching favicon.svg
 const psScript = `

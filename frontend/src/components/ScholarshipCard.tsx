@@ -16,6 +16,11 @@ import {
   Award,
   AlertCircle
 } from 'lucide-react';
+import {
+  calculateDaysRemaining,
+  getProviderCategoryBadge,
+  getFundingTypeLabel
+} from '../utils/formatters';
 
 interface Props {
   scholarship: Scholarship;
@@ -23,7 +28,7 @@ interface Props {
   onBookmarkChanged?: (scholarshipId: string, isSaved: boolean) => void;
 }
 
-export const ScholarshipCard: React.FC<Props> = ({
+export const ScholarshipCard: React.FC<Props> = React.memo(({
   scholarship,
   evaluationResult,
   onBookmarkChanged
@@ -57,42 +62,9 @@ export const ScholarshipCard: React.FC<Props> = ({
     }
   };
 
-  // Provider category readable badge
-  const categoryLabels: Record<string, { label: string; color: string }> = {
-    central_gov: { label: 'Central Government', color: 'bg-blue-50 text-blue-700 border-blue-200' },
-    state_gov: { label: 'State Government', color: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
-    corporate_csr: { label: 'Corporate CSR', color: 'bg-purple-50 text-purple-700 border-purple-200' },
-    corporate: { label: 'Corporate CSR', color: 'bg-purple-50 text-purple-700 border-purple-200' },
-    foundation_ngo: { label: 'NGO / Foundation', color: 'bg-amber-50 text-amber-700 border-amber-200' },
-    ngo: { label: 'NGO / Foundation', color: 'bg-amber-50 text-amber-700 border-amber-200' },
-    premier_university: { label: 'Premier University', color: 'bg-teal-50 text-teal-700 border-teal-200' },
-    university: { label: 'University Aid', color: 'bg-teal-50 text-teal-700 border-teal-200' },
-    international_government: { label: 'International Gov', color: 'bg-rose-50 text-rose-700 border-rose-200' },
-    international_university: { label: 'World University', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' },
-    international: { label: 'International', color: 'bg-rose-50 text-rose-700 border-rose-200' },
-    private: { label: 'Private Entity', color: 'bg-indigo-50 text-indigo-700 border-indigo-200' }
-  };
-
-  const catConfig = categoryLabels[scholarship.providerCategory] || {
-    label: scholarship.providerCategory.replace('_', ' '),
-    color: 'bg-slate-50 text-slate-700 border-slate-200'
-  };
-
-  // Funding Type format
-  const fundingFormat: Record<string, string> = {
-    full_funding: 'Full Funding',
-    tuition_waiver: 'Tuition Waiver',
-    fixed_award: 'Direct Grant',
-    partial_funding: 'Partial Award',
-    loan_scholarship: 'Loan Scholarship'
-  };
-
-  // Calculate days left
-  const deadlineDate = new Date(scholarship.deadline);
-  const today = new Date();
-  const diffTime = deadlineDate.getTime() - today.getTime();
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  const isExpired = diffDays < 0;
+  const catConfig = getProviderCategoryBadge(scholarship.providerCategory);
+  const fundingLabel = getFundingTypeLabel(scholarship.fundingType);
+  const daysInfo = calculateDaysRemaining(scholarship.deadline);
 
   return (
     <div className="group bg-white rounded-2xl border border-slate-200 shadow-subtle hover:shadow-card-hover transition-all duration-200 flex flex-col justify-between overflow-hidden relative">
@@ -123,12 +95,12 @@ export const ScholarshipCard: React.FC<Props> = ({
             {scholarship.fundingType && (
               <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-brand-50 text-brand-700 border border-brand-200">
                 <Award size={10} className="text-brand-600" />
-                {fundingFormat[scholarship.fundingType] || scholarship.fundingType}
+                {fundingLabel}
               </span>
             )}
 
             {/* Verification / Expired badge */}
-            {scholarship.verificationStatus === 'Expired' || isExpired ? (
+            {scholarship.verificationStatus === 'Expired' || daysInfo.isExpired ? (
               <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
                 <AlertCircle size={10} className="text-rose-600" />
                 Expired
@@ -208,17 +180,15 @@ export const ScholarshipCard: React.FC<Props> = ({
           {/* Deadline */}
           <div
             className={`flex items-center gap-1 text-[11px] font-medium ${
-              isExpired
+              daysInfo.isExpired
                 ? 'text-rose-600 font-semibold'
-                : diffDays <= 7
+                : daysInfo.isClosingSoon
                 ? 'text-amber-700 font-semibold'
                 : 'text-slate-500'
             }`}
           >
             <Calendar size={13} />
-            <span>
-              {isExpired ? 'Closed' : diffDays === 0 ? 'Closes today' : `${diffDays}d left`}
-            </span>
+            <span>{daysInfo.label}</span>
           </div>
 
           <Link
@@ -232,4 +202,6 @@ export const ScholarshipCard: React.FC<Props> = ({
       </div>
     </div>
   );
-};
+});
+
+ScholarshipCard.displayName = 'ScholarshipCard';

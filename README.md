@@ -238,7 +238,7 @@ For each evaluated criterion $i \in C$, satisfaction credit is assigned accordin
 The overall transparent match score ($S$) is the weighted percentage:
 
 ```math
-S = \min\left(100, \max\left(0, \operatorname{round}\left( \frac{\sum_{i \in C} W_i \times \text{Credit}(i)}{\sum_{i \in C} W_i} \times 100 \right) \right)\right)
+S = \min\left(100, \max\left(0, \text{round}\left( \frac{\sum_{i \in C} W_i \times \text{Credit}(i)}{\sum_{i \in C} W_i} \times 100 \right) \right)\right)
 ```
 
 *If no specific criteria are attached to an open general award, a baseline score of 50% is assigned.*

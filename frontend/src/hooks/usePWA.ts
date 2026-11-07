@@ -21,7 +21,7 @@ export function usePWA() {
     // Check if already in standalone mode
     const isStandalone =
       window.matchMedia('(display-mode: standalone)').matches ||
-      (window.navigator as any).standalone === true ||
+      Boolean((window.navigator as unknown as { standalone?: boolean }).standalone) ||
       document.referrer.includes('android-app://');
 
     setIsInstalled(isStandalone);

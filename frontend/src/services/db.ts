@@ -1,9 +1,9 @@
 import Dexie, { Table } from 'dexie';
-import { StudentProfile, ApplicationRecord, SavedScholarship } from '../types/student';
+import { StudentProfile, StudentProfileRecord, ApplicationRecord, SavedScholarship } from '../types/student';
 import { Scholarship } from '../types/scholarship';
 
 export class GrantlyDatabase extends Dexie {
-  studentProfile!: Table<StudentProfile, string>;
+  studentProfile!: Table<StudentProfileRecord, string>;
   savedScholarships!: Table<SavedScholarship, string>;
   applications!: Table<ApplicationRecord, string>;
   cachedScholarships!: Table<Scholarship, string>;
@@ -52,7 +52,7 @@ export const profileStorage = {
     };
 
     try {
-      await db.studentProfile.put({ ...updated, id: 'current' } as any);
+      await db.studentProfile.put({ ...updated, id: 'current' });
     } catch (err) {
       console.warn('IndexedDB write error, saving to localStorage:', err);
     }
@@ -224,8 +224,9 @@ export const dataManager = {
       }
 
       return { success: true, message: 'All student data successfully imported and synced!' };
-    } catch (err: any) {
-      return { success: false, message: err.message || 'Failed to parse JSON backup file.' };
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : 'Failed to parse JSON backup file.';
+      return { success: false, message };
     }
   },
 

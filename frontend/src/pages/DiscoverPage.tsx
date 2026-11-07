@@ -8,43 +8,20 @@ import {
   SlidersHorizontal,
   X,
   Filter,
-  CheckCircle2,
-  AlertCircle,
-  XCircle,
   RotateCcw,
   Sparkles,
   Building,
   GraduationCap
 } from 'lucide-react';
-import { ScholarshipCategory, ProviderCategory, EducationLevel, GenderEligibility } from '../types/scholarship';
+import {
+  ScholarshipCategory,
+  ProviderCategory,
+  EducationLevel,
+  GenderEligibility,
+  FundingType
+} from '../types/scholarship';
 import { EligibilityStatus } from '../types/eligibility';
-
-const INDIAN_STATES = [
-  'All India', 'Andhra Pradesh', 'Arunachal Pradesh', 'Assam', 'Bihar', 'Chhattisgarh', 'Goa',
-  'Gujarat', 'Haryana', 'Himachal Pradesh', 'Jharkhand', 'Karnataka', 'Kerala',
-  'Madhya Pradesh', 'Maharashtra', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
-  'Odisha', 'Punjab', 'Rajasthan', 'Sikkim', 'Tamil Nadu', 'Telangana', 'Tripura',
-  'Uttar Pradesh', 'Uttarakhand', 'West Bengal', 'Delhi', 'Jammu and Kashmir', 'Ladakh',
-  'Puducherry', 'Chandigarh', 'Andaman and Nicobar Islands', 'Dadra and Nagar Haveli and Daman and Diu'
-];
-
-const COUNTRIES = [
-  { val: 'all', label: 'All Regions / Countries' },
-  { val: 'India', label: 'India Opportunities' },
-  { val: 'International', label: 'All International (Study Abroad)' },
-  { val: 'United Kingdom', label: 'United Kingdom (UK)' },
-  { val: 'United States', label: 'United States (USA)' },
-  { val: 'Germany', label: 'Germany (DAAD)' },
-  { val: 'France', label: 'France (Campus France)' },
-  { val: 'Netherlands', label: 'Netherlands' },
-  { val: 'Sweden', label: 'Sweden (SI)' },
-  { val: 'Switzerland', label: 'Switzerland' },
-  { val: 'Canada', label: 'Canada' },
-  { val: 'Australia', label: 'Australia' },
-  { val: 'Singapore', label: 'Singapore (A*STAR)' },
-  { val: 'Japan', label: 'Japan (MEXT)' },
-  { val: 'South Korea', label: 'South Korea (GKS)' }
-];
+import { INDIAN_STATES, COUNTRIES } from '../utils/constants';
 
 export const DiscoverPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -57,7 +34,7 @@ export const DiscoverPage: React.FC = () => {
   useEffect(() => {
     const categoryParam = searchParams.get('category') as ScholarshipCategory | null;
     const providerParam = searchParams.get('providerCategory') as ProviderCategory | null;
-    const sortParam = searchParams.get('sortBy') as any;
+    const sortParam = searchParams.get('sortBy') as ScholarshipFilters['sortBy'] | null;
 
     if (categoryParam || providerParam || sortParam) {
       setFilters(prev => ({
@@ -88,7 +65,9 @@ export const DiscoverPage: React.FC = () => {
     filters.category !== 'all' ? 1 : 0,
     filters.providerCategory !== 'all' ? 1 : 0,
     filters.educationLevel !== 'all' ? 1 : 0,
+    filters.country !== 'all' ? 1 : 0,
     filters.state !== 'all' ? 1 : 0,
+    filters.fundingType !== 'all' ? 1 : 0,
     filters.gender !== 'all' ? 1 : 0,
     filters.eligibilityStatus !== 'all' ? 1 : 0,
     filters.status !== 'all' ? 1 : 0,
@@ -121,41 +100,51 @@ export const DiscoverPage: React.FC = () => {
             {searchInput && (
               <button
                 onClick={() => setSearchInput('')}
-                className="absolute right-3 top-3 text-slate-400 hover:text-slate-600 p-0.5 rounded-lg"
+                className="absolute right-3.5 top-3.5 text-slate-400 hover:text-slate-600"
               >
                 <X size={16} />
               </button>
             )}
           </div>
 
-          {/* Mobile Filter Toggle */}
-          <button
-            onClick={() => setShowMobileFilters(true)}
-            className="lg:hidden w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-3 bg-white border border-slate-200 text-slate-700 font-semibold rounded-2xl text-sm shadow-subtle"
-          >
-            <SlidersHorizontal size={16} />
-            <span>Filters {activeFiltersCount > 0 ? `(${activeFiltersCount})` : ''}</span>
-          </button>
-        </div>
-      </div>
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <button
+              onClick={() => setShowMobileFilters(true)}
+              className="sm:hidden flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 bg-white border border-slate-200 rounded-2xl text-xs font-bold text-slate-700"
+            >
+              <Filter size={16} />
+              <span>Filters ({activeFiltersCount})</span>
+            </button>
 
-      {/* Main Grid: Sidebar Filters + Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Desktop Sidebar Filters */}
-        <aside className="hidden lg:block lg:col-span-1 space-y-6 bg-white p-6 rounded-3xl border border-slate-200 shadow-subtle h-fit sticky top-24">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-            <div className="flex items-center gap-2 font-bold text-sm text-navy-900">
-              <Filter size={16} className="text-brand-600" />
-              <span>Filter Opportunities</span>
-            </div>
             {activeFiltersCount > 0 && (
               <button
                 onClick={handleResetFilters}
-                className="text-xs text-brand-600 hover:text-brand-700 font-semibold flex items-center gap-1"
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-semibold text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
+                title="Reset all filters"
               >
-                <RotateCcw size={12} />
-                <span>Reset ({activeFiltersCount})</span>
+                <RotateCcw size={14} />
+                <span className="hidden sm:inline">Reset</span>
               </button>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Main Layout: Sidebar & Results Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+        {/* Desktop Filters Sidebar */}
+        <aside className="hidden lg:block space-y-6 bg-white rounded-3xl p-6 border border-slate-200 shadow-card sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto">
+          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+            <div className="flex items-center gap-2">
+              <SlidersHorizontal size={16} className="text-brand-600" />
+              <h2 className="text-sm font-bold text-navy-900 uppercase tracking-wider">
+                Filter Opportunities
+              </h2>
+            </div>
+            {activeFiltersCount > 0 && (
+              <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-brand-50 text-brand-700">
+                {activeFiltersCount} active
+              </span>
             )}
           </div>
 
@@ -166,15 +155,15 @@ export const DiscoverPage: React.FC = () => {
             </label>
             <div className="space-y-1.5">
               {[
-                { val: 'all', label: 'All Opportunities', color: 'text-slate-700' },
-                { val: 'ELIGIBLE', label: `Eligible Only (${stats.eligibleCount})`, color: 'text-emerald-700' },
-                { val: 'NEEDS_INFORMATION', label: `Needs Information (${stats.needsInfoCount})`, color: 'text-amber-700' },
-                { val: 'NOT_ELIGIBLE', label: `Ineligible (${stats.ineligibleCount})`, color: 'text-rose-700' }
+                { val: 'all' as const, label: 'All Opportunities', color: 'text-slate-700' },
+                { val: 'ELIGIBLE' as const, label: `Eligible Only (${stats.eligibleCount})`, color: 'text-emerald-700' },
+                { val: 'NEEDS_INFORMATION' as const, label: `Needs Information (${stats.needsInfoCount})`, color: 'text-amber-700' },
+                { val: 'NOT_ELIGIBLE' as const, label: `Ineligible (${stats.ineligibleCount})`, color: 'text-rose-700' }
               ].map(opt => (
                 <button
                   key={opt.val}
                   type="button"
-                  onClick={() => setFilters(prev => ({ ...prev, eligibilityStatus: opt.val as any }))}
+                  onClick={() => setFilters(prev => ({ ...prev, eligibilityStatus: opt.val }))}
                   className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-colors ${
                     filters.eligibilityStatus === opt.val
                       ? 'bg-brand-50 text-brand-700 font-bold border border-brand-200'
@@ -198,41 +187,33 @@ export const DiscoverPage: React.FC = () => {
                 onClick={() => setFilters(prev => ({ ...prev, status: 'all' }))}
                 className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-colors ${
                   filters.status === 'all'
-                    ? 'bg-navy-900 text-white font-bold'
+                    ? 'bg-brand-50 text-brand-700 font-bold border border-brand-200'
                     : 'text-slate-600 hover:bg-slate-50'
                 }`}
               >
-                All Statuses ({stats.totalAvailable})
+                <span>All Opportunities ({stats.totalAvailable})</span>
               </button>
-
               <button
                 type="button"
                 onClick={() => setFilters(prev => ({ ...prev, status: 'open' }))}
                 className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-colors ${
                   filters.status === 'open'
                     ? 'bg-emerald-50 text-emerald-800 font-bold border border-emerald-200'
-                    : 'text-emerald-700 hover:bg-emerald-50'
+                    : 'text-slate-600 hover:bg-slate-50'
                 }`}
               >
-                Currently Open ({stats.openCount})
+                <span className="text-emerald-700 font-medium">Currently Open</span>
               </button>
-
               <button
                 type="button"
-                onClick={() => setFilters(prev => ({ ...prev, status: filters.status === 'expired' ? 'all' : 'expired' }))}
-                className={`w-full flex items-center justify-between text-xs px-3 py-2 rounded-xl border transition-colors ${
-                  filters.status === 'expired'
-                    ? 'bg-rose-50 border-rose-300 text-rose-800 font-bold'
-                    : 'border-slate-200 text-rose-700 hover:bg-rose-50/50'
+                onClick={() => setFilters(prev => ({ ...prev, status: 'closed' }))}
+                className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-colors ${
+                  filters.status === 'closed'
+                    ? 'bg-rose-50 text-rose-800 font-bold border border-rose-200'
+                    : 'text-slate-600 hover:bg-slate-50'
                 }`}
               >
-                <span className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-rose-500" />
-                  <span>Expired Scholarships</span>
-                </span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-rose-100 text-rose-800 font-bold">
-                  {stats.expiredCount}
-                </span>
+                <span className="text-rose-700 font-medium">Expired / Closed</span>
               </button>
             </div>
           </div>
@@ -260,7 +241,7 @@ export const DiscoverPage: React.FC = () => {
             </label>
             <select
               value={filters.fundingType}
-              onChange={e => setFilters(prev => ({ ...prev, fundingType: e.target.value as any }))}
+              onChange={e => setFilters(prev => ({ ...prev, fundingType: e.target.value as FundingType | 'all' }))}
               className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="all">All Funding Types</option>
@@ -279,7 +260,7 @@ export const DiscoverPage: React.FC = () => {
             </label>
             <select
               value={filters.providerCategory}
-              onChange={e => setFilters(prev => ({ ...prev, providerCategory: e.target.value as any }))}
+              onChange={e => setFilters(prev => ({ ...prev, providerCategory: e.target.value as ProviderCategory | 'all' }))}
               className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="all">All Provider Types</option>
@@ -300,10 +281,11 @@ export const DiscoverPage: React.FC = () => {
             </label>
             <select
               value={filters.educationLevel}
-              onChange={e => setFilters(prev => ({ ...prev, educationLevel: e.target.value as any }))}
+              onChange={e => setFilters(prev => ({ ...prev, educationLevel: e.target.value as EducationLevel | 'all' }))}
               className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="all">All Education Levels</option>
+              <option value="school">School (Class 9-12)</option>
               <option value="high_school">High School (Class 11/12)</option>
               <option value="diploma">Diploma / Polytechnic</option>
               <option value="undergraduate">Undergraduate Degree</option>
@@ -336,7 +318,7 @@ export const DiscoverPage: React.FC = () => {
             </label>
             <select
               value={filters.gender}
-              onChange={e => setFilters(prev => ({ ...prev, gender: e.target.value as any }))}
+              onChange={e => setFilters(prev => ({ ...prev, gender: e.target.value as GenderEligibility | 'all' }))}
               className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
               <option value="all">All Genders</option>
@@ -345,34 +327,15 @@ export const DiscoverPage: React.FC = () => {
               <option value="transgender">Transgender Candidates</option>
             </select>
           </div>
-
-          {/* Application Status Filter */}
-          <div className="space-y-2">
-            <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
-              Portal Application Status
-            </label>
-            <select
-              value={filters.status}
-              onChange={e => setFilters(prev => ({ ...prev, status: e.target.value as any }))}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
-            >
-              <option value="all">All Opportunities ({stats.totalAvailable})</option>
-              <option value="open">Currently Open ({stats.openCount})</option>
-              <option value="expired">Expired / Closed ({stats.expiredCount})</option>
-              <option value="coming_soon">Coming Soon</option>
-            </select>
-          </div>
         </aside>
 
-        {/* Scholarship Results Area */}
-        <main className="lg:col-span-3 space-y-6">
-          {/* Sorting and Results Count Header */}
+        {/* Results Area */}
+        <main className="lg:col-span-3 space-y-4">
+          {/* Header Bar with Sort and Count */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pb-3 border-b border-slate-200">
             <div className="text-xs font-semibold text-slate-500">
               Showing <span className="font-bold text-navy-900">{processedScholarships.length}</span> opportunities
               {filters.eligibilityStatus !== 'all' && ` (${filters.eligibilityStatus.replace('_', ' ')})`}
-              {filters.status === 'expired' && ` (Expired / Closed)`}
-              {filters.status === 'open' && ` (Open Only)`}
             </div>
 
             {/* Sorting Dropdown */}
@@ -380,7 +343,7 @@ export const DiscoverPage: React.FC = () => {
               <span className="text-xs text-slate-400 font-medium">Sort by:</span>
               <select
                 value={filters.sortBy}
-                onChange={e => setFilters(prev => ({ ...prev, sortBy: e.target.value as any }))}
+                onChange={e => setFilters(prev => ({ ...prev, sortBy: e.target.value as ScholarshipFilters['sortBy'] }))}
                 className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs bg-white text-navy-900 font-semibold focus:outline-none focus:ring-2 focus:ring-brand-500"
               >
                 <option value="relevance">Deterministic Match & Eligibility</option>
@@ -443,13 +406,13 @@ export const DiscoverPage: React.FC = () => {
                 <label className="font-bold text-slate-700 block mb-1">Application & Expiry Status</label>
                 <select
                   value={filters.status}
-                  onChange={e => setFilters(prev => ({ ...prev, status: e.target.value as any }))}
+                  onChange={e => setFilters(prev => ({ ...prev, status: e.target.value as ScholarshipFilters['status'] }))}
                   className="w-full p-2.5 rounded-xl border border-slate-200"
                 >
                   <option value="all">All Opportunities ({stats.totalAvailable})</option>
-                  <option value="open">Currently Open ({stats.openCount})</option>
-                  <option value="expired">Expired / Closed ({stats.expiredCount})</option>
-                  <option value="coming_soon">Coming Soon</option>
+                  <option value="open">Currently Open</option>
+                  <option value="closed">Expired / Closed</option>
+                  <option value="upcoming">Upcoming</option>
                 </select>
               </div>
 
@@ -457,7 +420,7 @@ export const DiscoverPage: React.FC = () => {
                 <label className="font-bold text-slate-700 block mb-1">Eligibility Verdict</label>
                 <select
                   value={filters.eligibilityStatus}
-                  onChange={e => setFilters(prev => ({ ...prev, eligibilityStatus: e.target.value as any }))}
+                  onChange={e => setFilters(prev => ({ ...prev, eligibilityStatus: e.target.value as EligibilityStatus | 'all' }))}
                   className="w-full p-2.5 rounded-xl border border-slate-200"
                 >
                   <option value="all">All Eligibility</option>
@@ -484,7 +447,7 @@ export const DiscoverPage: React.FC = () => {
                 <label className="font-bold text-slate-700 block mb-1">Funding Structure</label>
                 <select
                   value={filters.fundingType}
-                  onChange={e => setFilters(prev => ({ ...prev, fundingType: e.target.value as any }))}
+                  onChange={e => setFilters(prev => ({ ...prev, fundingType: e.target.value as FundingType | 'all' }))}
                   className="w-full p-2.5 rounded-xl border border-slate-200"
                 >
                   <option value="all">All Funding Types</option>
@@ -500,7 +463,7 @@ export const DiscoverPage: React.FC = () => {
                 <label className="font-bold text-slate-700 block mb-1">Provider Type</label>
                 <select
                   value={filters.providerCategory}
-                  onChange={e => setFilters(prev => ({ ...prev, providerCategory: e.target.value as any }))}
+                  onChange={e => setFilters(prev => ({ ...prev, providerCategory: e.target.value as ProviderCategory | 'all' }))}
                   className="w-full p-2.5 rounded-xl border border-slate-200"
                 >
                   <option value="all">All Providers</option>
@@ -541,7 +504,7 @@ export const DiscoverPage: React.FC = () => {
               </button>
               <button
                 onClick={() => setShowMobileFilters(false)}
-                className="flex-1 py-2.5 bg-brand-600 text-white rounded-xl font-semibold text-xs"
+                className="flex-1 py-2.5 bg-brand-600 rounded-xl font-bold text-white text-xs"
               >
                 Apply
               </button>
