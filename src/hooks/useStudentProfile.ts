@@ -8,8 +8,20 @@ export interface ProfileCompleteness {
   missingFields: { key: keyof StudentProfile; label: string; importance: 'high' | 'medium' | 'low'; reason: string }[];
 }
 
+function getInitialProfile(): StudentProfile {
+  try {
+    const cached = localStorage.getItem('grantly_profile_fallback');
+    if (cached) {
+      return JSON.parse(cached);
+    }
+  } catch (e) {
+    // ignore
+  }
+  return DEFAULT_GUEST_PROFILE;
+}
+
 export function useStudentProfile() {
-  const [profile, setProfile] = useState<StudentProfile>(DEFAULT_GUEST_PROFILE);
+  const [profile, setProfile] = useState<StudentProfile>(getInitialProfile);
   const [loading, setLoading] = useState<boolean>(true);
 
   const loadProfile = useCallback(async () => {

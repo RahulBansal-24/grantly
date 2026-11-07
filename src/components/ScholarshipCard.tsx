@@ -13,7 +13,8 @@ import {
   ShieldCheck,
   Globe,
   MapPin,
-  Award
+  Award,
+  AlertCircle
 } from 'lucide-react';
 
 interface Props {
@@ -126,11 +127,18 @@ export const ScholarshipCard: React.FC<Props> = ({
               </span>
             )}
 
-            {/* Verified badge */}
-            <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
-              <ShieldCheck size={10} className="text-emerald-600" />
-              {scholarship.verificationStatus || 'Verified'}
-            </span>
+            {/* Verification / Expired badge */}
+            {scholarship.verificationStatus === 'Expired' || isExpired ? (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
+                <AlertCircle size={10} className="text-rose-600" />
+                Expired
+              </span>
+            ) : (
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                <ShieldCheck size={10} className="text-emerald-600" />
+                {scholarship.verificationStatus || 'Verified'}
+              </span>
+            )}
           </div>
 
           <button

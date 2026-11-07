@@ -58,9 +58,6 @@ export const Navbar: React.FC = () => {
                   <span className="text-xl font-black tracking-tight text-navy-900 group-hover:text-brand-600 transition-colors">
                     GRANTLY
                   </span>
-                  <span className="hidden sm:inline-block ml-2 text-[10px] font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded border border-brand-200">
-                    Transparent
-                  </span>
                 </div>
               </Link>
 

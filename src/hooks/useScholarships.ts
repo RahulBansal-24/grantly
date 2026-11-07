@@ -15,7 +15,7 @@ export interface ScholarshipFilters {
   fundingType: FundingType | 'all';
   gender: GenderEligibility | 'all';
   eligibilityStatus: EligibilityStatus | 'all';
-  status: 'open' | 'closed' | 'upcoming' | 'coming_soon' | 'all';
+  status: 'open' | 'closed' | 'expired' | 'upcoming' | 'coming_soon' | 'all';
   sortBy: 'relevance' | 'deadline' | 'amount_high' | 'amount_low' | 'newest';
 }
 
@@ -46,7 +46,7 @@ export function useScholarships(profile: StudentProfile | null) {
       const controller = new AbortController();
       const timeoutId = setTimeout(() => controller.abort(), 4000);
 
-      const res = await fetch('/api/scholarships', { signal: controller.signal });
+      const res = await fetch('/api/scholarships?limit=1000', { signal: controller.signal });
       clearTimeout(timeoutId);
 
       if (res.ok) {
@@ -154,9 +154,21 @@ export function useScholarships(profile: StudentProfile | null) {
         if (result.status !== filters.eligibilityStatus) return false;
       }
 
-      // Application Status
+      // Application / Expiration Status
       if (filters.status !== 'all') {
-        if (scholarship.status !== filters.status) return false;
+        const isExp =
+          scholarship.status === 'closed' ||
+          scholarship.verificationStatus === 'Expired' ||
+          Boolean(scholarship.isDeadlinePassed) ||
+          new Date(scholarship.deadline).getTime() < Date.now();
+
+        if (filters.status === 'expired' || filters.status === 'closed') {
+          if (!isExp) return false;
+        } else if (filters.status === 'open') {
+          if (isExp) return false;
+        } else {
+          if (scholarship.status !== filters.status) return false;
+        }
       }
 
       return true;
@@ -187,12 +199,26 @@ export function useScholarships(profile: StudentProfile | null) {
     let totalEligibleFundingValue = 0;
     let indianCount = 0;
     let internationalCount = 0;
+    let expiredCount = 0;
+    let openCount = 0;
 
     for (const s of scholarships) {
       if (s.country === 'India') {
         indianCount++;
       } else {
         internationalCount++;
+      }
+
+      const isExp =
+        s.status === 'closed' ||
+        s.verificationStatus === 'Expired' ||
+        Boolean(s.isDeadlinePassed) ||
+        new Date(s.deadline).getTime() < Date.now();
+
+      if (isExp) {
+        expiredCount++;
+      } else {
+        openCount++;
       }
 
       const res = evaluationsMap.get(s.id);
@@ -215,7 +241,9 @@ export function useScholarships(profile: StudentProfile | null) {
       ineligibleCount,
       totalEligibleFundingValue,
       indianCount,
-      internationalCount
+      internationalCount,
+      expiredCount,
+      openCount
     };
   }, [scholarships, evaluationsMap]);
 

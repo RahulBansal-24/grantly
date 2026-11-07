@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useStudentProfile } from '../hooks/useStudentProfile';
 import { useScholarships } from '../hooks/useScholarships';
 import { StudentProfile } from '../types/student';
@@ -30,6 +30,13 @@ export const ProfilePage: React.FC = () => {
   const [formData, setFormData] = useState<Partial<StudentProfile>>(profile);
   const [saveSuccess, setSaveSuccess] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'personal' | 'educational' | 'financial' | 'special'>('personal');
+
+  // Automatically keep formData synchronized with saved profile data
+  useEffect(() => {
+    if (profile) {
+      setFormData(profile);
+    }
+  }, [profile]);
 
   const { stats } = useScholarships(formData as StudentProfile);
 
@@ -132,7 +139,7 @@ export const ProfilePage: React.FC = () => {
           <div className="space-y-6">
             <div className="border-b border-slate-100 pb-3">
               <h2 className="text-base font-bold text-navy-900">Personal & Domicile Information</h2>
-              <p className="text-xs text-slate-500">Essential for state residency matching.</p>
+              <p className="text-xs text-slate-500">Essential for state residency and demographic matching.</p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -142,6 +149,38 @@ export const ProfilePage: React.FC = () => {
                   type="text"
                   value={formData.firstName || ''}
                   onChange={e => handleChange('firstName', e.target.value)}
+                  placeholder="e.g. Rahul"
+                  className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-brand-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Last Name</label>
+                <input
+                  type="text"
+                  value={formData.lastName || ''}
+                  onChange={e => handleChange('lastName', e.target.value)}
+                  placeholder="e.g. Sharma"
+                  className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-brand-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Date of Birth</label>
+                <input
+                  type="date"
+                  value={formData.dateOfBirth || ''}
+                  onChange={e => {
+                    const dob = e.target.value;
+                    handleChange('dateOfBirth', dob);
+                    if (dob) {
+                      const birthYear = new Date(dob).getFullYear();
+                      const thisYear = new Date().getFullYear();
+                      if (birthYear > 1900 && thisYear >= birthYear) {
+                        handleChange('age', thisYear - birthYear);
+                      }
+                    }
+                  }}
                   className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
@@ -152,6 +191,7 @@ export const ProfilePage: React.FC = () => {
                   type="number"
                   value={formData.age || ''}
                   onChange={e => handleChange('age', e.target.value ? Number(e.target.value) : undefined)}
+                  placeholder="e.g. 20"
                   className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
@@ -207,7 +247,7 @@ export const ProfilePage: React.FC = () => {
                     onChange={e => handleChange('isPersonWithDisability', e.target.checked)}
                     className="w-4 h-4 rounded text-brand-600 border-slate-300"
                   />
-                  <span className="text-xs font-semibold text-slate-700">Person with Disability (≥40%)</span>
+                  <span className="text-xs font-semibold text-slate-700">Person with Disability</span>
                 </label>
               </div>
             </div>
@@ -232,7 +272,7 @@ export const ProfilePage: React.FC = () => {
                 >
                   <option value="">Select Level</option>
                   <option value="high_school">Class 11 / 12</option>
-                  <option value="diploma">Diploma</option>
+                  <option value="diploma">Diploma / Polytechnic</option>
                   <option value="undergraduate">Undergraduate Degree</option>
                   <option value="postgraduate">Postgraduate Degree</option>
                   <option value="phd">PhD / Doctoral</option>
@@ -251,6 +291,42 @@ export const ProfilePage: React.FC = () => {
               </div>
 
               <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Stream / Field of Study</label>
+                <select
+                  value={formData.stream || ''}
+                  onChange={e => handleChange('stream', e.target.value)}
+                  className="w-full p-2.5 rounded-xl border border-slate-200 text-xs bg-white focus:ring-2 focus:ring-brand-500"
+                >
+                  <option value="">Select Stream / Field</option>
+                  <option value="Engineering & Technology">Engineering & Technology</option>
+                  <option value="Medicine & Health Sciences">Medicine & Health Sciences</option>
+                  <option value="Commerce & Management">Commerce & Management</option>
+                  <option value="Natural & Pure Sciences">Natural & Pure Sciences</option>
+                  <option value="Humanities & Social Sciences">Humanities & Social Sciences</option>
+                  <option value="Law & Legal Studies">Law & Legal Studies</option>
+                  <option value="Agriculture & Veterinary">Agriculture & Veterinary</option>
+                  <option value="Polytechnic / Vocational">Polytechnic / Vocational</option>
+                  <option value="General Studies">General Studies</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Current Year of Study</label>
+                <select
+                  value={formData.currentAcademicYear !== undefined ? formData.currentAcademicYear : ''}
+                  onChange={e => handleChange('currentAcademicYear', e.target.value ? Number(e.target.value) : undefined)}
+                  className="w-full p-2.5 rounded-xl border border-slate-200 text-xs bg-white focus:ring-2 focus:ring-brand-500"
+                >
+                  <option value="">Select Year</option>
+                  <option value="1">1st Year / Fresher</option>
+                  <option value="2">2nd Year</option>
+                  <option value="3">3rd Year</option>
+                  <option value="4">4th Year</option>
+                  <option value="5">5th Year</option>
+                </select>
+              </div>
+
+              <div>
                 <label className="block text-xs font-semibold text-slate-700 mb-1">Recent Exam Percentage (%)</label>
                 <input
                   type="number"
@@ -260,6 +336,20 @@ export const ProfilePage: React.FC = () => {
                   value={formData.percentage !== undefined ? formData.percentage : ''}
                   onChange={e => handleChange('percentage', e.target.value ? parseFloat(e.target.value) : undefined)}
                   placeholder="82.5"
+                  className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-brand-500"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Previous Exam Percentage (10th / 12th %)</label>
+                <input
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  max="100"
+                  value={formData.previousExamPercentage !== undefined ? formData.previousExamPercentage : ''}
+                  onChange={e => handleChange('previousExamPercentage', e.target.value ? parseFloat(e.target.value) : undefined)}
+                  placeholder="85.0"
                   className="w-full p-2.5 rounded-xl border border-slate-200 text-xs focus:ring-2 focus:ring-brand-500"
                 />
               </div>
@@ -343,27 +433,59 @@ export const ProfilePage: React.FC = () => {
           <div className="space-y-4">
             <div className="border-b border-slate-100 pb-3">
               <h2 className="text-base font-bold text-navy-900">Special Criteria</h2>
-              <p className="text-xs text-slate-500">Specific quota attributes.</p>
+              <p className="text-xs text-slate-500">Specific quota and affirmative action attributes.</p>
             </div>
 
-            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer">
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
               <input
                 type="checkbox"
                 checked={formData.isFirstGenerationLearner || false}
                 onChange={e => handleChange('isFirstGenerationLearner', e.target.checked)}
                 className="w-4 h-4 rounded text-brand-600 border-slate-300"
               />
-              <span className="text-xs font-semibold text-slate-800">First Generation Graduate in Family</span>
+              <div>
+                <span className="text-xs font-semibold text-slate-800 block">First Generation Graduate in Family</span>
+                <span className="text-[11px] text-slate-500">First member of your immediate family pursuing post-secondary education</span>
+              </div>
             </label>
 
-            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer">
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
               <input
                 type="checkbox"
                 checked={formData.isSingleGirlChild || false}
                 onChange={e => handleChange('isSingleGirlChild', e.target.checked)}
                 className="w-4 h-4 rounded text-brand-600 border-slate-300"
               />
-              <span className="text-xs font-semibold text-slate-800">Single Girl Child in Family</span>
+              <div>
+                <span className="text-xs font-semibold text-slate-800 block">Single Girl Child in Family</span>
+                <span className="text-[11px] text-slate-500">Matches specialized national and state girl child education schemes</span>
+              </div>
+            </label>
+
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+              <input
+                type="checkbox"
+                checked={formData.isOrphan || false}
+                onChange={e => handleChange('isOrphan', e.target.checked)}
+                className="w-4 h-4 rounded text-brand-600 border-slate-300"
+              />
+              <div>
+                <span className="text-xs font-semibold text-slate-800 block">Orphan Candidate</span>
+                <span className="text-[11px] text-slate-500">Unlocks designated orphan and child welfare quota schemes</span>
+              </div>
+            </label>
+
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 cursor-pointer hover:bg-slate-50 transition-colors">
+              <input
+                type="checkbox"
+                checked={formData.hasSportsDistinction || false}
+                onChange={e => handleChange('hasSportsDistinction', e.target.checked)}
+                className="w-4 h-4 rounded text-brand-600 border-slate-300"
+              />
+              <div>
+                <span className="text-xs font-semibold text-slate-800 block">State / National Level Sports Distinction</span>
+                <span className="text-[11px] text-slate-500">Eligible for SAI, corporate CSR sports foundations and athletic awards</span>
+              </div>
             </label>
           </div>
         )}

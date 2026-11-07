@@ -75,12 +75,6 @@ export const HomePage: React.FC = () => {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-brand-500/20 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-5xl mx-auto text-center relative z-10 space-y-6">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-brand-200">
-            <Sparkles size={14} className="text-amber-400" />
-            <span>Deterministic Rule-Based Matching • Zero AI Black Boxes</span>
-          </div>
-
           {/* Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
             Your future deserves <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 via-brand-200 to-indigo-100">funding.</span>

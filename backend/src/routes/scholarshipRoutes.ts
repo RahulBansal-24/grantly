@@ -119,7 +119,7 @@ scholarshipRouter.get('/', async (req: Request, res: Response, next: NextFunctio
 
     // Pagination
     const page = query.page || 1;
-    const limit = query.limit || 50;
+    const limit = query.limit || 500;
     const startIndex = (page - 1) * limit;
     const paginated = filtered.slice(startIndex, startIndex + limit);
 

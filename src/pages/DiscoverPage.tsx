@@ -166,7 +166,7 @@ export const DiscoverPage: React.FC = () => {
             </label>
             <div className="space-y-1.5">
               {[
-                { val: 'all', label: 'All Opportunities' },
+                { val: 'all', label: 'All Opportunities', color: 'text-slate-700' },
                 { val: 'ELIGIBLE', label: `Eligible Only (${stats.eligibleCount})`, color: 'text-emerald-700' },
                 { val: 'NEEDS_INFORMATION', label: `Needs Information (${stats.needsInfoCount})`, color: 'text-amber-700' },
                 { val: 'NOT_ELIGIBLE', label: `Ineligible (${stats.ineligibleCount})`, color: 'text-rose-700' }
@@ -184,6 +184,56 @@ export const DiscoverPage: React.FC = () => {
                   <span className={opt.color}>{opt.label}</span>
                 </button>
               ))}
+            </div>
+          </div>
+
+          {/* Application & Expiry Status */}
+          <div className="space-y-2">
+            <label className="text-xs font-bold uppercase tracking-wider text-slate-400 block">
+              Application & Expiry Status
+            </label>
+            <div className="space-y-1.5">
+              <button
+                type="button"
+                onClick={() => setFilters(prev => ({ ...prev, status: 'all' }))}
+                className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-colors ${
+                  filters.status === 'all'
+                    ? 'bg-navy-900 text-white font-bold'
+                    : 'text-slate-600 hover:bg-slate-50'
+                }`}
+              >
+                All Statuses ({stats.totalAvailable})
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setFilters(prev => ({ ...prev, status: 'open' }))}
+                className={`w-full text-left text-xs px-3 py-2 rounded-xl transition-colors ${
+                  filters.status === 'open'
+                    ? 'bg-emerald-50 text-emerald-800 font-bold border border-emerald-200'
+                    : 'text-emerald-700 hover:bg-emerald-50'
+                }`}
+              >
+                Currently Open ({stats.openCount})
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setFilters(prev => ({ ...prev, status: filters.status === 'expired' ? 'all' : 'expired' }))}
+                className={`w-full flex items-center justify-between text-xs px-3 py-2 rounded-xl border transition-colors ${
+                  filters.status === 'expired'
+                    ? 'bg-rose-50 border-rose-300 text-rose-800 font-bold'
+                    : 'border-slate-200 text-rose-700 hover:bg-rose-50/50'
+                }`}
+              >
+                <span className="flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-rose-500" />
+                  <span>Expired Scholarships</span>
+                </span>
+                <span className="px-1.5 py-0.5 rounded-full text-[10px] bg-rose-100 text-rose-800 font-bold">
+                  {stats.expiredCount}
+                </span>
+              </button>
             </div>
           </div>
 
@@ -306,10 +356,10 @@ export const DiscoverPage: React.FC = () => {
               onChange={e => setFilters(prev => ({ ...prev, status: e.target.value as any }))}
               className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-brand-500"
             >
-              <option value="all">All Statuses (Open & Closed)</option>
-              <option value="open">Currently Open Only</option>
+              <option value="all">All Opportunities ({stats.totalAvailable})</option>
+              <option value="open">Currently Open ({stats.openCount})</option>
+              <option value="expired">Expired / Closed ({stats.expiredCount})</option>
               <option value="coming_soon">Coming Soon</option>
-              <option value="closed">Closed / Past Deadlines</option>
             </select>
           </div>
         </aside>
@@ -321,6 +371,8 @@ export const DiscoverPage: React.FC = () => {
             <div className="text-xs font-semibold text-slate-500">
               Showing <span className="font-bold text-navy-900">{processedScholarships.length}</span> opportunities
               {filters.eligibilityStatus !== 'all' && ` (${filters.eligibilityStatus.replace('_', ' ')})`}
+              {filters.status === 'expired' && ` (Expired / Closed)`}
+              {filters.status === 'open' && ` (Open Only)`}
             </div>
 
             {/* Sorting Dropdown */}
@@ -388,7 +440,21 @@ export const DiscoverPage: React.FC = () => {
             {/* Mobile filter controls */}
             <div className="space-y-4 text-xs">
               <div>
-                <label className="font-bold text-slate-700 block mb-1">Status</label>
+                <label className="font-bold text-slate-700 block mb-1">Application & Expiry Status</label>
+                <select
+                  value={filters.status}
+                  onChange={e => setFilters(prev => ({ ...prev, status: e.target.value as any }))}
+                  className="w-full p-2.5 rounded-xl border border-slate-200"
+                >
+                  <option value="all">All Opportunities ({stats.totalAvailable})</option>
+                  <option value="open">Currently Open ({stats.openCount})</option>
+                  <option value="expired">Expired / Closed ({stats.expiredCount})</option>
+                  <option value="coming_soon">Coming Soon</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="font-bold text-slate-700 block mb-1">Eligibility Verdict</label>
                 <select
                   value={filters.eligibilityStatus}
                   onChange={e => setFilters(prev => ({ ...prev, eligibilityStatus: e.target.value as any }))}
