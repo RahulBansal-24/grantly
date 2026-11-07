@@ -378,7 +378,7 @@ pie title Scholarship Distribution by Provider (113 Total)
    - Profile data is mirrored synchronously in `localStorage` for zero-flash initial loading and populated via reactive React hooks.
 2. **Network-First API with Bundled Fallback**:
    - The frontend requests `/api/scholarships?limit=1000` from the Express backend.
-   - If the backend is unreachable or the user is offline, the client seamlessly falls back to the embedded curated offline dataset in [`src/data/scholarshipsData.ts`](file:///c:/my%20files/projects/grantly/src/data/scholarshipsData.ts).
+   - If the backend is unreachable or the user is offline, the client seamlessly falls back to the embedded curated offline dataset in [`frontend/src/data/scholarshipsData.ts`](file:///c:/my%20files/projects/grantly/frontend/src/data/scholarshipsData.ts).
 3. **PWA Service Worker Runtime Caching**:
    - Powered by Workbox to cache web assets, fonts, and API responses. The application operates 100% offline without network drops.
 
@@ -388,33 +388,87 @@ pie title Scholarship Distribution by Provider (113 Total)
 
 ```
 grantly/
-├── 📄 index.html                      # Root HTML5 template with PWA meta & favicon
-├── 📄 vite.config.ts                  # Vite 6 configuration with PWA plugin & workbox
-├── 📄 tailwind.config.js              # Tailwind design tokens, custom colors & themes
-├── 📄 postcss.config.js               # PostCSS styling processor
-├── 📄 tsconfig.json                   # TypeScript project compiler configuration
-├── 📄 vitest.config.ts                # Vitest test runner configuration
-├── 📄 package.json                    # Frontend dependencies and npm script runner
+├── 📄 .gitignore                      # Git ignore rules for build and cache artifacts
 ├── 📄 README.md                       # Master comprehensive project documentation
 │
-├── 📁 public/                         # Public web assets & PWA manifest icons
-│   ├── 🖼️ favicon.svg                 # Vector graduation cap brand logo
-│   ├── 🖼️ pwa-192x192.png             # 192x192 PWA homescreen icon
-│   ├── 🖼️ pwa-512x512.png             # 512x512 PWA splash / maskable icon
-│   └── 🖼️ apple-touch-icon.png        # 180x180 iOS Safari touch icon
+├── 📁 frontend/                       # Frontend React 18 + Vite PWA Application
+│   ├── 📄 package.json                # Frontend package dependencies & scripts
+│   ├── 📄 package-lock.json           # Frontend locked dependencies
+│   ├── 📄 vite.config.ts              # Vite 6 configuration with PWA plugin & workbox
+│   ├── 📄 tailwind.config.js          # Tailwind design tokens, custom colors & themes
+│   ├── 📄 postcss.config.js           # PostCSS styling processor
+│   ├── 📄 tsconfig.json               # Frontend TypeScript compiler configuration
+│   ├── 📄 vitest.config.ts            # Vitest test runner configuration
+│   ├── 📄 vercel.json                 # Frontend client routing fallback for SPA
+│   ├── 📄 index.html                  # Root HTML5 template with PWA meta & favicon
+│   ├── 📁 public/                     # Public web assets & PWA manifest icons
+│   │   ├── 🖼️ favicon.svg             # Vector graduation cap brand logo
+│   │   ├── 🖼️ pwa-192x192.png         # 192x192 PWA homescreen icon
+│   │   ├── 🖼️ pwa-512x512.png         # 512x512 PWA splash / maskable icon
+│   │   └── 🖼️ apple-touch-icon.png    # 180x180 iOS Safari touch icon
+│   └── 📁 src/                        # Frontend React Application Source
+│       ├── 📜 main.tsx                # React DOM entry point
+│       ├── 📜 App.tsx                 # Router definitions and global layouts
+│       ├── 📜 index.css               # Tailwind styles, base layers & animations
+│       ├── 📜 vite-env.d.ts           # Vite client environment declarations
+│       ├── 📁 types/                  # TypeScript domain models
+│       │   ├── 📜 scholarship.ts      # Scholarship, categories, and requirement types
+│       │   ├── 📜 student.ts          # Student profile, application pipeline types
+│       │   └── 📜 eligibility.ts      # Evaluation result, criterion status types
+│       ├── 📁 services/               # Core business logic & storage
+│       │   ├── 📜 eligibilityEngine.ts # 100% Deterministic Rule-Based Matching Engine
+│       │   ├── 📜 db.ts               # Dexie.js IndexedDB schema & storage operations
+│       │   └── 📁 __tests__/
+│       │       └── 📜 eligibilityEngine.test.ts # Unit tests for the matching engine
+│       ├── 📁 hooks/                  # Custom reactive React hooks
+│       │   ├── 📜 useScholarships.ts  # Dataset querying, filtering, sorting & stats
+│       │   ├── 📜 useStudentProfile.ts # Reactive IndexedDB student profile hook
+│       │   └── 📜 usePWA.ts           # Service worker status & install prompt handling
+│       ├── 📁 utils/                  # Shared formatting and constant definitions
+│       │   ├── 📜 constants.ts        # Option lists, badges, and shared UI mappings
+│       │   └── 📜 formatters.ts       # Currency, date, and text formatters
+│       ├── 📁 components/             # Reusable UI component library
+│       │   ├── 📜 Navbar.tsx          # Navigation bar with install button & network status
+│       │   ├── 📜 Footer.tsx          # Attribution, privacy and source directory link
+│       │   ├── 📜 ScholarshipCard.tsx # Reusable scholarship card with badges & tags
+│       │   ├── 📜 EligibilityBadge.tsx# Verdict badge (Eligible, Needs Info, Ineligible)
+│       │   ├── 📜 EligibilityBreakdown.tsx # Explainable criteria comparison modal
+│       │   ├── 📜 PwaInstallModal.tsx # Step-by-step PWA install instructions
+│       │   └── 📁 __tests__/
+│       │       └── 📜 EligibilityBadge.test.tsx # Component unit tests
+│       ├── 📁 pages/                  # Application route views
+│       │   ├── 📜 HomePage.tsx        # Hero landing page with dynamic statistics
+│       │   ├── 📜 OnboardingPage.tsx  # Multi-step guest profile wizard
+│       │   ├── 📜 DashboardPage.tsx   # Student command center with analytics charts
+│       │   ├── 📜 DiscoverPage.tsx    # Search, faceted filters & opportunities grid
+│       │   ├── 📜 ScholarshipDetailsPage.tsx # Detailed view, checklists & official URLs
+│       │   ├── 📜 ApplicationsPage.tsx# Pipeline stage tracker & personal notes
+│       │   ├── 📜 SavedScholarshipsPage.tsx # Bookmarked scholarships collection
+│       │   ├── 📜 ProfilePage.tsx     # Attribute editor with real-time match feedback
+│       │   └── 📜 SettingsPage.tsx    # Backup export/restore, wipe & source audit
+│       └── 📁 data/                   # Bundled datasets for offline PWA fallback
+│           ├── 📜 scholarshipsData.ts # Offline fallback copy of 113 verified schemes
+│           └── 📜 sourcesData.ts      # Offline fallback copy of source directory
 │
-├── 📁 screenshots/                    # Application UI showcase screenshots
-│   ├── 🖼️ 1) landing page.png         # Figure 1: Landing Page & Live Statistics
-│   ├── 🖼️ 2) PWA install.png          # Figure 2: PWA Installation Modal
-│   ├── 🖼️ 3) discover tab.png         # Figure 3: Discovery Catalog & Filters
-│   ├── 🖼️ 4) dashboard.png            # Figure 4: Student Analytics Dashboard
-│   ├── 🖼️ 5) application tab.png      # Figure 5: Application Pipeline Kanban
-│   ├── 🖼️ 6) saved scholarships.png   # Figure 6: Bookmarked Opportunities
-│   ├── 🖼️ 7) profile section.png      # Figure 7: Student Profile Editor
-│   └── 🖼️ 8) settings.png             # Figure 8: Data Sovereignty & Settings
-│
-├── 📁 scripts/                        # Utility & build scripts
-│   └── 📜 generate-icons.js           # Vector icon renderer for high-res PWA PNGs
+├── 📁 backend/                        # Node.js Express REST API server
+│   ├── 📄 package.json                # Backend dependencies and test scripts
+│   ├── 📄 package-lock.json           # Backend locked dependencies
+│   ├── 📄 tsconfig.json               # Backend TypeScript configuration
+│   ├── 📄 .env.example                # Sample environment variables
+│   └── 📁 src/
+│       ├── 📜 index.ts                # Express application entry point & middleware
+│       ├── 📁 routes/
+│       │   ├── 📜 scholarshipRoutes.ts # GET /api/scholarships (filters, search, pagination)
+│       │   ├── 📜 sourcesRoutes.ts     # GET /api/sources & /api/sources/report
+│       │   └── 📜 providerRoutes.ts    # GET /api/providers/status
+│       ├── 📁 services/
+│       │   └── 📜 scholarshipAggregator.ts # File-backed repository with memory cache
+│       ├── 📁 validators/
+│       │   └── 📜 scholarshipValidator.ts  # Zod schemas for query and path parameters
+│       ├── 📁 middleware/
+│       │   └── 📜 errorHandler.ts      # Centralized HTTP error handling
+│       └── 📁 __tests__/
+│           └── 📜 api.test.ts          # Supertest backend integration test suite
 │
 ├── 📁 data/                           # Authentic harvested scholarship database
 │   ├── 📊 scholarships.json           # 113 verified, structured scholarship records
@@ -435,65 +489,15 @@ grantly/
 │       ├── 📜 schemes_international.py # International Fellowships (Chevening, Rhodes, etc.)
 │       └── 📜 schemes_international_extended.py
 │
-├── 📁 backend/                        # Node.js Express REST API server
-│   ├── 📄 package.json                # Backend dependencies and test scripts
-│   ├── 📄 tsconfig.json               # Backend TypeScript configuration
-│   ├── 📄 .env.example                # Sample environment variables
-│   └── 📁 src/
-│       ├── 📜 index.ts                # Express application entry point & middleware
-│       ├── 📁 routes/
-│       │   ├── 📜 scholarshipRoutes.ts # GET /api/scholarships (filters, search, pagination)
-│       │   ├── 📜 sourcesRoutes.ts     # GET /api/sources & /api/sources/report
-│       │   └── 📜 providerRoutes.ts    # GET /api/providers/status
-│       ├── 📁 services/
-│       │   └── 📜 scholarshipAggregator.ts # File-backed repository with memory cache
-│       ├── 📁 validators/
-│       │   └── 📜 scholarshipValidator.ts  # Zod schemas for query and path parameters
-│       ├── 📁 middleware/
-│       │   └── 📜 errorHandler.ts      # Centralized HTTP error handling
-│       └── 📁 __tests__/
-│           └── 📜 api.test.ts          # Supertest backend integration test suite
-│
-└── 📁 src/                            # Frontend React Application Source
-    ├── 📜 main.tsx                    # React DOM entry point
-    ├── 📜 App.tsx                     # Router definitions and global layouts
-    ├── 📜 index.css                   # Tailwind styles, base layers & animations
-    ├── 📜 vite-env.d.ts               # Vite client environment declarations
-    ├── 📁 types/                      # TypeScript domain models
-    │   ├── 📜 scholarship.ts          # Scholarship, categories, and requirement types
-    │   ├── 📜 student.ts              # Student profile, application pipeline types
-    │   └── 📜 eligibility.ts          # Evaluation result, criterion status types
-    ├── 📁 services/                   # Core business logic & storage
-    │   ├── 📜 eligibilityEngine.ts    # 100% Deterministic Rule-Based Matching Engine
-    │   ├── 📜 db.ts                   # Dexie.js IndexedDB schema & storage operations
-    │   └── 📁 __tests__/
-    │       └── 📜 eligibilityEngine.test.ts # Unit tests for the matching engine
-    ├── 📁 hooks/                      # Custom reactive React hooks
-    │   ├── 📜 useScholarships.ts      # Dataset querying, filtering, sorting & stats
-    │   ├── 📜 useStudentProfile.ts    # Reactive IndexedDB student profile hook
-    │   └── 📜 usePWA.ts               # Service worker status & install prompt handling
-    ├── 📁 components/                 # Reusable UI component library
-    │   ├── 📜 Navbar.tsx              # Navigation bar with install button & network status
-    │   ├── 📜 Footer.tsx              # Attribution, privacy and source directory link
-    │   ├── 📜 ScholarshipCard.tsx     # Reusable scholarship card with badges & tags
-    │   ├── 📜 EligibilityBadge.tsx    # Verdict badge (Eligible, Needs Info, Ineligible)
-    │   ├── 📜 EligibilityBreakdown.tsx# Explainable criteria comparison modal
-    │   ├── 📜 PwaInstallModal.tsx     # Step-by-step PWA install instructions
-    │   └── 📁 __tests__/
-    │       └── 📜 EligibilityBadge.test.tsx # Component unit tests
-    ├── 📁 pages/                      # Application route views
-    │   ├── 📜 HomePage.tsx            # Hero landing page with dynamic statistics
-    │   ├── 📜 OnboardingPage.tsx      # Multi-step guest profile wizard
-    │   ├── 📜 DashboardPage.tsx       # Student command center with analytics charts
-    │   ├── 📜 DiscoverPage.tsx        # Search, faceted filters & opportunities grid
-    │   ├── 📜 ScholarshipDetailsPage.tsx # Detailed view, checklists & official URLs
-    │   ├── 📜 ApplicationsPage.tsx    # Pipeline stage tracker & personal notes
-    │   ├── 📜 SavedScholarshipsPage.tsx # Bookmarked scholarships collection
-    │   ├── 📜 ProfilePage.tsx         # Attribute editor with real-time match feedback
-    │   └── 📜 SettingsPage.tsx        # Backup export/restore, wipe & source audit
-    └── 📁 data/                       # Bundled datasets for offline PWA fallback
-        ├── 📜 scholarshipsData.ts     # Offline fallback copy of 113 verified schemes
-        └── 📜 sourcesData.ts          # Offline fallback copy of source directory
+└── 📁 screenshots/                    # Application UI showcase screenshots
+    ├── 🖼️ 1) landing page.png         # Figure 1: Landing Page & Live Statistics
+    ├── 🖼️ 2) PWA install.png          # Figure 2: PWA Installation Modal
+    ├── 🖼️ 3) discover tab.png         # Figure 3: Discovery Catalog & Filters
+    ├── 🖼️ 4) dashboard.png            # Figure 4: Student Analytics Dashboard
+    ├── 🖼️ 5) application tab.png      # Figure 5: Application Pipeline Kanban
+    ├── 🖼️ 6) saved scholarships.png   # Figure 6: Bookmarked Opportunities
+    ├── 🖼️ 7) profile section.png      # Figure 7: Student Profile Editor
+    └── 🖼️ 8) settings.png             # Figure 8: Data Sovereignty & Settings
 ```
 
 ---
@@ -514,8 +518,8 @@ grantly/
 git clone https://github.com/your-username/grantly.git
 cd grantly
 
-# Install root & frontend dependencies
-npm install
+# Install frontend dependencies
+cd frontend && npm install && cd ..
 
 # Install backend dependencies
 cd backend && npm install && cd ..
@@ -525,14 +529,16 @@ cd backend && npm install && cd ..
 
 ### ⚡ 2. Start the Application
 
-You can launch both the frontend and backend in concurrent development mode:
+Launch the frontend and backend in their respective directories:
 
 ```bash
-# Start frontend client (Vite)
+# Start frontend client (Vite on http://localhost:5173)
+cd frontend
 npm run dev
 
-# In a separate terminal, start backend API (Express)
-npm run dev:backend
+# In a separate terminal, start backend API (Express on http://localhost:5000)
+cd backend
+npm run dev
 ```
 
 The application will be live at:
@@ -547,23 +553,17 @@ The application will be live at:
 GRANTLY features complete test coverage across deterministic engine rules, component rendering, and API contracts:
 
 ```bash
-# Run frontend unit tests (Vitest)
-npm test
+# Run frontend unit tests (Vitest — 12 tests)
+cd frontend && npm test
 
-# Run backend API integration tests (Supertest + Vitest)
-npm run test:backend
+# Build frontend production bundle (TypeScript + Vite PWA)
+cd frontend && npm run build
 
-# Run all test suites across the entire repository
-npm run test:all
+# Run backend API integration tests (Vitest + Supertest — 8 tests)
+cd backend && npm test
 
-# Perform strict TypeScript typechecking
-npx tsc --noEmit
-
-# Re-render official PWA graduation cap vector icons
-node scripts/generate-icons.js
-
-# Build production bundles
-npm run build:all
+# Build backend production bundle (TypeScript)
+cd backend && npm run build
 ```
 
 ### 🐍 Dataset Verification & Re-compilation (Python)
