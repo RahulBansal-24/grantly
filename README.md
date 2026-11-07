@@ -227,15 +227,19 @@ The engine evaluates up to 10 structured dimensions. Each dimension has an assig
 
 For each evaluated criterion $i \in C$, satisfaction credit is assigned according to its status:
 
-$$\text{Credit}(i) = \begin{cases} 
+```math
+\text{Credit}(i) = \begin{cases} 
 1.0 & \text{if } \text{Status}(i) = \text{SATISFIED} \\ 
-0.4 & \text{if } \text{Status}(i) = \text{MISSING\_INFO} \quad \text{(discovery partial credit)} \\ 
+0.4 & \text{if } \text{Status}(i) = \text{MISSING INFO} \quad \text{(discovery partial credit)} \\ 
 0.0 & \text{if } \text{Status}(i) = \text{FAILED} 
-\end{cases}$$
+\end{cases}
+```
 
 The overall transparent match score ($S$) is the weighted percentage:
 
-$$S = \min\left(100, \max\left(0, \left\lfloor \frac{\sum_{i \in C} W_i \times \text{Credit}(i)}{\sum_{i \in C} W_i} \times 100 \right\rceil \right)\right)$$
+```math
+S = \min\left(100, \max\left(0, \operatorname{round}\left( \frac{\sum_{i \in C} W_i \times \text{Credit}(i)}{\sum_{i \in C} W_i} \times 100 \right) \right)\right)
+```
 
 *If no specific criteria are attached to an open general award, a baseline score of 50% is assigned.*
 
